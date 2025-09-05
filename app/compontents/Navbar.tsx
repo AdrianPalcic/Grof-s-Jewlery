@@ -99,7 +99,7 @@ const Navbar = () => {
           {links.map((link) => (
             <li
               key={link.slug}
-              className="relative group flex items-center gap-1 cursor-pointer hover:text-secondaryColor transition-colors duration-300"
+              className="relative group flex items-center  cursor-pointer hover:text-secondaryColor transition-colors duration-300"
             >
               <span className="flex items-center gap-1">
                 {link.text} <ChevronDown size={14} />
@@ -110,7 +110,7 @@ const Navbar = () => {
                   className="absolute left-0 top-6  w-48 bg-white border border-gray-200 rounded-sm shadow-md 
                   opacity-0 invisible pointer-events-none
                   transition-all duration-300 ease-out 
-                  group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto gtoup-hover:top-full text-textColor"
+                  group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto gtoup-hover:top-full text-textColor z-10"
                 >
                   {link.links.map((sublink) => (
                     <li key={sublink.slug}>

@@ -23,12 +23,35 @@ p {
 
 @layer utilities {
   .btn {
-    @apply text-white bg-secondaryColor px-5 py-2 font-cinzel uppercase font-normal text-lg transition-colors hover:bg-[#5d3000] shadow-2xl shadow-black;
+    @apply text-white bg-secondaryColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors hover:bg-[#5d3000] shadow-2xl shadow-black;
   }
   .sec-btn {
-    @apply text-bgColor bg-transparent border-[1px] border-solid border-bgColor px-5 py-2 font-cinzel uppercase font-normal text-lg transition-colors;
+    @apply text-bgColor bg-transparent border-[1px] border-solid border-bgColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors;
+  }
+  .ghost {
+    @apply text-secondaryColor bg-transparent border-[1px] border-solid border-secondaryColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors;
   }
   .acc {
     @apply text-secondaryColor;
+  }
+  .sec-h2 {
+    @apply text-3xl sm:text-5xl text-center;
+  }
+  .section {
+    @apply mb-20 px-4 sm:px-10 w-full mx-auto;
+  }
+  .active {
+    @apply bg-secondaryColor;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
