@@ -19,6 +19,8 @@ module.exports = {
       },
       screens: {
         navbreak: "1110px",
+        mdd: "900px",
+        smm: "500px",
       },
     },
   },
