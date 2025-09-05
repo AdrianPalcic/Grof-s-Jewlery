@@ -16,10 +16,10 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-5xl md:text-6xl mb-2 text-white text-center">
           ISPISUJEMO PRIČE <span className="acc">POKLONIMA</span>
         </h1>
-        <h2 className="text-[16px] sm:text-lg md:text-xl text-white mb-4 text-center">
+        <h2 className="text-[16px] sm:text-lg md:text-xl text-white mb-4 text-center ">
           {" "}
-          UNIQUE AND HANDCRAFTED GIFTS, GIFT BOXES AND ORIGINAL PACKAGING
-          SOLUTIONS
+          Unique and handcrafted gifts, gift boxes and original packaging
+          solutions
         </h2>
         <Link href="/">
           <ButtonMain text="Započnite kupovinu" />
