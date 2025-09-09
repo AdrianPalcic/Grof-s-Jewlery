@@ -146,7 +146,7 @@ const Navbar = () => {
 
       <div
         className={`navbreak:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[700px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          mobileOpen ? "max-h-[1200px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}
       >
         <ul className="flex flex-col gap-4 uppercase text-sm p-2">

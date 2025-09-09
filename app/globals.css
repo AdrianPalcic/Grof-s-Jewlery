@@ -23,7 +23,7 @@ p {
 
 @layer utilities {
   .btn {
-    @apply text-white bg-secondaryColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors hover:bg-[#5d3000] shadow-2xl shadow-black;
+    @apply text-white bg-secondaryColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors hover:bg-[#5d3000];
   }
   .sec-btn {
     @apply text-bgColor bg-transparent border-[1px] border-solid border-bgColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors;
