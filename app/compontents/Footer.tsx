@@ -65,7 +65,7 @@ const Footer = () => {
         <ul className="flex flex-col gap-2">
           {buyLinks.map((link) => (
             <Link
-              href={`/${link.slug}`}
+              href={`/kategorija/${link.slug}`}
               key={link.slug}
               className=" font-cormorant font-regular text-lg text-[#5A5A5A] transition-colors duration-300 hover:text-secondaryColor"
             >

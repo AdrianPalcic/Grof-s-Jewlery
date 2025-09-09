@@ -22,7 +22,7 @@ const KolekcijaHome = () => {
           vještini, tradiciji i poštovanju prema materijalu.
         </p>
         <Link
-          href={"/kolekcija/slug"}
+          href={"/kolekcije/jesenske-radost"}
           className="flex justify-center sm:justify-normal"
         >
           <ButtonMain text="Pregledajte Proizvode" />

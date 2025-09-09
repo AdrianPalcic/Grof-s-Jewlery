@@ -115,7 +115,7 @@ const Navbar = () => {
                   {link.links.map((sublink) => (
                     <li key={sublink.slug}>
                       <Link
-                        href={`/${link.slug}/${sublink.slug}`}
+                        href={`/kategorija/${link.slug}/${sublink.slug}`}
                         className="block px-4 py-2 text-sm hover:text-secondaryColor transition-colors duration-300"
                       >
                         {sublink.text}
@@ -160,7 +160,7 @@ const Navbar = () => {
                   {link.links.map((sublink) => (
                     <li key={sublink.slug}>
                       <Link
-                        href={`/${link.slug}/${sublink.slug}`}
+                        href={`/kategorija/${link.slug}/${sublink.slug}`}
                         className="block hover:text-secondaryColor transition-colors duration-300"
                       >
                         {sublink.text}
