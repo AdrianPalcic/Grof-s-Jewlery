@@ -5,7 +5,7 @@ import React from "react";
 
 const Page = () => {
   const params = useParams();
-  return <div>Page: {params.kolekcija}</div>;
+  return <div>Page: {params.podkategorija}</div>;
 };
 
 export default Page;

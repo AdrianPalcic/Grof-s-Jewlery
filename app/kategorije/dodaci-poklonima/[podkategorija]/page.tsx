@@ -3,9 +3,9 @@
 import { useParams } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const params = useParams();
-  return <div>page: {params.kategorija}</div>;
+  return <div>Page: {params.podkategorija}</div>;
 };
 
-export default page;
+export default Page;

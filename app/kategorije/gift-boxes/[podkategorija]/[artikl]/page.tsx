@@ -4,14 +4,13 @@ import ItemDetails from "@/app/compontents/ItemDetails";
 import { useParams } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const params = useParams();
-
   return (
-    <>
-      <ItemDetails /> : {params.artikl}
-    </>
+    <div>
+      <ItemDetails />: {params.artikl}
+    </div>
   );
 };
 
-export default page;
+export default Page;
