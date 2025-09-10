@@ -4,19 +4,19 @@ import React, { useState } from "react";
 
 const reviews = [
   {
-    text: "Kupila sam ogrlicu iz ljetne kolekcije Grof&apos;ss Jewelry i ostala bez riječi. Kvaliteta izrade i pažnja posvećena detaljima su nevjerojatni. Osjećam se posebno svaki put kad je nosim.",
+    text: `Kupila sam ogrlicu iz ljetne kolekcije Grof's Jewelry i ostala bez riječi. Kvaliteta izrade i pažnja posvećena detaljima su nevjerojatni. Osjećam se posebno svaki put kad je nosim.`,
     author: "Franka Nevistić",
   },
   {
-    text: "Narukvica koju sam dobila je još ljepša uživo! Pakiranje, brzina dostave i usluga su na vrhunskoj razini.",
+    text: `Narukvica koju sam dobila je još ljepša uživo! Pakiranje, brzina dostave i usluga su na vrhunskoj razini.`,
     author: "Ana Horvat",
   },
   {
-    text: "Prsten iz kolekcije je jednostavno savršen. Minimalistički, a opet poseban. Nosim ga svaki dan.",
+    text: `Prsten iz kolekcije je jednostavno savršen. Minimalistički, a opet poseban. Nosim ga svaki dan.`,
     author: "Maja Kovač",
   },
   {
-    text: "Poklonila sam lančić prijateljici i bila je oduševljena! Definitivno ću ponovno naručivati.",
+    text: `Poklonila sam lančić prijateljici i bila je oduševljena! Definitivno ću ponovno naručivati.`,
     author: "Ivana Babić",
   },
 ];
