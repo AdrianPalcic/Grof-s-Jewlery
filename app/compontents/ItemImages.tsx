@@ -14,7 +14,7 @@ const ItemImages = () => {
           id="main-img"
           src={activeImg}
           alt="Najbolje kolekcije papirnatih nakita"
-          className="w-full max-w-[700px] h-full object-cover max-h-[700px] "
+          className="w-full  h-full object-cover max-h-[700px] "
         />
       </div>
 

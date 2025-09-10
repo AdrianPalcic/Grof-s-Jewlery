@@ -15,7 +15,7 @@ const ItemDetails = (artiklSlug: Props) => {
         <p>45.20€</p>
         <div className="w-full h-[1px] bg-secondaryColor mt-2 "></div>
 
-        <p className="text-xl w-[90%] mt-2 mb-4">
+        <p className="text-xl smm:w-[90%] mt-2 mb-4">
           Više od tri desetljeća, Grof’s Jewelry simbol je vrhunske izrade i
           bezvremenskog dizajna. Svaki komad pomno je ručno izrađen od strane
           naših majstora obrtnika, koristeći samo najfinije materijale. Naša

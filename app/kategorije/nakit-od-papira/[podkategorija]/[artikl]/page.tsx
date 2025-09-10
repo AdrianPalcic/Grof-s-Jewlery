@@ -7,9 +7,11 @@ import React from "react";
 const Page = () => {
   const params = useParams();
   return (
-    <div>
-      <ItemDetails />: {params.artikl}
-    </div>
+    <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
+      <ItemDetails
+        artiklSlug={typeof params.artikl === "string" ? params.artikl : ""}
+      />
+    </section>
   );
 };
 

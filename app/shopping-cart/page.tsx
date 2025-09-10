@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import CartEmpty from "./components/CartEmpty";
 import CartFull from "./components/CartFull";
 
-const page = () => {
+const Page = () => {
   const [items, setItems] = useState(0);
 
   return (
@@ -14,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
