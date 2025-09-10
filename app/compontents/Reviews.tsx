@@ -41,7 +41,7 @@ const Reviews = () => {
           className="fade-in transition-opacity duration-500 select-none"
         >
           <h3 className="text-lg sm:text-xl italic mb-4 !normal-case">
-            "{reviews[current].text}"
+            {reviews[current].text}
           </h3>
           <p className="font-semibold">{reviews[current].author}</p>
         </div>
