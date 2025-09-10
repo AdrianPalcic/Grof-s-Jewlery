@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { ReactEventHandler, useState } from "react";
+import React, { useState } from "react";
 
 const Form = () => {
   const [input, setInput] = useState({
@@ -15,18 +15,24 @@ const Form = () => {
   const router = useRouter();
 
   // Funkcija za update state-a
-  const handleChange = (e: any) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
     setInput((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
   };
 
-  // Funkcija za submit - za sad samo sprema u state
-  const handleSubmit = (e: any) => {
+  // Funkcija za submit
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Podaci iz forme:", input);
+
     setInput({
       ime: "",
       email: "",
