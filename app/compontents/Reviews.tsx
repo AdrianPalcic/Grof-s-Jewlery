@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const reviews = [
   {
-    text: "Kupila sam ogrlicu iz ljetne kolekcije Grof’s Jewelry i ostala bez riječi. Kvaliteta izrade i pažnja posvećena detaljima su nevjerojatni. Osjećam se posebno svaki put kad je nosim.",
+    text: "Kupila sam ogrlicu iz ljetne kolekcije Grof&apos;ss Jewelry i ostala bez riječi. Kvaliteta izrade i pažnja posvećena detaljima su nevjerojatni. Osjećam se posebno svaki put kad je nosim.",
     author: "Franka Nevistić",
   },
   {
