@@ -91,7 +91,7 @@ const Navbar = () => {
             height={60}
             className="mix-blend-darken"
           />
-          <h4 className="ml-2">Grof's Jewelry</h4>
+          <h4 className="ml-2">Grof&apos;ss Jewelry</h4>
         </Link>
 
         {/* Desktop Nav */}

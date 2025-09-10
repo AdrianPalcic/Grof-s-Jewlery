@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 
 const reviews = [
@@ -21,8 +22,7 @@ const reviews = [
 ];
 
 const Reviews = () => {
-  const [current, setCurrent] = useState(0);
-  const [startX, setStartX] = useState(null);
+  const [current, setCurrent] = useState<number>(0);
 
   const handlePrev = () => {
     setCurrent((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
@@ -32,36 +32,6 @@ const Reviews = () => {
     setCurrent((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
   };
 
-  const handleTouchStart = (e: any) => {
-    setStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: any) => {
-    if (startX === null) return;
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-      handleNext(); // swipe left
-    } else if (endX - startX > 50) {
-      handlePrev(); // swipe right
-    }
-    setStartX(null);
-  };
-
-  const handleMouseDown = (e: any) => {
-    setStartX(e.clientX);
-  };
-
-  const handleMouseUp = (e: any) => {
-    if (startX === null) return;
-    const endX = e.clientX;
-    if (startX - endX > 50) {
-      handleNext();
-    } else if (endX - startX > 50) {
-      handlePrev();
-    }
-    setStartX(null);
-  };
-
   return (
     <section className="section text-center">
       <div className="max-w-2xl mx-auto">
@@ -69,10 +39,6 @@ const Reviews = () => {
         <div
           key={current}
           className="fade-in transition-opacity duration-500 select-none"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
         >
           <h3 className="text-lg sm:text-xl italic mb-4 !normal-case">
             "{reviews[current].text}"

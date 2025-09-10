@@ -9,7 +9,10 @@ const Page = () => {
 
   return (
     <>
-      <ItemDetails /> : {params.artikl}
+      <ItemDetails
+        artiklSlug={typeof params.artikl === "string" ? params.artikl : ""}
+      />{" "}
+      : {params.artikl}
     </>
   );
 };
