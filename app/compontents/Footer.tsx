@@ -55,7 +55,7 @@ const Footer = () => {
   return (
     <footer className="flex w-full flex-wrap gap-5 px-4 sm:px-8 ">
       <div className="flex-1 min-w-[250px]">
-        <h2 className="text-3xl mb-2">Grof&apos;ss Jewlery</h2>
+        <h2 className="text-3xl mb-2">Grof&apos;s Jewlery</h2>
         <p className="font-cormorant">
           Izuzetan nakit izrađen za one koji cijene najfinije stvari u životu.
         </p>

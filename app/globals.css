@@ -26,7 +26,7 @@ p {
     @apply text-white bg-secondaryColor px-5 py-2 font-cinzel  border-[1px] border-solid border-secondaryColor uppercase font-normal text-[16px] smm:text-lg transition-colors hover:bg-[#5d3000];
   }
   .sec-btn {
-    @apply text-bgColor bg-transparent border-[1px] border-solid border-bgColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors;
+    @apply text-bgColor bg-transparent border-[1px] border-solid border-bgColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors duration-300 hover:text-white hover:border-white;
   }
   .ghost {
     @apply text-secondaryColor bg-transparent border-[1px] border-solid border-secondaryColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors duration-300 hover:text-white hover:bg-secondaryColor;
