@@ -9,7 +9,7 @@ const AboutCollection = () => {
       <h2 className="text-3xl text-center">
         Priča o kolekciji - jesenske radosti
       </h2>
-      <p className="text-center w-[50%] mt-2">
+      <p className="text-center w-full md:w-[50%] mt-2">
         Inspirirana blagim sjajem svitanja i tišinom pred veliki dan, ova
         kolekcija donosi suptilnu eleganciju koja neće oduzeti riječ od vaše
         ljepote. Svaki komad ručno je izrađen s namjerom da bude...

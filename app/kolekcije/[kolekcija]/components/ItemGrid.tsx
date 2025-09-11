@@ -16,9 +16,9 @@ const ItemGrid = ({ col }: { col: string }) => {
 
   return (
     <section id="item-grid" className="mb-20">
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-12 gap-x-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4">
         {items.map((item) => (
-          <div key={item.id} className="flex flex-col items-center">
+          <div key={item.id}>
             <Link
               href={`/kolekcije/${col}/${item.title}`}
               className="overflow-hidden"
@@ -26,7 +26,7 @@ const ItemGrid = ({ col }: { col: string }) => {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full min-h-[250px] h-[300px] object-cover transition-transform duration-300 hover:scale-[1.1]"
+                className="w-full min-h-[250px] h-[300px] object-cover transition-opacity duration-300 hover:opacity-70"
               />
             </Link>
             <div className="flex flex-col items-start justify-start w-full">

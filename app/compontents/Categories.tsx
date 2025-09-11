@@ -14,7 +14,7 @@ const Categories = () => {
 
       <div className="flex flex-wrap justify-center gap-5 w-full">
         <div className="flex flex-col gap-4 flex-1 min-w-[250px]">
-          <Link href="/nakit-od-papira">
+          <Link href="/kategorije/nakit-od-papira">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
                 src="/kat1.png"
@@ -28,7 +28,7 @@ const Categories = () => {
             </div>
           </Link>
 
-          <Link href="/pokloni">
+          <Link href="/kategorije/pokloni">
             <div className="relative w-full  h-[250px] sm:h-[250px]  overflow-hidden">
               <img
                 src="/kat2.png"
@@ -42,7 +42,7 @@ const Categories = () => {
             </div>
           </Link>
 
-          <Link href="/pakiranje-poklona">
+          <Link href="/kategorije/pakiranje-poklona">
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
               <img
                 src="/kat3.png"
@@ -58,7 +58,7 @@ const Categories = () => {
         </div>
 
         <div className="flex flex-col gap-4 flex-1 min-w-[250px]">
-          <Link href="/dodaci-poklonima">
+          <Link href="/kategorije/dodaci-poklonima">
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
               <img
                 src="/kat4.png"
@@ -72,7 +72,7 @@ const Categories = () => {
             </div>
           </Link>
 
-          <Link href="/gift-boxes">
+          <Link href="/kategorije/gift-boxes">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
                 src="/kat5.png"
@@ -86,7 +86,7 @@ const Categories = () => {
             </div>
           </Link>
 
-          <Link href="/package-design">
+          <Link href="/kategorije/package-design">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
                 src="/ant.jpeg"
