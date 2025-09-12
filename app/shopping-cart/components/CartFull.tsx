@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import CartItem from "./CartItem";
-import ButtonMain from "@/app/compontents/ButtonMain";
 
 const CartFull = () => {
   return (

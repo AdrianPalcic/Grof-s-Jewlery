@@ -5,7 +5,7 @@ import CartEmpty from "./components/CartEmpty";
 import CartFull from "./components/CartFull";
 
 const Page = () => {
-  const [items, setItems] = useState(0);
+  const [items, setItems] = useState(1);
 
   return (
     <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
