@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
 import "./globals.css";
 import Navbar from "./compontents/Navbar";
 import Footer from "./compontents/Footer";
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
   description: "Handmade Paper Jewelry",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
