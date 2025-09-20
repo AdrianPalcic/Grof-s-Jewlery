@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
       <ItemDetails
-        artiklSlug={typeof params.artikl === "string" ? params.artikl : ""}
+        artiklSlug={typeof params.slug === "string" ? params.slug : ""}
       />
     </section>
   );

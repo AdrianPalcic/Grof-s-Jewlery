@@ -1,31 +1,64 @@
-import React from "react";
 import Hero from "./Hero";
 import AboutCollection from "./AboutCollection";
-import GhostButton from "@/app/compontents/GhostButton";
-import Link from "next/link";
-import ItemGrid from "./ItemGrid";
+import ItemGrid from "@/app/compontents/ItemGrid";
 import CTA from "@/app/compontents/CTA";
+import { Image, Products } from "@/app/page";
 
-const CollectionDetails = ({ collection }: { collection: string }) => {
-  const items = [
-    { id: 1, img: "/kat1.png", title: "Papirnata Naušnica 1", price: "11.30€" },
-    { id: 2, img: "/kat2.png", title: "Papirnata Naušnica 2", price: "12.50€" },
-    { id: 3, img: "/kat3.png", title: "Papirnata Naušnica 3", price: "10.00€" },
-    { id: 4, img: "/kat4.png", title: "Papirnata Naušnica 4", price: "15.20€" },
-    { id: 5, img: "/kat5.png", title: "Papirnata Naušnica 5", price: "9.80€" },
-    { id: 6, img: "/kat1.png", title: "Papirnata Naušnica 6", price: "14.00€" },
-    { id: 7, img: "/kat2.png", title: "Papirnata Naušnica 7", price: "13.30€" },
-    { id: 8, img: "/kat3.png", title: "Papirnata Naušnica 8", price: "16.40€" },
-  ];
+type Brand = {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  image: Image;
+};
 
-  return (
-    <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
-      <Hero />
-      <AboutCollection />
-      <ItemGrid col={typeof collection === "string" ? collection : ""} />
-      <CTA text="Razgovarajmo o Custom Narudžbi" link="kontakt" />
-    </main>
-  );
+interface Props {
+  collection: string; // slug of the brand
+}
+
+const CollectionDetails = async ({ collection }: Props) => {
+  try {
+    // Fetch brand by slug
+    const brandRes = await fetch(
+      `http://localhost:3000/api/brands/${collection}`,
+      {
+        cache: "no-store", // server component fetch
+      }
+    );
+
+    if (!brandRes.ok) {
+      throw new Error("Failed to fetch brand");
+    }
+
+    const brand: Brand = await brandRes.json();
+
+    // Fetch products by brand id
+    const productsRes = await fetch(
+      `http://localhost:3000/api/brands/products/${brand.id}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    if (!productsRes.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    const productsData = await productsRes.json();
+    const products: Products[] = productsData.products;
+
+    return (
+      <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
+        <Hero image={brand.image} name={brand.name} />
+        <AboutCollection name={brand.name} description={brand.description} />
+        <ItemGrid proizvodi={products} />
+        <CTA text="Razgovarajmo o Custom Narudžbi" link="kontakt" />
+      </main>
+    );
+  } catch (error) {
+    console.error("Error in CollectionDetails page:", error);
+    return <div>Došlo je do greške pri učitavanju kolekcije.</div>;
+  }
 };
 
 export default CollectionDetails;

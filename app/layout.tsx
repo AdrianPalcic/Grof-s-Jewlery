@@ -32,13 +32,70 @@ export const metadata: Metadata = {
   description: "Handmade Paper Jewelry",
 };
 
+type LinkItem = {
+  href: string;
+  targetHints?: Record<string, any>; // opcionalno, ovisi što vraća API
+};
+
+type CategoryLinks = {
+  self: LinkItem[];
+  collection: LinkItem[];
+};
+
+export type Category = {
+  id: number;
+  name: string;
+  slug: string;
+  parent: number;
+  description: string;
+  display: string;
+  count: number;
+  image: string | null;
+  menu_order: number;
+  children: Category[];
+  _links: CategoryLinks;
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  let topLevelCategories: Category[] = [];
+
+  try {
+    const res = await fetch("http://localhost:3000/api/wc-categories", {
+      next: { revalidate: 3600 }, // cache 1h
+    });
+
+    if (res.ok) {
+      const categories: Category[] = await res.json();
+
+      const categoriesMap: Record<number, Category> = {};
+      categories.forEach((cat) => {
+        categoriesMap[cat.id] = { ...cat, children: [] };
+      });
+
+      categories.forEach((cat) => {
+        if (cat.parent === 0) {
+          topLevelCategories.push(categoriesMap[cat.id]);
+        } else if (categoriesMap[cat.parent]) {
+          categoriesMap[cat.parent].children.push(categoriesMap[cat.id]);
+        }
+      });
+
+      topLevelCategories = topLevelCategories.filter(
+        (cat) => cat.name !== "Uncategorized"
+      );
+      console.log(topLevelCategories);
+    } else {
+      console.error("Proxy fetch error:", await res.text());
+    }
+  } catch (err) {
+    console.error("Error fetching categories via proxy:", err);
+  }
+
   return (
     <html lang="en">
       <head>
-        {/* Favicon */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -60,18 +117,16 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#ffffff" />
 
-        {/* SEO meta */}
         <meta name="description" content={metadata.description!} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-
       <body
         suppressHydrationWarning
         className={`${cinzel.variable} ${cormorant.variable} bg-bgColor text-textColor antialiased`}
       >
-        <Navbar />
+        <Navbar categories={topLevelCategories} />
         {children}
-        <Footer />
+        <Footer categories={topLevelCategories} />
       </body>
     </html>
   );

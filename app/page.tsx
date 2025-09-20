@@ -7,61 +7,40 @@ import Reviews from "./compontents/Reviews";
 import BuildGift from "./compontents/BuildGift";
 import CTA from "./compontents/CTA";
 
-// Tip za pojedinu kategoriju
-type Category = {
+export type Image = {
+  alt: string;
+  date_created: string;
+  date_created_gmt: string;
+  date_modified: string;
+  date_modified_gmt: string;
+  id: number;
+  name: string;
+  src: string;
+};
+
+export type Products = {
   id: number;
   name: string;
   slug: string;
-  parent: number;
-  description: string;
-  display: string;
-  count: number;
-  menu_order: number;
-  image: string | null;
-  _links?: any;
-  children: Category[];
+  images: Image[];
+  price: string;
 };
 
-// Mapa kategorija po ID-u
-type CategoriesMap = Record<number, Category>;
-
 export default async function Home() {
-  let categories: Category[] = [];
+  let products;
 
   try {
-    const res = await fetch("http://localhost:3000/api/wc-categories", {
+    const res = await fetch("http://localhost:3000/api/random-products", {
       next: { revalidate: 3600 },
     });
-
     if (res.ok) {
-      const data: Category[] = await res.json();
-      const categoriesMap: CategoriesMap = {};
-
-      data.forEach((cat) => {
-        categoriesMap[cat.id] = { ...cat, children: [] };
-      });
-
-      const topLevelCategories: Category[] = [];
-      data.forEach((cat) => {
-        if (cat.parent === 0) {
-          topLevelCategories.push(categoriesMap[cat.id]);
-        } else if (categoriesMap[cat.parent]) {
-          categoriesMap[cat.parent].children.push(categoriesMap[cat.id]);
-        }
-      });
-
-      // Filter nepotrebnih kategorija
-      const NeededCategories = topLevelCategories.filter(
-        (cat) => cat.name !== "Uncategorized"
-      );
-
-      console.log(NeededCategories);
-      categories = NeededCategories;
+      products = await res.json();
+      console.log(products);
     } else {
-      console.error("Proxy fetch error:", await res.text());
+      console.error("Failed fetching random products", await res.text());
     }
-  } catch (err) {
-    console.error("Error fetching categories via proxy:", err);
+  } catch (error) {
+    console.error("Error at api/featured-products", error);
   }
 
   return (
@@ -69,10 +48,10 @@ export default async function Home() {
       <Hero />
       <KolekcijaHome />
       <OnamaHome />
-      <Bestsellers />
+      <Bestsellers products={products} />
       <Categories />
       <Reviews />
-      <BuildGift />
+      <BuildGift products={products} />
       <CTA text="Kontakt" link="kontakt" />
     </main>
   );

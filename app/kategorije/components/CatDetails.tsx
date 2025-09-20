@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
-import ItemGrid from "./ItemGrid";
+import ItemGrid from "../../compontents/ItemGrid";
 import ButtonMain from "@/app/compontents/ButtonMain";
 import Link from "next/link";
 

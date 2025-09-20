@@ -1,4 +1,3 @@
-// app/api/wc-categories/route.js
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
 const WooCommerce = new WooCommerceRestApi({
@@ -8,23 +7,25 @@ const WooCommerce = new WooCommerceRestApi({
   version: "wc/v3",
 });
 
-export async function GET() {
+export async function GET(req) {
+  const url = new URL(req.url);
+  const slug = url.pathname.split("/").pop(); // zadnji segment
+
+  if (!slug) {
+    return new Response(JSON.stringify({ error: "Slug not provided" }), {
+      status: 400,
+    });
+  }
+
   try {
-    let allCategories = [];
-    let page = 1;
-    let fetched = [];
+    const { data } = await WooCommerce.get("products/brands", {
+      per_page: 1,
+      slug: slug,
+    });
 
-    do {
-      const { data } = await WooCommerce.get("products/categories", {
-        per_page: 100,
-        page,
-      });
-      fetched = data;
-      allCategories.push(...fetched);
-      page++;
-    } while (fetched.length === 100);
+    const brand = data[0];
 
-    return new Response(JSON.stringify(allCategories), {
+    return new Response(JSON.stringify(brand), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -36,9 +37,9 @@ export async function GET() {
     });
   } catch (error) {
     console.error("API Route Error:", error);
-    return new Response(
-      JSON.stringify({ error: "Failed to fetch categories" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ error: "Failed to fetch brand" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

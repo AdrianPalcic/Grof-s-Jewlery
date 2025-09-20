@@ -1,4 +1,3 @@
-// app/api/wc-categories/route.js
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
 const WooCommerce = new WooCommerceRestApi({
@@ -10,21 +9,9 @@ const WooCommerce = new WooCommerceRestApi({
 
 export async function GET() {
   try {
-    let allCategories = [];
-    let page = 1;
-    let fetched = [];
+    const { data } = await WooCommerce.get("products/brands");
 
-    do {
-      const { data } = await WooCommerce.get("products/categories", {
-        per_page: 100,
-        page,
-      });
-      fetched = data;
-      allCategories.push(...fetched);
-      page++;
-    } while (fetched.length === 100);
-
-    return new Response(JSON.stringify(allCategories), {
+    return new Response(JSON.stringify(data), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -36,9 +23,9 @@ export async function GET() {
     });
   } catch (error) {
     console.error("API Route Error:", error);
-    return new Response(
-      JSON.stringify({ error: "Failed to fetch categories" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ error: "Failed to fetch brands" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

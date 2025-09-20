@@ -2,27 +2,37 @@ import Link from "next/link";
 import React from "react";
 import ButtonMain from "./ButtonMain";
 
-const KolekcijaHome = () => {
+const KolekcijaHome = async () => {
+  let brand;
+
+  try {
+    const res = await fetch("http://localhost:3000/api/brands", {
+      next: { revalidate: 3600 },
+    });
+
+    if (res.ok) {
+      brand = await res.json();
+      if (brand.length > 0) {
+        brand = brand[0];
+      }
+    } else {
+      console.error("Failed to Fetch Brand", await res.text());
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching brand via proxy:", error);
+    return null;
+  }
+
   return (
     <section className="flex flex-col lg:flex-row px-2 sm:px-10 items-center  gap-10 mx-auto mb-20">
       <div className="flex-1">
         <h2 className="text-center sm:text-left text-3xl mb-4 border-b-2 border-solid border-secondaryColor">
-          Jesenska Kolekcija
+          {brand.name}
         </h2>
-        <p className="text-xl text-black mb-4">
-          Više od tri desetljeća, Grof’s Jewelry simbol je vrhunske izrade i
-          bezvremenskog dizajna. Svaki komad pomno je ručno izrađen od strane
-          naših majstora obrtnika, koristeći samo najfinije materijale. Naša
-          predanost izvrsnosti nadilazi samu estetiku – obuhvaća i etičko
-          podrijetlo te održivu praksu, osiguravajući da svaki komad ne samo da
-          ukrašava, već i priča priču o vještini, tradiciji i poštovanju prema
-          materijalu. <br /> <br /> Naša predanost izvrsnosti nadilazi samu
-          estetiku – obuhvaća i etičko podrijetlo te održivu praksu,
-          osiguravajući da svaki komad ne samo da ukrašava, već i priča priču o
-          vještini, tradiciji i poštovanju prema materijalu.
-        </p>
+        <p className="text-xl text-black mb-4">{brand.description}</p>
         <Link
-          href={"/kolekcije/jesenske-radost"}
+          href={`/kolekcije/${brand.slug}`}
           className="flex justify-center sm:justify-normal"
         >
           <ButtonMain text="Pregledajte Proizvode" />
@@ -30,8 +40,8 @@ const KolekcijaHome = () => {
       </div>
       <div className="flex-1 w-full">
         <img
-          src="/collection.png"
-          alt="Najbolje kolekcije papirnatih nakita"
+          src={brand?.image?.src}
+          alt={brand?.image?.alt}
           className="w-full h-full object-cover max-h-[700px]"
         />
       </div>

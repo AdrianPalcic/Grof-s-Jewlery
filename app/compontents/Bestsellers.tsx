@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
+import { Products } from "../page";
 
-const Bestsellers = () => {
+const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
   return (
     <section className="section">
       <h2 className="sec-h2">Istaknuti Proizvodi</h2>
@@ -9,7 +10,10 @@ const Bestsellers = () => {
         Otkrijte najomiljenije komade koje naše mušterije jednostavno obožavaju.
       </p>
       <div className="flex flex-col mdd:flex-row gap-4 mdd:max-w-9xl mx-auto">
-        <Link href="/negdje" className="flex-1 overflow-hidden">
+        <Link
+          href={`/proizvodi/${products[0].slug}`}
+          className="flex-1 overflow-hidden"
+        >
           <img
             src="/1.png"
             alt=""
@@ -17,28 +21,40 @@ const Bestsellers = () => {
           />
         </Link>
         <div className="flex-1 flex flex-wrap gap-4">
-          <Link href="/negdje" className="w-full smm:w-[48%] overflow-hidden">
+          <Link
+            href={`/proizvodi/${products[1].slug}`}
+            className="w-full smm:w-[48%] overflow-hidden"
+          >
             <img
               src="/2.png"
               alt=""
               className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
             />
           </Link>
-          <Link href="/negdje" className="w-full smm:w-[48%] overflow-hidden">
+          <Link
+            href={`/proizvodi/${products[2].slug}`}
+            className="w-full smm:w-[48%] overflow-hidden"
+          >
             <img
               src="/3.png"
               alt=""
               className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
             />
           </Link>
-          <Link href="/negdje" className="w-full smm:w-[48%] overflow-hidden">
+          <Link
+            href={`/proizvodi/${products[3].slug}`}
+            className="w-full smm:w-[48%] overflow-hidden"
+          >
             <img
               src="/4.png"
               alt=""
               className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
             />
           </Link>
-          <Link href="/negdje" className="w-full smm:w-[48%] overflow-hidden">
+          <Link
+            href={`/proizvodi/${products[4].slug}`}
+            className="w-full smm:w-[48%] overflow-hidden"
+          >
             <img
               src="/5.png"
               alt=""

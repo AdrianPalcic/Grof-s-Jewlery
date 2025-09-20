@@ -1,34 +1,13 @@
 import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Category } from "../layout";
 
-const Footer = () => {
-  const buyLinks = [
-    {
-      text: "Nakit od papira",
-      slug: "nakit-od-papira",
-    },
-    {
-      text: "Pokloni",
-      slug: "pokloni",
-    },
-    {
-      text: "Pakiranje poklona",
-      slug: "pakiranje-poklona",
-    },
-    {
-      text: "Dodaci poklonima",
-      slug: "dodaci-poklonima",
-    },
-    {
-      text: "Gift Boxes",
-      slug: "gift-boxes",
-    },
-    {
-      text: "Package Design",
-      slug: "package-design",
-    },
-  ];
+type NavbarProps = {
+  categories: Category[];
+};
+
+const Footer = ({ categories }: NavbarProps) => {
   const infoLinks = [
     {
       text: "Kontakt",
@@ -63,13 +42,13 @@ const Footer = () => {
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Kupujte</h3>
         <ul className="flex flex-col gap-2">
-          {buyLinks.map((link) => (
+          {categories.map((link) => (
             <Link
               href={`/kategorije/${link.slug}`}
               key={link.slug}
               className=" font-cormorant font-regular text-lg text-[#5A5A5A] transition-colors duration-300 hover:text-secondaryColor"
             >
-              <li>{link.text}</li>
+              <li>{link.name}</li>
             </Link>
           ))}
         </ul>

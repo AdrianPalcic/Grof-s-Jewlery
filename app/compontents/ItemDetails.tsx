@@ -7,11 +7,13 @@ type Props = {
   artiklSlug: string;
 };
 
-const ItemDetails = (artiklSlug: Props) => {
+const ItemDetails = ({ artiklSlug }: Props) => {
   return (
     <div className="flex flex-col-reverse lg:flex-row-reverse px-2 sm:px-10 items-center  gap-2 lg:gap-10 mx-auto mb-20  py-10">
       <div className="flex-[0.6]">
-        <h2 className=" text-3xl  ">Priča utkana u svaki detalj</h2>
+        <h2 className=" text-3xl  ">
+          Priča utkana u svaki detalj {artiklSlug}
+        </h2>
         <p>45.20€</p>
         <div className="w-full h-[1px] bg-secondaryColor mt-2 "></div>
 

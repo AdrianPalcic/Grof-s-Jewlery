@@ -20,7 +20,6 @@ type CartItemType = {
 };
 
 const CartItem = () => {
-  // Dummy data za testiranje
   const [item] = useState<CartItemType>({
     id: "giftbox-1",
     title: "Moj Gift Box",
@@ -46,7 +45,7 @@ const CartItem = () => {
       {/* Glavni artikl */}
       <div className="w-full flex items-center justify-between">
         <div className="flex gap-4">
-          <Link href="/taj-artikl" className="w-[100px] smm:w-[150px]">
+          <Link href={`/proizvodi`} className="w-[100px] smm:w-[150px]">
             <img
               src="/1.png"
               alt="Artikl"
