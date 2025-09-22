@@ -1,7 +1,7 @@
 import CollectionDetails from "./components/CollectionDetails";
 
 const Page = async ({ params }: { params: { kolekcija: string } }) => {
-  const slug = params.kolekcija; // ovo je slug iz URL-a
+  const slug = params.kolekcija; 
 
   return <CollectionDetails collection={slug} />;
 };

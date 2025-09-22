@@ -13,7 +13,7 @@ type Brand = {
 };
 
 interface Props {
-  collection: string; // slug of the brand
+  collection: string;
 }
 
 const CollectionDetails = async ({ collection }: Props) => {
@@ -22,7 +22,7 @@ const CollectionDetails = async ({ collection }: Props) => {
     const brandRes = await fetch(
       `http://localhost:3000/api/brands/${collection}`,
       {
-        cache: "no-store", // server component fetch
+        cache: "no-store",
       }
     );
 

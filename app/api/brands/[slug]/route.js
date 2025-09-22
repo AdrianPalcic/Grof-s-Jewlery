@@ -9,7 +9,7 @@ const WooCommerce = new WooCommerceRestApi({
 
 export async function GET(req) {
   const url = new URL(req.url);
-  const slug = url.pathname.split("/").pop(); // zadnji segment
+  const slug = url.pathname.split("/").pop();
 
   if (!slug) {
     return new Response(JSON.stringify({ error: "Slug not provided" }), {
