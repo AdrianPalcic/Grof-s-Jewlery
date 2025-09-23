@@ -4,10 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-type NavbarProps = {
-  categories: Category[];
-};
-
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
