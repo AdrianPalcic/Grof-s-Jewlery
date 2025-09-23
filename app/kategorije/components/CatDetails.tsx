@@ -8,7 +8,7 @@ const CatDetails = ({ param }: { param: string }) => {
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
       <Hero />
-      <ItemGrid cat={typeof param === "string" ? param : ""} />
+      <ItemGrid />
       <div className="relative w-full overflow-hidden">
         {/* Slika */}
         <img

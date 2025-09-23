@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { Products } from "../page";
 
-const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
+const Bestsellers = () => {
   return (
     <section className="section">
       <h2 className="sec-h2">Istaknuti Proizvodi</h2>
@@ -10,10 +9,7 @@ const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
         Otkrijte najomiljenije komade koje naše mušterije jednostavno obožavaju.
       </p>
       <div className="flex flex-col mdd:flex-row gap-4 mdd:max-w-9xl mx-auto">
-        <Link
-          href={`/proizvodi/${products[0].slug}`}
-          className="flex-1 overflow-hidden"
-        >
+        <Link href={`/proizvodi/1`} className="flex-1 overflow-hidden">
           <img
             src="/1.png"
             alt=""
@@ -22,7 +18,7 @@ const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
         </Link>
         <div className="flex-1 flex flex-wrap gap-4">
           <Link
-            href={`/proizvodi/${products[1].slug}`}
+            href={`/proizvodi/1`}
             className="w-full smm:w-[48%] overflow-hidden"
           >
             <img
@@ -32,7 +28,7 @@ const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
             />
           </Link>
           <Link
-            href={`/proizvodi/${products[2].slug}`}
+            href={`/proizvodi/1`}
             className="w-full smm:w-[48%] overflow-hidden"
           >
             <img
@@ -42,7 +38,7 @@ const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
             />
           </Link>
           <Link
-            href={`/proizvodi/${products[3].slug}`}
+            href={`/proizvodi/1`}
             className="w-full smm:w-[48%] overflow-hidden"
           >
             <img
@@ -52,7 +48,7 @@ const Bestsellers = ({ products = [] }: { products?: Partial<Products>[] }) => {
             />
           </Link>
           <Link
-            href={`/proizvodi/${products[4].slug}`}
+            href={`/proizvodi/1`}
             className="w-full smm:w-[48%] overflow-hidden"
           >
             <img

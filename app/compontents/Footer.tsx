@@ -3,11 +3,34 @@ import Link from "next/link";
 import React from "react";
 import { Category } from "../layout";
 
-type NavbarProps = {
-  categories: Category[];
-};
+const Footer = () => {
+  const categories = [
+    {
+      text: "Dodaci Poklonima",
+      slug: "dodaci-poklonima",
+    },
+    {
+      text: "Nakit od Papira",
+      slug: "nakit-od-papira",
+    },
+    {
+      text: "Gift Boxes",
+      slug: "gift-boxes",
+    },
+    {
+      text: "Package Design",
+      slug: "package-design",
+    },
+    {
+      text: "Pakiranje Poklona",
+      slug: "pakiranje-poklona",
+    },
+    {
+      text: "Pokloni",
+      slug: "pokloni",
+    },
+  ];
 
-const Footer = ({ categories }: NavbarProps) => {
   const infoLinks = [
     {
       text: "Kontakt",
@@ -32,7 +55,7 @@ const Footer = ({ categories }: NavbarProps) => {
   ];
 
   return (
-    <footer className="flex w-full flex-wrap gap-5 px-4 sm:px-8 ">
+    <footer className="flex w-full flex-wrap gap-5 px-4 sm:px-8 mb-4">
       <div className="flex-1 min-w-[250px]">
         <h2 className="text-3xl mb-2">Grof&apos;s Jewlery</h2>
         <p className="font-cormorant">
@@ -48,7 +71,7 @@ const Footer = ({ categories }: NavbarProps) => {
               key={link.slug}
               className=" font-cormorant font-regular text-lg text-[#5A5A5A] transition-colors duration-300 hover:text-secondaryColor"
             >
-              <li>{link.name}</li>
+              <li>{link.text}</li>
             </Link>
           ))}
         </ul>
