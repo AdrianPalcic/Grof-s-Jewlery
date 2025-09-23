@@ -32,30 +32,6 @@ export const metadata: Metadata = {
   description: "Handmade Paper Jewelry",
 };
 
-type LinkItem = {
-  href: string;
-  targetHints?: Record<string, any>; // opcionalno, ovisi što vraća API
-};
-
-type CategoryLinks = {
-  self: LinkItem[];
-  collection: LinkItem[];
-};
-
-export type Category = {
-  id: number;
-  name: string;
-  slug: string;
-  parent: number;
-  description: string;
-  display: string;
-  count: number;
-  image: string | null;
-  menu_order: number;
-  children: Category[];
-  _links: CategoryLinks;
-};
-
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
