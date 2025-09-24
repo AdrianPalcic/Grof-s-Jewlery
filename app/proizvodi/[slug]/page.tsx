@@ -1,18 +1,48 @@
-"use client";
-
-import ItemDetails from "@/app/compontents/ItemDetails";
-import { useParams } from "next/navigation";
+import ButtonMain from "@/app/compontents/ButtonMain";
+import ItemImages from "@/app/compontents/ItemImages";
+import { getProductByHandle } from "@/lib/shopify/product";
+import { ProductImageConnection } from "@/types/types";
+import Link from "next/link";
 import React from "react";
 
-const Page = () => {
-  const params = useParams();
-  return (
-    <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
-      <ItemDetails
-        artiklSlug={typeof params.slug === "string" ? params.slug : ""}
-      />
-    </section>
-  );
+type PageProps = {
+  params: Promise<{ slug: string }>;
 };
 
-export default Page;
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+
+  const product = await getProductByHandle(slug);
+
+  const images = product.images.edges.map((edge) => edge.node);
+  console.log(images);
+
+  return (
+    <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
+      <div className="flex flex-col-reverse lg:flex-row-reverse px-2 sm:px-10 items-center  gap-2 lg:gap-10 mx-auto mb-20  py-10">
+        <div className="flex-[0.6]">
+          <h2 className=" text-3xl  ">{product.title}</h2>
+          <p>45.20€</p>
+          <div className="w-full h-[1px] bg-secondaryColor mt-2 "></div>
+
+          <p className="text-xl smm:w-[90%] mt-2 mb-4">{product.description}</p>
+          <div className="flex w-full items-center justify-between gap-3 mb-5">
+            <button className="btn w-full">Dodaj u košaricu</button>
+            <button className="ghost w-full">Dodaj u Gift Box</button>
+          </div>
+          <div className="w-full h-[1px] bg-secondaryColor my-2"></div>
+          <h3 className="text-2xl">Za posebne prigode</h3>
+          <p className="mb-4">
+            Ovaj dizajn možemo izraditi u većem broju primjeraka isključivo za
+            vas.
+          </p>
+          <Link href="/kontakt">
+            <ButtonMain text="Kontaktiraj nas za posebnu ponudu" />
+          </Link>
+        </div>
+
+        <ItemImages images={images} />
+      </div>
+    </section>
+  );
+}

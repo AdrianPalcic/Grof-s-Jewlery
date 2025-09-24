@@ -6,20 +6,28 @@ import Categories from "./compontents/Categories";
 import Reviews from "./compontents/Reviews";
 import BuildGift from "./compontents/BuildGift";
 import CTA from "./compontents/CTA";
+import { getAllCollections } from "@/lib/shopify/collections";
+import { getFiveProducts } from "@/lib/shopify/fiveProducts";
 
+export default async function Home() {
+  const collections = await getAllCollections(2);
+  const collection = collections.filter((col) => col.handle !== "frontpage");
 
-export default  function Home() {
+  const fiveProducts = await getFiveProducts(5);
 
+  const threeProducts = fiveProducts.slice(0, 3);
+
+  console.log(fiveProducts);
 
   return (
     <main className="mx-auto w-full max-w-[1700px]">
       <Hero />
-      <KolekcijaHome />
+      <KolekcijaHome collection={collection[0]} />
       <OnamaHome />
-      <Bestsellers />
+      <Bestsellers products={fiveProducts} />
       <Categories />
       <Reviews />
-      <BuildGift />
+      <BuildGift products={threeProducts} />
       <CTA text="Kontakt" link="kontakt" />
     </main>
   );
