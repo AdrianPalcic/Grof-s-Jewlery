@@ -13,6 +13,7 @@ const BuildGift = ({ products }: { products: Product[] }) => {
           <img
             src="/one.png"
             alt="Poklon pozadina"
+            loading="lazy"
             className="w-full h-[50vh] object-cover min-h-[400px]"
           />
 
@@ -39,6 +40,7 @@ const BuildGift = ({ products }: { products: Product[] }) => {
                 <img
                   src={product.featuredImage?.url || "/placeholder.png"}
                   alt={product.featuredImage?.altText || product.title}
+                  loading="lazy"
                   className="w-full min-h-[250px] h-[300px] object-cover"
                 />
               </Link>

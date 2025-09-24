@@ -21,6 +21,7 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
           <img
             src={first.featuredImage?.url || "/placeholder.png"}
             alt={first.featuredImage?.altText || first.title}
+            loading="lazy"
             className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
           />
         </Link>
@@ -36,6 +37,7 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
               <img
                 src={product.featuredImage?.url || "/placeholder.png"}
                 alt={product.featuredImage?.altText || product.title}
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
             </Link>

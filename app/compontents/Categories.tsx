@@ -19,6 +19,7 @@ const Categories = () => {
               <img
                 src="/kat1.png"
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
@@ -33,6 +34,7 @@ const Categories = () => {
               <img
                 src="/kat2.png"
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
@@ -47,6 +49,7 @@ const Categories = () => {
               <img
                 src="/kat3.png"
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
@@ -62,6 +65,7 @@ const Categories = () => {
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
               <img
                 src="/kat4.png"
+                loading="lazy"
                 alt=""
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
@@ -77,6 +81,7 @@ const Categories = () => {
               <img
                 src="/kat5.png"
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
@@ -91,6 +96,7 @@ const Categories = () => {
               <img
                 src="/ant.jpeg"
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
