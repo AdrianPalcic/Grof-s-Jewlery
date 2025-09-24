@@ -2,71 +2,62 @@
 
 import ButtonMain from "@/app/compontents/ButtonMain";
 import GhostButton from "@/app/compontents/GhostButton";
+import { Product } from "@/types/types";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const SubcategorySection = ({ name }: { name: string }) => {
-  const items = [
-    {
-      id: 1,
-      itemCat: "package-design",
-      img: "/kat1.png",
-      title: "Papirnata Naušnica 1",
-      price: "11.30€",
-    },
-    {
-      id: 2,
-      itemCat: "package-design",
-      img: "/kat2.png",
-      title: "Papirnata Naušnica 2",
-      price: "12.50€",
-    },
-    {
-      id: 3,
-      itemCat: "package-design",
-      img: "/kat3.png",
-      title: "Papirnata Naušnica 3",
-      price: "10.00€",
-    },
-    {
-      id: 4,
-      itemCat: "package-design",
-      img: "/kat4.png",
-      title: "Papirnata Naušnica 4",
-      price: "15.20€",
-    },
-  ];
+const SubcategorySection = ({
+  text,
+  slug,
+  category,
+  products,
+}: {
+  text: string;
+  slug: string;
+  category: string;
+  products: Product[];
+}) => {
+  function formatName(slug: string) {
+    return slug
+      .split("-")
+      .map((w) => w[0].toUpperCase() + w.slice(1))
+      .join(" ");
+  }
 
   return (
     <section className="flex flex-col mb-6">
-      <h1 className="text-2xl sm:text-4xl mb-4">{name}</h1>
+      <h1 className="text-2xl sm:text-4xl mb-4">{text}</h1>
 
       <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory mb-5">
-        {items.map((item) => (
+        {products.map((product) => (
           <div
-            key={item.id}
+            key={product.id}
             className="flex-none w-full smm:w-[300px] snap-start"
           >
             <Link
-              href={`/kategorije/${item.itemCat}/${name}/${item.title}`}
+              href={`/proizvodi/${product.handle}`}
               className="overflow-hidden block"
             >
-              <img
-                src={item.img}
-                alt={item.title}
+              <Image
+                src={product.featuredImage?.url || "/placeholder.png"}
+                alt={product.featuredImage?.altText || product.title}
                 className="w-full h-[300px] object-cover transition-opacity duration-300 hover:opacity-70"
               />
             </Link>
             <div className="flex flex-col items-start justify-start w-full mt-2">
-              <h2 className="text-xl font-semibold">{item.title}</h2>
-              <p className="mb-2">{item.price}</p>
+              <h2 className="text-xl font-semibold">{product.title}</h2>
+              <p className="mb-2">
+                {" "}
+                {"€" + product.priceRange.minVariantPrice.amount}
+              </p>
               <GhostButton text="Dodaj u košaricu" />
             </div>
           </div>
         ))}
       </div>
 
-      <Link href={`/kategorije/${items[0].itemCat}/${name}`}>
+      <Link href={`/kategorije/${category}/${slug}`}>
         <ButtonMain text="Svi Artikli" />
       </Link>
     </section>

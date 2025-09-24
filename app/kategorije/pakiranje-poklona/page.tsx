@@ -3,11 +3,8 @@ import SubcategorySection from "../components/SubcategorySection";
 
 const page = () => {
   const subCategories = [
-    "Naušnice i ukosnice",
-    "Broševi",
-    "Prstenje",
-    "Ukosnice",
-    "Ogrlice",
+    { text: "Kutije za poklone", slug: "kutije-za-poklone" },
+    { text: "Vrečice za poklone", slug: "vrecice-za-poklone" },
   ];
 
   return (
@@ -15,9 +12,9 @@ const page = () => {
       <h1 className="text-3xl sm:text-5xl mb-10">
         Pakiranje <span className="acc">Poklona</span>
       </h1>
-      {subCategories.map((subcategory) => (
+      {/* {subCategories.map((subcategory) => (
         <SubcategorySection key={subcategory} name={subcategory} />
-      ))}
+      ))} */}
     </main>
   );
 };

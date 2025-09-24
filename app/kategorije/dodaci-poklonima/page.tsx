@@ -1,22 +1,38 @@
 import React from "react";
 import SubcategorySection from "../components/SubcategorySection";
+import { Product } from "@/types/types";
+import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
-const page = () => {
+const page = async () => {
+  const categoryName = "Dodaci Poklonima";
+
   const subCategories = [
-    "Naušnice i ukosnice",
-    "Broševi",
-    "Prstenje",
-    "Ukosnice",
-    "Ogrlice",
+    { text: "Čestitke", slug: "cestitke" },
+    { text: "Zahvalnice", slug: "zahvalnice" },
+    { text: "Inspirativne kartice", slug: "inspirativne-kartice" },
+    { text: "Knjižne oznake", slug: "knjizne-oznake" },
   ];
+
+  const subcategoriesWithProducts = await Promise.all(
+    subCategories.map(async (subcategory) => {
+      const products: Product[] = await getProductsByTag(5, subcategory.slug);
+      return { ...subcategory, products };
+    })
+  );
 
   return (
     <main className="mx-auto mt-10 mb-20 px-4 sm:px-10">
       <h1 className="text-3xl sm:text-5xl mb-10">
         Dodaci <span className="acc">Poklonima</span>
       </h1>
-      {subCategories.map((subcategory) => (
-        <SubcategorySection key={subcategory} name={subcategory} />
+      {subcategoriesWithProducts.map((subcategory) => (
+        <SubcategorySection
+          key={subcategory.slug}
+          text={subcategory.text}
+          slug={subcategory.slug}
+          category={categoryName}
+          products={subcategory.products}
+        />
       ))}
     </main>
   );
