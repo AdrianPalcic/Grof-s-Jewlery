@@ -29,7 +29,10 @@ export const GET_PRODUCTS = `query GetProducts($count: Int!) {
             node {
               id                     
               title
-              price
+              priceV2 {
+        amount
+        currencyCode
+      }
             }
           }
         }

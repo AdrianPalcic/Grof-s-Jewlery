@@ -27,7 +27,10 @@ export const GET_PRODUCT_BY_HANDLE = `query GetProductByHandle($handle: String!)
         node {
           id                     
           title
-          price
+          priceV2 {
+        amount
+        currencyCode
+      }
         }
       }
     }

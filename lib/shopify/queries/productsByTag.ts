@@ -29,7 +29,10 @@ export const GET_PRODUCTS_BY_TAG = `query GetProductsByTag($tag: String!, $first
             node {
               id                     
               title
-              price
+             priceV2 {
+        amount
+        currencyCode
+      }
             }
           }
         }

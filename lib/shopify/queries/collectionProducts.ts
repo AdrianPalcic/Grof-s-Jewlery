@@ -38,7 +38,10 @@ export const GET_COLLECTION_PRODUCTS = `query GetCollectionProducts($handle: Str
               node {
                 id                         
                 title
-                price
+               priceV2 {
+        amount
+        currencyCode
+      }
               }
             }
           }
