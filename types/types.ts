@@ -17,6 +17,7 @@ export type Collection = {
 };
 export type Product = {
   id: string;
+  variantId: string;
   title: string;
   handle: string;
   description: string;

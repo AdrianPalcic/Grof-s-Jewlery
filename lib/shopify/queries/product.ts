@@ -22,6 +22,15 @@ export const GET_PRODUCT_BY_HANDLE = `query GetProductByHandle($handle: String!)
         currencyCode
       }
     }
+    variants(first: 1) {        
+      edges {
+        node {
+          id                     
+          title
+          price
+        }
+      }
+    }
   }
 }
 `;

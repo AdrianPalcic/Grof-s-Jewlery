@@ -39,9 +39,10 @@ const SubcategorySection = ({
               href={`/proizvodi/${product.handle}`}
               className="overflow-hidden block"
             >
-              <Image
+              <img
                 src={product.featuredImage?.url || "/placeholder.png"}
                 alt={product.featuredImage?.altText || product.title}
+                loading="lazy"
                 className="w-full h-[300px] object-cover transition-opacity duration-300 hover:opacity-70"
               />
             </Link>

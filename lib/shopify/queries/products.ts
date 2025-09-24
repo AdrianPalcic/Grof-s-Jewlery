@@ -24,9 +24,17 @@ export const GET_PRODUCTS = `query GetProducts($count: Int!) {
             currencyCode
           }
         }
+        variants(first: 1) {        
+          edges {
+            node {
+              id                     
+              title
+              price
+            }
+          }
+        }
       }
     }
   }
 }
-
 `;
