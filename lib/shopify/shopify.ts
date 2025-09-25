@@ -1,6 +1,6 @@
 export async function shopifyGraphql(
   query: string,
-  variables: Record<string, any> = {}
+  variables: Record<string, unknown> = {}
 ) {
   const endpoint = process.env.SHOPIFY_STORE_URL!;
   const token = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;

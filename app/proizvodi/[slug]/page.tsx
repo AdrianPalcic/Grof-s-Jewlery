@@ -1,3 +1,4 @@
+import AddToCartBtn from "@/app/compontents/AddToCartBtn";
 import ButtonMain from "@/app/compontents/ButtonMain";
 import ItemImages from "@/app/compontents/ItemImages";
 import { getProductByHandle } from "@/lib/shopify/product";
@@ -29,7 +30,7 @@ export default async function Page({ params }: PageProps) {
 
           <p className="text-xl smm:w-[90%] mt-2 mb-4">{product.description}</p>
           <div className="flex w-full items-center justify-between gap-3 mb-5">
-            <button className="btn w-full">Dodaj u košaricu</button>
+            <AddToCartBtn product={product} />
             <button className="ghost w-full">Dodaj u Gift Box</button>
           </div>
           <div className="w-full h-[1px] bg-secondaryColor my-2"></div>

@@ -4,7 +4,7 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 const page = async () => {
-  const categoryName = "Gift Boxes";
+  const categorySlug = "gift-boxes";
   const subCategories = [
     { text: "Mjesečni gift boxevi", slug: "mjesecni-gift-boxevi" },
   ];
@@ -26,7 +26,7 @@ const page = async () => {
           key={subcategory.slug}
           text={subcategory.text}
           slug={subcategory.slug}
-          category={categoryName}
+          category={categorySlug}
           products={subcategory.products}
         />
       ))}

@@ -1,12 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartEmpty from "./components/CartEmpty";
 import CartFull from "./components/CartFull";
 import { useCartStore } from "@/store/cartStore";
+import Loader from "../compontents/Loader";
 
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <Loader />;
 
   console.log(cart);
   return (

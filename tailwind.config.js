@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        "bounce-delay1": "bounce 0.6s infinite 0s",
+        "bounce-delay2": "bounce 0.6s infinite 0.2s",
+        "bounce-delay3": "bounce 0.6s infinite 0.4s",
+      },
       colors: {
         bgColor: "#F5F5DC", // primjer custom boje
         secondaryColor: "#763C00",
