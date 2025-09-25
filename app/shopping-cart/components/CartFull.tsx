@@ -1,8 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import CartItem from "./CartItem";
+import { Product } from "@/types/types";
+import { calculateTotal } from "@/utils/calculateTotal";
 
-const CartFull = () => {
+const CartFull = ({ products }: { products: Product[] }) => {
+  const total = calculateTotal(products);
+
   return (
     <section className="px-0 sm:px-10 ">
       <div className="flex flex-col sm:flex-row mb-5  w-full items-left sm:items-center gap-2 sm:gap-0 justify-between ">
@@ -20,16 +24,26 @@ const CartFull = () => {
         <div className="w-full h-[1px] bg-secondaryColor mb-2"></div>
 
         <div className="w-full flex flex-col gap-6">
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {products.map((product) => {
+            console.log(
+              "Rendering product in cart:",
+              product.id,
+              product.title
+            );
+            return (
+              <CartItem
+                key={`${product.id}-${product.handle}`}
+                product={product}
+              />
+            );
+          })}
         </div>
 
         <div className="w-full h-[1px] bg-secondaryColor mt-2 "></div>
         <div className="my-10 ">
           <div className="flex items-center gap-10">
             <h4 className="text-2xl">Vaš Total</h4>
-            <p className="text-xl">45.20€</p>
+            <p className="text-2xl  font-cormorant">{total}€</p>
           </div>
           <p className="text-left mb-2">Idite na checkout</p>
           <Link href="/">

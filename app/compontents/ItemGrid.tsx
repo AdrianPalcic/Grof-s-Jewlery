@@ -1,7 +1,7 @@
 import { Product } from "@/types/types";
 import React from "react";
-import GhostButton from "./GhostButton";
 import Link from "next/link";
+import AddToCartBtn from "./AddToCartBtn";
 
 const ItemGrid = ({ products }: { products: Product[] }) => {
   return (
@@ -22,10 +22,10 @@ const ItemGrid = ({ products }: { products: Product[] }) => {
             </Link>
             <div className="flex flex-col items-start justify-start w-full">
               <h2 className="mt-2 text-xl font-semibold">{product.title}</h2>
-              <p className="mb-2">
+              <p className="mb-2 text-xl font-cormorant">
                 {"€" + product.priceRange.minVariantPrice.amount}
               </p>
-              <GhostButton text="Dodaj u košaricu" />
+              <AddToCartBtn product={product} />
             </div>
           </div>
         ))}

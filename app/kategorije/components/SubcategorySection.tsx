@@ -1,9 +1,8 @@
 "use client";
 
+import AddToCartBtn from "@/app/compontents/AddToCartBtn";
 import ButtonMain from "@/app/compontents/ButtonMain";
-import GhostButton from "@/app/compontents/GhostButton";
 import { Product } from "@/types/types";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -18,13 +17,6 @@ const SubcategorySection = ({
   category: string;
   products: Product[];
 }) => {
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
-
   return (
     <section className="flex flex-col mb-6">
       <h1 className="text-2xl sm:text-4xl mb-4">{text}</h1>
@@ -52,7 +44,7 @@ const SubcategorySection = ({
                 {" "}
                 {"€" + product.priceRange.minVariantPrice.amount}
               </p>
-              <GhostButton text="Dodaj u košaricu" />
+              <AddToCartBtn product={product} />
             </div>
           </div>
         ))}
