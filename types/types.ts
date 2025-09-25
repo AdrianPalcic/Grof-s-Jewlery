@@ -30,3 +30,10 @@ export type Product = {
     };
   };
 };
+
+export type CartState = {
+  cart: Product[];
+  addToCart: (item: Product) => void;
+  removeFromCart: (id: string) => void;
+  clearCart: () => void;
+};
