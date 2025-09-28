@@ -2,32 +2,32 @@ export async function shopifyGraphql(
   query: string,
   variables: Record<string, unknown> = {}
 ) {
-  const endpoint = process.env.SHOPIFY_STORE_URL!;
-  const token = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
+  const endpoint =
+    typeof window === "undefined"
+      ? process.env.SHOPIFY_STORE_URL
+      : process.env.NEXT_PUBLIC_SHOPIFY_STORE_URL;
 
-  try {
-    const res = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Shopify-Storefront-Access-Token": token,
-      },
-      body: JSON.stringify({
-        query,
-        variables,
-      }),
-    });
+  const token =
+    typeof window === "undefined"
+      ? process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
+      : process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
-    const json = await res.json();
+  if (!endpoint || !token)
+    throw new Error("Shopify endpoint or token not defined");
 
-    if (json.errors) {
-      console.error("Shopify GraphQL Error:", json.errors);
-      throw new Error("Shopify query failed");
-    }
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Shopify-Storefront-Access-Token": token!,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
 
-    return json.data;
-  } catch (err) {
-    console.error("Shopify fetch failed:", err);
-    throw err;
+  const json = await res.json();
+  if (json.errors) {
+    console.error("Shopify GraphQL Error:", json.errors);
+    throw new Error("Shopify query failed");
   }
+  return json.data;
 }

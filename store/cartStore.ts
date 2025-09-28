@@ -15,15 +15,22 @@ const saveCartToStorage = (cart: Product[]) => {
 export const useCartStore = create<CartState>((set, get) => ({
   cart: loadCartFromStorage(),
 
-  addToCart: (item) =>
+  modalOpen: false,
+  lastAdded: null,
+
+  addToCart: (item) => {
     set((state) => {
       const exists = state.cart.some((cartItem) => cartItem.id === item.id);
-      if (exists) return state;
+      const updatedCart = exists ? state.cart : [...state.cart, item];
 
-      const updatedCart = [...state.cart, item];
-      saveCartToStorage(updatedCart);
+      if (!exists) {
+        saveCartToStorage(updatedCart);
+        get().openModal(item);
+      }
+
       return { cart: updatedCart };
-    }),
+    });
+  },
 
   removeFromCart: (id) =>
     set((state) => {
@@ -36,4 +43,7 @@ export const useCartStore = create<CartState>((set, get) => ({
     saveCartToStorage([]);
     set({ cart: [] });
   },
+
+  openModal: (item: Product) => set({ modalOpen: true, lastAdded: item }),
+  closeModal: () => set({ modalOpen: false, lastAdded: null }),
 }));

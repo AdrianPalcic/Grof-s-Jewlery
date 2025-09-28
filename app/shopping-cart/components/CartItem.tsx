@@ -9,15 +9,6 @@ import React from "react";
 const CartItem = ({ product }: { product: Product }) => {
   const deleteItem = useCartStore((state) => state.removeFromCart);
 
-  const areYouSure = (itemId: string) => {
-    const wants = confirm("Are you sure you want to delete this item?");
-    if (wants) {
-      deleteItem(product.id);
-    } else {
-      return;
-    }
-  };
-
   return (
     <div
       id="item"
@@ -45,7 +36,7 @@ const CartItem = ({ product }: { product: Product }) => {
               </h3>
             </div>
             <div className="flex gap-1">
-              <span onClick={() => areYouSure(product.id)}>
+              <span onClick={() => deleteItem(product.id)}>
                 <Trash
                   className="opacity-65 transition-all duration-300 hover:text-secondaryColor hover:opacity-100 cursor-pointer"
                   size={15}

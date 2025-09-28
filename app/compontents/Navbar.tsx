@@ -1,11 +1,15 @@
 "use client";
+import { useCartStore } from "@/store/cartStore";
 import { ChevronDown, ShoppingCart, Menu, X, Gift } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import CartModal from "./CartModal";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const modalOpen = useCartStore((state) => state.modalOpen);
+  const lastAdded = useCartStore((state) => state.lastAdded);
 
   const links = [
     {
@@ -94,6 +98,11 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <Link href="/shopping-cart">
             <ShoppingCart className="transition-colors duration-300 hover:text-secondaryColor" />
+          </Link>
+          {modalOpen && lastAdded && <CartModal product={lastAdded} />}
+
+          <Link href="/gift-box-builder" className="navbreak:hidden">
+            <Gift className="transition-colors duration-300 hover:text-secondaryColor" />
           </Link>
           <button
             className="navbreak:hidden"

@@ -17,7 +17,6 @@ export type Collection = {
 };
 export type Product = {
   id: string;
-  variantId: string;
   title: string;
   handle: string;
   description: string;
@@ -29,6 +28,18 @@ export type Product = {
       currencyCode: string;
     };
   };
+  variants: {
+    edges: {
+      node: {
+        id: string;
+        title: string;
+        priceV2: {
+          amount: string;
+          currencyCode: string;
+        };
+      };
+    }[];
+  };
 };
 
 export type CartState = {
@@ -36,4 +47,8 @@ export type CartState = {
   addToCart: (item: Product) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
+  modalOpen: boolean;
+  lastAdded: Product | null;
+  openModal: (item: Product) => void;
+  closeModal: () => void;
 };

@@ -3,6 +3,7 @@ import React from "react";
 import CartItem from "./CartItem";
 import { Product } from "@/types/types";
 import { calculateTotal } from "@/utils/calculateTotal";
+import CheckoutBtn from "./CheckoutBtn";
 
 const CartFull = ({ products }: { products: Product[] }) => {
   const total = calculateTotal(products);
@@ -46,9 +47,7 @@ const CartFull = ({ products }: { products: Product[] }) => {
             <p className="text-2xl  font-cormorant">{total}€</p>
           </div>
           <p className="text-left mb-2">Idite na checkout</p>
-          <Link href="/">
-            <button className="ghost">Checkout</button>
-          </Link>
+          <CheckoutBtn />
         </div>
       </div>
     </section>
