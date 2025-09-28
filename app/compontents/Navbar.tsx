@@ -69,12 +69,17 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full px-6 py-4 font-cinzel font-regular border-b border-gray-200">
+    <header className="w-full px-6 py-4 font-cinzel font-regular border-b bg-bgColor border-gray-200 sticky top-0 z-50">
       <nav className="flex items-center justify-between">
-        {/* Logo */}
+        <div className="hidden navbreak:flex items-center">
+          <Link href="/gift-box-builder">
+            <Gift className="transition-colors duration-300 hover:text-secondaryColor" />
+          </Link>
+        </div>
+
         <Link
           href="/"
-          className="flex items-center text-secondaryColor text-lg"
+          className="flex items-center text-secondaryColor text-lg mx-auto"
         >
           <Image
             src="/logo.jpg"
@@ -86,23 +91,35 @@ const Navbar = () => {
           <h4 className="ml-2">Grof&apos;s Jewelry</h4>
         </Link>
 
-        {/* Desktop Nav */}
-        <ul className="hidden navbreak:flex justify-center text-[15px] gap-6 uppercase">
+        <div className="flex items-center gap-4">
+          <Link href="/shopping-cart">
+            <ShoppingCart className="transition-colors duration-300 hover:text-secondaryColor" />
+          </Link>
+          <button
+            className="navbreak:hidden"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </nav>
+
+      <div className="hidden navbreak:block mt-4">
+        <ul className="flex justify-center text-[15px] gap-6 uppercase">
           {links.map((cat) => (
             <li
               key={cat.slug}
-              className="relative group flex items-center  cursor-pointer hover:text-secondaryColor transition-colors duration-300"
+              className="relative group flex items-center cursor-pointer hover:text-secondaryColor transition-colors duration-300"
             >
               <span className="flex items-center gap-1">
                 {cat.text} <ChevronDown size={14} />
               </span>
-
               {cat.links.length > 0 && (
                 <ul
-                  className="absolute left-0 top-6  w-48 bg-white border border-gray-200 rounded-sm shadow-md 
-                  opacity-0 invisible pointer-events-none
-                  transition-all duration-300 ease-out 
-                  group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto gtoup-hover:top-full text-textColor z-10"
+                  className="absolute left-0 top-6 w-48 bg-white border border-gray-200 rounded-sm shadow-md 
+                    opacity-0 invisible pointer-events-none
+                    transition-all duration-300 ease-out 
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:top-full text-textColor z-10"
                 >
                   {cat.links.map((sublink) => (
                     <li key={sublink.slug}>
@@ -119,22 +136,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
-        <div className="flex items-center gap-4">
-          <Link href="/shopping-cart">
-            <ShoppingCart className="transition-colors duration-300 hover:text-secondaryColor" />
-          </Link>
-          <Link href="/gift-box-builder">
-            <Gift className="transition-colors duration-300 hover:text-secondaryColor" />
-          </Link>
-          <button
-            className="navbreak:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </nav>
+      </div>
 
       <div
         className={`navbreak:hidden overflow-hidden transition-all duration-300 ease-in-out ${
@@ -154,6 +156,7 @@ const Navbar = () => {
                       <Link
                         href={`/kategorije/${cat.slug}/${sublink.slug}`}
                         className="block hover:text-secondaryColor transition-colors duration-300"
+                        onClick={() => setMobileOpen(false)}
                       >
                         {sublink.text}
                       </Link>
