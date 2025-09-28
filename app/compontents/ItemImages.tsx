@@ -11,7 +11,7 @@ const ItemImages = ({ images }: { images: Image[] }) => {
       <div className="w-full">
         <img
           id="main-img"
-          src={activeImg.url}
+          src={activeImg?.url}
           alt="Najbolje kolekcije papirnatih nakita"
           className="w-full  h-full object-cover max-h-[700px] "
         />
