@@ -23,6 +23,8 @@ export const GET_PRODUCTS_BY_TAG = `query GetProductsByTag($tag: String!, $first
             currencyCode 
           } 
         }
+                    availableForSale
+
         tags
         variants(first: 1) {        
           edges {

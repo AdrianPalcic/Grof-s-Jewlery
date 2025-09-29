@@ -15,10 +15,6 @@ export default async function Home() {
 
   const fiveProducts = await getFiveProducts(5);
 
-  const threeProducts = fiveProducts.slice(0, 3);
-
-  console.log(fiveProducts);
-
   return (
     <main className="mx-auto w-full max-w-[1700px]">
       <Hero />
@@ -27,7 +23,7 @@ export default async function Home() {
       <Bestsellers products={fiveProducts} />
       <Categories />
       <Reviews />
-      <BuildGift products={threeProducts} />
+      <BuildGift />
       <CTA text="Kontakt" link="kontakt" />
     </main>
   );

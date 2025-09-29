@@ -24,6 +24,7 @@ export const GET_PRODUCTS = `query GetProducts($count: Int!) {
             currencyCode
           }
         }
+          availableForSale
         variants(first: 1) {        
           edges {
             node {

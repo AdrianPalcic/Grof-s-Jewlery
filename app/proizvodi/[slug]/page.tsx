@@ -29,10 +29,16 @@ export default async function Page({ params }: PageProps) {
           <div className="w-full h-[1px] bg-secondaryColor mt-2 "></div>
 
           <p className="text-xl smm:w-[90%] mt-2 mb-4">{product.description}</p>
-          <div className="flex w-full items-center justify-between gap-3 mb-5">
-            <AddToCartBtn product={product} />
-            <button className="ghost w-full">Dodaj u Gift Box</button>
-          </div>
+          {product.availableForSale ? (
+            <div className="flex w-full items-center justify-between gap-3 mb-5">
+              <AddToCartBtn product={product} />
+              <button className="ghost w-full">Dodaj u Gift Box</button>
+            </div>
+          ) : (
+            <button className="btn w-full opacity-50" disabled>
+              Rasprodano
+            </button>
+          )}
           <div className="w-full h-[1px] bg-secondaryColor my-2"></div>
           <h3 className="text-2xl">Za posebne prigode</h3>
           <p className="mb-4">

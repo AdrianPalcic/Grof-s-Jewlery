@@ -25,6 +25,9 @@ p {
   .btn {
     @apply text-white bg-secondaryColor px-5 py-2 font-cinzel  border-[1px] border-solid border-secondaryColor uppercase font-normal text-[16px] smm:text-lg transition-colors hover:bg-[#5d3000];
   }
+  .sold-out {
+    @apply z-50 text-white rounded-full  bg-red-800 absolute bottom-2 right-5 py-2 px-4 uppercase;
+  }
   .sec-btn {
     @apply text-bgColor bg-transparent border-[1px] border-solid border-bgColor px-5 py-2 font-cinzel uppercase font-normal text-[16px] smm:text-lg transition-colors duration-300 hover:text-white hover:border-white;
   }

@@ -40,6 +40,7 @@ export type Product = {
       };
     }[];
   };
+  availableForSale: boolean;
 };
 
 export type CartState = {

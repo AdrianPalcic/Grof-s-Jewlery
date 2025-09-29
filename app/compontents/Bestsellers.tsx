@@ -16,7 +16,7 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
       <div className="flex flex-col mdd:flex-row gap-4 mdd:max-w-9xl mx-auto">
         <Link
           href={`/proizvodi/${first.handle}`}
-          className="flex-1 overflow-hidden"
+          className="flex-1 overflow-hidden relative"
         >
           <img
             src={first.featuredImage?.url || "/placeholder.png"}
@@ -24,6 +24,9 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
             loading="lazy"
             className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
           />
+          {!first.availableForSale && (
+            <span className="sold-out">Rasprodano</span>
+          )}
         </Link>
 
         {/* Grid of 4 smaller images */}
@@ -40,6 +43,9 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
+              {!product.availableForSale && (
+                <span className="sold-out">Rasprodano</span>
+              )}
             </Link>
           ))}
         </div>
