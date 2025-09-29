@@ -29,7 +29,7 @@ const SubcategorySection = ({
           >
             <Link
               href={`/proizvodi/${product.handle}`}
-              className="overflow-hidden block"
+              className="overflow-hidden block relative"
             >
               <img
                 src={product.featuredImage?.url || "/placeholder.png"}
@@ -37,6 +37,11 @@ const SubcategorySection = ({
                 loading="lazy"
                 className="w-full h-[300px] object-cover transition-opacity duration-300 hover:opacity-70"
               />
+              {product.availableForSale === false ? (
+                <span className="sold-out">Rasprodano</span>
+              ) : (
+                ""
+              )}
             </Link>
             <div className="flex flex-col items-start justify-start w-full mt-2">
               <h2 className="text-xl font-semibold">{product.title}</h2>
