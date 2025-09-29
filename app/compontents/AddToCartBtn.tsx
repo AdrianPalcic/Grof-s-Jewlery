@@ -27,7 +27,7 @@ const AddToCartBtn = ({ product }: { product: Product }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full mt-2 w-[260px] p-3 bg-bgColor border rounded shadow-lg z-50">
+        <div className="absolute left-0 top-full mt-2 w-[260px] p-3 bg-white border rounded shadow-lg z-50">
           <button
             className="absolute top-1 right-1"
             onClick={() => setIsOpen(false)}

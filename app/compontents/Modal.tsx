@@ -12,7 +12,7 @@ const Modal: React.FC<ModalProps> = ({ setIsOpen }) => {
   return (
     <div
       id="modal"
-      className="absolute top-[50%] left-[50%] w-[300px] h-[200px] -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col justify-center items-center bg-bgColor p-4 gap-4 border rounded shadow-xl"
+      className="absolute top-[50%] left-[50%] w-[300px] h-[200px] -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col justify-center items-center bg-white p-4 gap-4 border rounded shadow-xl"
     >
       <button
         className="absolute top-2 left-2"
