@@ -1,56 +1,36 @@
+"use client";
+
 import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    console.log("Newsletter email submitted:", email);
+    setSubmitted(true);
+    setEmail("");
+  };
+
   const categories = [
-    {
-      text: "Dodaci Poklonima",
-      slug: "dodaci-poklonima",
-    },
-    {
-      text: "Nakit od Papira",
-      slug: "nakit-od-papira",
-    },
-    {
-      text: "Gift Boxes",
-      slug: "gift-boxes",
-    },
-    {
-      text: "Package Design",
-      slug: "package-design",
-    },
-    {
-      text: "Pakiranje Poklona",
-      slug: "pakiranje-poklona",
-    },
-    {
-      text: "Pokloni",
-      slug: "pokloni",
-    },
+    { text: "Dodaci Poklonima", slug: "dodaci-poklonima" },
+    { text: "Nakit od Papira", slug: "nakit-od-papira" },
+    { text: "Gift Boxes", slug: "gift-boxes" },
+    { text: "Package Design", slug: "package-design" },
+    { text: "Pakiranje Poklona", slug: "pakiranje-poklona" },
+    { text: "Pokloni", slug: "pokloni" },
   ];
 
   const infoLinks = [
-    {
-      text: "Kontakt",
-      slug: "kontakt",
-    },
-    {
-      text: "O nama",
-      slug: "onama",
-    },
-    {
-      text: "Politika Privatnosti",
-      slug: "politika-privatnosti",
-    },
-    {
-      text: "Kolačići",
-      slug: "kolacici",
-    },
-    {
-      text: "Uvjeti Korištenja",
-      slug: "uvjeti-koristenja",
-    },
+    { text: "Kontakt", slug: "kontakt" },
+    { text: "O nama", slug: "onama" },
+    { text: "Politika Privatnosti", slug: "politika-privatnosti" },
+    { text: "Kolačići", slug: "kolacici" },
+    { text: "Uvjeti Korištenja", slug: "uvjeti-koristenja" },
   ];
 
   return (
@@ -61,6 +41,7 @@ const Footer = () => {
           Izuzetan nakit izrađen za one koji cijene najfinije stvari u životu.
         </p>
       </div>
+
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Kupujte</h3>
         <ul className="flex flex-col gap-2">
@@ -75,6 +56,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
+
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Informacije</h3>
         <ul className="flex flex-col gap-2">
@@ -89,21 +71,42 @@ const Footer = () => {
           ))}
         </ul>
       </div>
+
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Zapratite nas</h3>
         <div className="flex gap-2 items-center mt-2">
-          <Link href="www.facebook.com" className="group">
+          <Link href="https://www.facebook.com" className="group">
             <Facebook
               color="#5A5A5A"
               className="group-hover:text-secondaryColor "
             />
           </Link>
-          <Link href="www.instagram.com" className="group">
+          <Link href="https://www.instagram.com" className="group">
             <Instagram
               color="#5A5A5A"
               className="group-hover:text-secondaryColor"
             />
           </Link>
+        </div>
+
+        <div className="mt-4">
+          <h3 className="uppercase text-lg font-semibold mb-2">Newsletter</h3>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Vaš email"
+              className="p-2 border border-secondaryColor font-cinzel  w-full"
+              required
+            />
+            <button type="submit" className="ghost">
+              Prijavi se
+            </button>
+            {submitted && (
+              <p className="text-green-600 text-sm">Hvala na prijavi!</p>
+            )}
+          </form>
         </div>
       </div>
     </footer>
