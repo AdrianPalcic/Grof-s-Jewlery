@@ -22,7 +22,7 @@ const page = async () => {
   return (
     <main className="mx-auto mt-10 mb-20 px-4 sm:px-10">
       <h1 className="text-3xl sm:text-5xl mb-10">
-        Pakcage <span className="acc">Design</span>
+        Package <span className="acc">Design</span>
       </h1>
       {subcategoriesWithProducts.map((subcategory) => (
         <SubcategorySection

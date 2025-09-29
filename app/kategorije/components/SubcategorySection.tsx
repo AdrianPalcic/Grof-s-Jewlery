@@ -44,7 +44,6 @@ const SubcategorySection = ({
                 {" "}
                 {"€" + product.priceRange.minVariantPrice.amount}
               </p>
-              <AddToCartBtn product={product} />
             </div>
           </div>
         ))}

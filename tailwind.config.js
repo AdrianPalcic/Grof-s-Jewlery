@@ -13,7 +13,7 @@ module.exports = {
         "bounce-delay3": "bounce 0.6s infinite 0.4s",
       },
       colors: {
-        bgColor: "#F5F5DC", // primjer custom boje
+        bgColor: "#F5F5DC",
         secondaryColor: "#763C00",
         textColor: "#333",
         try: "#F3F3EF",
