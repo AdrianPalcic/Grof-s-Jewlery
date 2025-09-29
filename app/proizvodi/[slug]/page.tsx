@@ -35,14 +35,15 @@ export default async function Page({ params }: PageProps) {
               <button className="ghost w-full">Dodaj u Gift Box</button>
             </div>
           ) : (
-            <button className="btn w-full opacity-50" disabled>
+            <button className="btn w-full opacity-50" disabled={true}>
               Rasprodano
             </button>
           )}
-          <div className="w-full h-[1px] bg-secondaryColor my-2"></div>
+          <div className="w-full h-[1px] bg-secondaryColor mb-2 "></div>
+
           <h3 className="text-2xl">Za posebne prigode</h3>
           <p className="mb-4">
-            Ovaj dizajn možemo izraditi u većem broju primjeraka isključivo za
+            Ovaj artikl možemo izraditi u većem broju primjeraka isključivo za
             vas.
           </p>
           <Link href="/kontakt">
