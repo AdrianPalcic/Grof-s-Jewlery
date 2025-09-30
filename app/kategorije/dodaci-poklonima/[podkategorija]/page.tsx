@@ -4,6 +4,7 @@ import Link from "next/link";
 import ButtonMain from "@/app/compontents/ButtonMain";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 import ItemGrid from "@/app/compontents/ItemGrid";
+import ProductList from "../../components/ProductList";
 
 type PageProps = {
   params: Promise<{ podkategorija: string }>;
@@ -20,13 +21,12 @@ export default async function Page({ params }: PageProps) {
   }
 
   const products = await getProductsByTag(20, podkategorija);
-  console.log(products);
 
   return (
     <div>
       <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
         <Hero name={formatName(podkategorija)} />
-        <ItemGrid products={products} />
+        <ProductList initialProducts={products} />
         <div className="relative w-full overflow-hidden">
           <img
             src="/one.png"

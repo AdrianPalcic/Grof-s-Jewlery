@@ -30,12 +30,12 @@ export default async function Page({ params }: PageProps) {
 
           <p className="text-xl smm:w-[90%] mt-2 mb-4">{product.description}</p>
           {product.availableForSale ? (
-            <div className="flex w-full items-center justify-between gap-3 mb-5">
+            <div className="flex flex-col sm:flex-row w-full items-center justify-between gap-3 mb-5">
               <AddToCartBtn product={product} />
               <button className="ghost w-full">Dodaj u Gift Box</button>
             </div>
           ) : (
-            <button className="btn w-full opacity-50" disabled={true}>
+            <button className="btn w-full opacity-50 mb-2" disabled={true}>
               Rasprodano
             </button>
           )}

@@ -14,7 +14,6 @@ const CartItem = ({ product }: { product: Product }) => {
       id="item"
       className="w-full flex flex-col py-2 border-b border-gray-200"
     >
-      {/* Glavni artikl */}
       <div className="w-full flex items-center justify-between">
         <div className="flex gap-4 w-full h-full">
           <Link

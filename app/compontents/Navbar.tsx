@@ -10,6 +10,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const modalOpen = useCartStore((state) => state.modalOpen);
   const lastAdded = useCartStore((state) => state.lastAdded);
+  const cart = useCartStore((state) => state.cart);
 
   const links = [
     {
@@ -96,8 +97,15 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link href="/shopping-cart">
+          <Link href="/shopping-cart" className="relative">
             <ShoppingCart className="transition-colors duration-300 hover:text-secondaryColor" />
+            {/* {cart.length > 0 ? (
+              <span className="text-sm absolute font-cormorant -right-2 top-3 bg-gray-300 text-textColor rounded-full w-5 h-5 flex items-center justify-center p-2">
+                {cart.length}
+              </span>
+            ) : (
+              ""
+            )} */}
           </Link>
           {modalOpen && lastAdded && <CartModal product={lastAdded} />}
 
