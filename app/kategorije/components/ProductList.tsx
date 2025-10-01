@@ -5,11 +5,7 @@ import { Product } from "@/types/types";
 import { getProductsByTagPaginated } from "@/lib/shopify/getProductsPaginated";
 import ItemGrid from "@/app/compontents/ItemGrid";
 
-interface Props {
-  initialProducts: Product[];
-}
-
-const ProductList: React.FC<Props> = ({ initialProducts }) => {
+const ProductList = ({ initialProducts }: { initialProducts: Product[] }) => {
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [loading, setLoading] = useState(false);
   const [lastCursor, setLastCursor] = useState<string | null>(null);
@@ -43,7 +39,7 @@ const ProductList: React.FC<Props> = ({ initialProducts }) => {
       <ItemGrid products={products} />
 
       {hasNextPage && (
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center my-6">
           <button className="ghost" onClick={loadMore} disabled={loading}>
             {loading ? "Učitavanje..." : "Load More"}
           </button>

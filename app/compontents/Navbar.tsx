@@ -3,14 +3,19 @@ import { useCartStore } from "@/store/cartStore";
 import { ChevronDown, ShoppingCart, Menu, X, Gift } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CartModal from "./CartModal";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const modalOpen = useCartStore((state) => state.modalOpen);
   const lastAdded = useCartStore((state) => state.lastAdded);
   const cart = useCartStore((state) => state.cart);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const links = [
     {
@@ -99,13 +104,13 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <Link href="/shopping-cart" className="relative">
             <ShoppingCart className="transition-colors duration-300 hover:text-secondaryColor" />
-            {/* {cart.length > 0 ? (
+            {mounted && cart.length > 0 ? (
               <span className="text-sm absolute font-cormorant -right-2 top-3 bg-gray-300 text-textColor rounded-full w-5 h-5 flex items-center justify-center p-2">
                 {cart.length}
               </span>
             ) : (
               ""
-            )} */}
+            )}
           </Link>
           {modalOpen && lastAdded && <CartModal product={lastAdded} />}
 
@@ -162,17 +167,17 @@ const Navbar = () => {
       >
         <ul className="flex flex-col gap-4 uppercase text-sm p-2">
           {links.map((cat) => (
-            <li key={cat.slug} className="flex flex-col">
-              <span className="flex items-center gap-1">
+            <li key={cat.slug} className="flex flex-col font-cinzel">
+              <span className="flex items-center gap-1 font-cinzel">
                 {cat.text} <ChevronDown size={14} />
               </span>
               {cat.links.length > 0 && (
-                <ul className="ml-4 mt-2 flex flex-col gap-2 text-gray-600">
+                <ul className="ml-4 mt-2 flex flex-col gap-2 text-gray-600 font-cormorant">
                   {cat.links.map((sublink) => (
                     <li key={sublink.slug}>
                       <Link
                         href={`/kategorije/${cat.slug}/${sublink.slug}`}
-                        className="block hover:text-secondaryColor transition-colors duration-300"
+                        className="block font-cormorant hover:text-secondaryColor transition-colors duration-300"
                         onClick={() => setMobileOpen(false)}
                       >
                         {sublink.text}
