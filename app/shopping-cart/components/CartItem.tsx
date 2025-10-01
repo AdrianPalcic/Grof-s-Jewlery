@@ -18,7 +18,7 @@ const CartItem = ({ product }: { product: Product }) => {
         <div className="flex gap-4 w-full h-full">
           <Link
             href={`/proizvodi/${product.handle}`}
-            className="w-[100px] smm:w-[150px] h-[150px]"
+            className="w-[100px] smm:w-[150px] h-[100px]"
           >
             <img
               src={product.featuredImage?.url}

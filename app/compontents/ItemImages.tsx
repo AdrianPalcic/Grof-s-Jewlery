@@ -13,7 +13,7 @@ const ItemImages = ({ images }: { images: Image[] }) => {
           id="main-img"
           src={activeImg?.url}
           alt="Najbolje kolekcije papirnatih nakita"
-          className="w-full h-full object-cover max-h-[400px] "
+          className="w-full h-full object-cover max-h-[400px] min-h-[350px]"
         />
       </div>
 

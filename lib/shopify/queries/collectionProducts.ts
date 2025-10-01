@@ -33,6 +33,8 @@ export const GET_COLLECTION_PRODUCTS = `query GetCollectionProducts($handle: Str
               currencyCode
             }
           }
+          availableForSale
+
           variants(first: 1) {          
             edges {
               node {

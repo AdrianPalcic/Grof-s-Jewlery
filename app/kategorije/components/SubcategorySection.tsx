@@ -1,6 +1,5 @@
 "use client";
 
-import AddToCartBtn from "@/app/compontents/AddToCartBtn";
 import ButtonMain from "@/app/compontents/ButtonMain";
 import { Product } from "@/types/types";
 import Link from "next/link";
@@ -25,7 +24,7 @@ const SubcategorySection = ({
         {products.map((product) => (
           <div
             key={product.id}
-            className="flex-none w-full smm:w-[300px] snap-start"
+            className="flex-none w-full smm:w-[300px]  snap-start"
           >
             <Link
               href={`/proizvodi/${product.handle}`}
@@ -44,7 +43,11 @@ const SubcategorySection = ({
               )}
             </Link>
             <div className="flex flex-col items-start justify-start w-full mt-2">
-              <h2 className="text-xl font-semibold">{product.title}</h2>
+              <Link href={`/proizvodi/${product.handle}`}>
+                <h2 className="text-[18px] sm:text-xl font-semibold transition-colors duration-200 hover:text-secondaryColor">
+                  {product.title}
+                </h2>
+              </Link>
               <p className="mb-2">
                 {" "}
                 {"€" + product.priceRange.minVariantPrice.amount}

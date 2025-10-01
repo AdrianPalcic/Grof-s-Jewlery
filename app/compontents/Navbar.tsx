@@ -13,10 +13,6 @@ const Navbar = () => {
   const lastAdded = useCartStore((state) => state.lastAdded);
   const cart = useCartStore((state) => state.cart);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const links = [
     {
       text: "Nakit od papira",
@@ -78,8 +74,12 @@ const Navbar = () => {
     },
   ];
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <header className="w-full px-6 py-4 font-cinzel font-regular border-b bg-bgColor border-gray-200 sticky top-0 z-50">
+    <header className="w-full px-6 py-4 font-cinzel font-regular border-b bg-bgColor border-gray-200 fixed top-0 z-50 ">
       <nav className="flex items-center justify-between">
         <div className="hidden navbreak:flex items-center">
           <Link href="/gift-box-builder">
@@ -102,7 +102,11 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link href="/shopping-cart" className="relative">
+          <Link
+            href="/shopping-cart"
+            className="relative"
+            onClick={mobileOpen ? () => setMobileOpen(false) : undefined}
+          >
             <ShoppingCart className="transition-colors duration-300 hover:text-secondaryColor" />
             {mounted && cart.length > 0 ? (
               <span className="text-sm absolute font-cormorant -right-2 top-3 bg-gray-300 text-textColor rounded-full w-5 h-5 flex items-center justify-center p-2">
@@ -114,7 +118,11 @@ const Navbar = () => {
           </Link>
           {modalOpen && lastAdded && <CartModal product={lastAdded} />}
 
-          <Link href="/gift-box-builder" className="navbreak:hidden">
+          <Link
+            href="/gift-box-builder"
+            className="navbreak:hidden"
+            onClick={mobileOpen ? () => setMobileOpen(false) : undefined}
+          >
             <Gift className="transition-colors duration-300 hover:text-secondaryColor" />
           </Link>
           <button
@@ -126,7 +134,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="hidden navbreak:block mt-4">
+      <div className="hidden navbreak:block mt-4 z-20">
         <ul className="flex justify-center text-[15px] gap-6 uppercase">
           {links.map((cat) => (
             <li
@@ -161,11 +169,13 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`navbreak:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[1200px] opacity-100 mt-4" : "max-h-0 opacity-0"
+        className={`navbreak:hidden  transition-all duration-300 ease-in-out overflow-y-auto   ${
+          mobileOpen
+            ? "max-h-[1400px] h-[500px] opacity-100 mt-4 overflow-y-auto"
+            : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="flex flex-col gap-4 uppercase text-sm p-2">
+        <ul className="flex flex-col gap-4 uppercase text-sm p-2 h-full ">
           {links.map((cat) => (
             <li key={cat.slug} className="flex flex-col font-cinzel">
               <span className="flex items-center gap-1 font-cinzel">

@@ -7,21 +7,26 @@ export async function getProductsByTagPaginated(
   tag: string,
   after?: string
 ): Promise<{ products: Product[]; hasNextPage: boolean; endCursor?: string }> {
-  const data = await shopifyGraphql(GET_PRODUCTS_BY_TAG_W_CURSOR, {
-    tag,
+  const variables = {
+    tag: `tag:"${tag}"`,
     first,
     after,
-  });
+  };
+
+  const data = await shopifyGraphql(GET_PRODUCTS_BY_TAG_W_CURSOR, variables);
 
   if (!data) {
     console.error("Failed to fetch paginated products");
     return { products: [], hasNextPage: false };
   }
 
-  const products = data.products.edges.map((edge: any) => edge.node);
+  const edges = data.products.edges;
+  const products = edges.map((edge: any) => edge.node);
+  const endCursor = edges.length > 0 ? edges[edges.length - 1].cursor : null;
+
   return {
     products,
     hasNextPage: data.products.pageInfo.hasNextPage,
-    endCursor: data.products.pageInfo.endCursor,
+    endCursor,
   };
 }
