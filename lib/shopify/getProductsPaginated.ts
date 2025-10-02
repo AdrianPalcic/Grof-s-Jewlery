@@ -21,7 +21,7 @@ export async function getProductsByTagPaginated(
   }
 
   const edges = data.products.edges;
-  const products = edges.map((edge: any) => edge.node);
+  const products = edges.map((edge: { node: Product }) => edge.node);
   const endCursor = edges.length > 0 ? edges[edges.length - 1].cursor : null;
 
   return {
