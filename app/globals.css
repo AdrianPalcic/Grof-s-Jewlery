@@ -58,3 +58,34 @@ p {
     opacity: 1;
   }
 }
+
+.hide-scrollbar {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.hide-scrollbar-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar-y::-webkit-scrollbar {
+  width: 0;
+}
+
+.hide-scrollbar-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar-x::-webkit-scrollbar {
+  height: 0;
+}

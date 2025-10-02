@@ -9,9 +9,9 @@ const CartFull = ({ products }: { products: Product[] }) => {
   const total = calculateTotal(products);
 
   return (
-    <section className="px-0 sm:px-10 ">
+    <section>
       <div className="flex flex-col sm:flex-row mb-5  w-full items-left sm:items-center gap-2 sm:gap-0 justify-between ">
-        <h1 className="text-3xl sm:texxt-4xl">Vaša košarica</h1>
+        <h1 className="text-3xl sm:text-4xl">Vaša košarica</h1>
         <Link href="/">
           <button className="ghost">Nastavite s kupnjom</button>
         </Link>

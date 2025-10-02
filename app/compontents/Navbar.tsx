@@ -79,7 +79,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="w-full px-6 py-4 font-cinzel font-regular border-b bg-bgColor border-gray-200 fixed top-0 z-50 ">
+    <header className="w-full px-6 py-4 font-cinzel font-regular border-b bg-bgColor border-gray-200 sticky top-0 z-50 ">
       <nav className="flex items-center justify-between">
         <div className="hidden navbreak:flex items-center">
           <Link href="/gift-box-builder">
@@ -171,7 +171,7 @@ const Navbar = () => {
       <div
         className={`navbreak:hidden  transition-all duration-300 ease-in-out overflow-y-auto   ${
           mobileOpen
-            ? "max-h-[1400px] h-[500px] opacity-100 mt-4 overflow-y-auto"
+            ? "max-h-[1400px] h-[550px] opacity-100 mt-4 overflow-y-auto"
             : "max-h-0 opacity-0"
         }`}
       >

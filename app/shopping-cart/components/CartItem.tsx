@@ -10,10 +10,7 @@ const CartItem = ({ product }: { product: Product }) => {
   const deleteItem = useCartStore((state) => state.removeFromCart);
 
   return (
-    <div
-      id="item"
-      className="w-full flex flex-col py-2 border-b border-gray-200"
-    >
+    <div id="item" className="w-full  py-2 ">
       <div className="w-full flex items-center justify-between">
         <div className="flex gap-4 w-full h-full">
           <Link
@@ -23,7 +20,7 @@ const CartItem = ({ product }: { product: Product }) => {
             <img
               src={product.featuredImage?.url}
               alt="Artikl"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-opacity duration-200 hover:opacity-90"
             />
           </Link>
 
