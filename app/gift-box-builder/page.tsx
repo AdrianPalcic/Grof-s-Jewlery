@@ -1,18 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import Hero from "./components/Hero";
-import BuilderEmpty from "./components/BuilderEmpty";
 import BuilderFull from "./components/BuilderFull";
+import Hero from "./components/Hero";
 
-const page = () => {
-  const [items, setItems] = useState(1);
+const Page = () => {
+  const [items, setItems] = useState(0);
 
   return (
     <section className="section mt-10">
-      {items === 0 ? <BuilderEmpty /> : <BuilderFull />}
+      <Hero />
+      {items > 0 && <BuilderFull />}
     </section>
   );
 };
 
-export default page;
+export default Page;

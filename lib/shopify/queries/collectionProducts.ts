@@ -3,6 +3,7 @@ export const GET_COLLECTION_PRODUCTS = `query GetCollectionProducts($handle: Str
     id
     title
     handle
+    productType 
     description
     image {
       url

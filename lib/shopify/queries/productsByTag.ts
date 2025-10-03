@@ -5,6 +5,7 @@ export const GET_PRODUCTS_BY_TAG = `query GetProductsByTag($tag: String!, $first
         id
         title
         handle
+        productType 
         featuredImage { 
           url 
           altText 

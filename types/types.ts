@@ -19,6 +19,7 @@ export type Product = {
   id: string;
   title: string;
   handle: string;
+  productType: string;
   description: string;
   featuredImage: Image | null;
   images: ProductImageConnection;
@@ -52,4 +53,8 @@ export type CartState = {
   lastAdded: Product | null;
   openModal: (item: Product) => void;
   closeModal: () => void;
+};
+
+export type GiftBox = Product & {
+  selectedItems?: Product[];
 };

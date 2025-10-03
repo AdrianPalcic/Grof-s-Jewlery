@@ -7,6 +7,7 @@ export const GET_PRODUCTS_BY_TAG_W_CURSOR = `
           id
           title
           handle
+          productType 
           featuredImage { 
             url 
             altText 

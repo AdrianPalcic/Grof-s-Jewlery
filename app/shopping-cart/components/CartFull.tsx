@@ -26,11 +26,6 @@ const CartFull = ({ products }: { products: Product[] }) => {
 
         <div className="w-full flex flex-col gap-6">
           {products.map((product) => {
-            console.log(
-              "Rendering product in cart:",
-              product.id,
-              product.title
-            );
             return (
               <CartItem
                 key={`${product.id}-${product.handle}`}

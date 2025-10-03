@@ -1,4 +1,4 @@
-import { CartState, Product } from "@/types/types";
+import { CartState, Product, GiftBox } from "@/types/types";
 import { create } from "zustand";
 
 const loadCartFromStorage = (): Product[] => {
@@ -18,21 +18,32 @@ export const useCartStore = create<CartState>((set, get) => ({
   modalOpen: false,
   lastAdded: null,
 
-  addToCart: (item) => {
+  addToCart: (item: Product | GiftBox) => {
     set((state) => {
-      const exists = state.cart.some((cartItem) => cartItem.id === item.id);
-      const updatedCart = exists ? state.cart : [...state.cart, item];
-
-      if (!exists) {
-        saveCartToStorage(updatedCart);
-        get().openModal(item);
+      if ("selectedItems" in item) {
+        const exists = state.cart.some(
+          (cartItem) => "selectedItems" in cartItem && cartItem.id === item.id
+        );
+        const updatedCart = exists ? state.cart : [...state.cart, item];
+        if (!exists) {
+          saveCartToStorage(updatedCart);
+          get().openModal(item);
+        }
+        return { cart: updatedCart };
+      } else {
+        // Običan proizvod
+        const exists = state.cart.some((cartItem) => cartItem.id === item.id);
+        const updatedCart = exists ? state.cart : [...state.cart, item];
+        if (!exists) {
+          saveCartToStorage(updatedCart);
+          get().openModal(item);
+        }
+        return { cart: updatedCart };
       }
-
-      return { cart: updatedCart };
     });
   },
 
-  removeFromCart: (id) =>
+  removeFromCart: (id: string) =>
     set((state) => {
       const updatedCart = state.cart.filter((item) => item.id !== id);
       saveCartToStorage(updatedCart);
@@ -44,6 +55,7 @@ export const useCartStore = create<CartState>((set, get) => ({
     set({ cart: [] });
   },
 
-  openModal: (item: Product) => set({ modalOpen: true, lastAdded: item }),
+  openModal: (item: Product | GiftBox) =>
+    set({ modalOpen: true, lastAdded: item }),
   closeModal: () => set({ modalOpen: false, lastAdded: null }),
 }));

@@ -1,15 +1,9 @@
 import React from "react";
-import Hero from "./Hero";
-import CheckoutBtn from "@/app/shopping-cart/components/CheckoutBtn";
-import Link from "next/link";
-import { ChevronDown } from "lucide-react";
 import BuilderItem from "./BuilderItem";
 
 const BuilderFull = () => {
   return (
     <>
-      <Hero />
-
       <div className="flex flex-col mt-3">
         <div className="flex w-full items-center justify-between">
           <p className="smm:text-[16px] text-[14px]">Proizvod</p>
@@ -35,7 +29,8 @@ const BuilderFull = () => {
             <h4 className="text-2xl">Vaš total:</h4>
             <p className="text-2xl font-cormorant ">10€</p>
           </div>
-          <CheckoutBtn />
+          {/* <AddToCartBtn /> */}
+          <button className="ghost">Dodaj u košaricu</button>
         </div>
       </div>
     </>

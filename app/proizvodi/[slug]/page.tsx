@@ -5,6 +5,7 @@ import { getProductByHandle } from "@/lib/shopify/product";
 import { ProductImageConnection } from "@/types/types";
 import Link from "next/link";
 import React from "react";
+import AddToGiftBoxBtn from "./components/AddToGiftBoxBtn";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -32,7 +33,7 @@ export default async function Page({ params }: PageProps) {
           {product.availableForSale ? (
             <div className="flex flex-col sm:flex-row w-full items-center justify-between gap-3 mb-5">
               <AddToCartBtn product={product} />
-              <button className="ghost w-full">Dodaj u Gift Box</button>
+              <AddToGiftBoxBtn product={product} />
             </div>
           ) : (
             <button className="btn w-full opacity-50 mb-2" disabled={true}>

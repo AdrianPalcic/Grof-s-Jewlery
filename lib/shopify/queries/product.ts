@@ -3,6 +3,7 @@ export const GET_PRODUCT_BY_HANDLE = `query GetProductByHandle($handle: String!)
     id
     title
     handle
+    productType 
     description
     featuredImage {
       url

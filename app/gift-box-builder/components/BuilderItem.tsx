@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Trash } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import BuilderMiniItem from "./BuilderMiniItem";
@@ -26,7 +26,7 @@ const BuilderItem = () => {
               className="flex text-sm font-cormorant items-center gap-1"
               onClick={() => setIsVisible(!isVisible)}
             >
-              {isVisible ? (
+              {!isVisible ? (
                 <>
                   Pokaži proizvode <ChevronDown size={14} />
                 </>
@@ -38,11 +38,19 @@ const BuilderItem = () => {
             </button>
             <div
               className={`${
-                isVisible ? "hidden " : "flex "
+                !isVisible ? "hidden " : "flex "
               }  flex-col mt-2 gap-4 `}
             >
               <BuilderMiniItem />
             </div>
+          </div>
+          <div className="flex gap-1">
+            <span>
+              <Trash
+                className="opacity-65 transition-all duration-300 hover:text-secondaryColor hover:opacity-100 cursor-pointer"
+                size={15}
+              />
+            </span>
           </div>
         </div>
       </div>

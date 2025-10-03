@@ -1,10 +1,13 @@
 export const GET_PRODUCTS = `query GetProducts($count: Int!) {
   products(first: $count) {
     edges {
+    
       node {
         id
+        
         title
         handle
+        productType 
         description
         featuredImage {
           url
@@ -34,6 +37,7 @@ export const GET_PRODUCTS = `query GetProducts($count: Int!) {
         amount
         currencyCode
       }
+      
             }
           }
         }
