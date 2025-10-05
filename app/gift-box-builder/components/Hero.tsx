@@ -19,19 +19,19 @@ const Hero = () => {
           <CheckCircle className="text-secondaryColor w-6 h-6 flex-shrink-0" />
           <p className="text-base sm:text-lg">
             Korak 1: Odaberite{" "}
-            <a
+            <Link
               className="text-secondaryColor underline"
               href="/kategorije/pakiranje-poklona/kutije-za-poklone"
             >
               kutiju
-            </a>{" "}
+            </Link>{" "}
             ili{" "}
-            <a
+            <Link
               className="text-secondaryColor underline"
               href="/kategorije/pakiranje-poklona/vrecice-za-poklone"
             >
               vrećicu
-            </a>
+            </Link>
           </p>
         </div>
 

@@ -1,56 +1,68 @@
 import { create } from "zustand";
-import { Product, GiftBox } from "@/types/types";
+import { Product } from "@/types/types";
 
 interface GiftStoreState {
   baseBox: Product | null;
   selectedItems: Product[];
-  wrapColor: string | null;
-  personalMessage: string | null;
 
   setBaseBox: (box: Product) => void;
   addItem: (item: Product) => void;
   removeItem: (itemId: string) => void;
-  setWrapColor: (color: string) => void;
-  setPersonalMessage: (message: string) => void;
   resetGift: () => void;
 }
 
+const loadGiftFromStorage = (): {
+  baseBox: Product | null;
+  selectedItems: Product[];
+} => {
+  if (typeof window === "undefined")
+    return { baseBox: null, selectedItems: [] };
+  const stored = localStorage.getItem("giftBox");
+  return stored ? JSON.parse(stored) : { baseBox: null, selectedItems: [] };
+};
+
+const saveGiftToStorage = (state: {
+  baseBox: Product | null;
+  selectedItems: Product[];
+}) => {
+  if (typeof window === "undefined") return;
+  localStorage.setItem("giftBox", JSON.stringify(state));
+};
+
 export const useGiftStore = create<GiftStoreState>((set, get) => ({
-  baseBox: null,
-  selectedItems: [],
-  wrapColor: null,
-  personalMessage: null,
+  ...loadGiftFromStorage(),
 
   setBaseBox: (box) =>
-    set(() => ({
-      baseBox: box,
-      selectedItems: [],
-      wrapColor: null,
-      personalMessage: null,
-    })),
+    set(() => {
+      const newState = { baseBox: box, selectedItems: [] };
+      saveGiftToStorage(newState);
+      return newState;
+    }),
 
   addItem: (item) => {
     const exists = get().selectedItems.some((i) => i.id === item.id);
     if (!exists) {
-      set((state) => ({
-        selectedItems: [...state.selectedItems, item],
-      }));
+      const newState = {
+        baseBox: get().baseBox,
+        selectedItems: [...get().selectedItems, item],
+      };
+      saveGiftToStorage(newState);
+      set(newState);
     }
   },
 
-  removeItem: (itemId) =>
-    set((state) => ({
-      selectedItems: state.selectedItems.filter((i) => i.id !== itemId),
-    })),
+  removeItem: (itemId) => {
+    const newState = {
+      baseBox: get().baseBox,
+      selectedItems: get().selectedItems.filter((i) => i.id !== itemId),
+    };
+    saveGiftToStorage(newState);
+    set(newState);
+  },
 
-  setWrapColor: (color) => set({ wrapColor: color }),
-  setPersonalMessage: (message) => set({ personalMessage: message }),
-
-  resetGift: () =>
-    set({
-      baseBox: null,
-      selectedItems: [],
-      wrapColor: null,
-      personalMessage: null,
-    }),
+  resetGift: () => {
+    const newState = { baseBox: null, selectedItems: [] };
+    saveGiftToStorage(newState);
+    set(newState);
+  },
 }));

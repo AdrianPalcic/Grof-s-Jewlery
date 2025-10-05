@@ -1,17 +1,32 @@
+"use client";
+
+import { useGiftStore } from "@/store/giftStore";
+import { Product } from "@/types/types";
+import { Trash } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const BuilderMiniItem = () => {
+const BuilderMiniItem = ({ product }: { product: Product }) => {
+  const removeItem = useGiftStore((state) => state.removeItem);
+
   return (
     <div className="flex gap-4">
-      <Link href="/" className="w-[50px] h-[50px]">
+      <Link href={`/proizvodi/${product.handle}`} className="w-[50px] h-[50px]">
         <img
-          src="/kat1.png"
-          alt="adasd"
+          src={product.featuredImage?.url}
+          alt={product.featuredImage?.altText}
           className="w-full h-full object-cover"
         />
       </Link>
-      <p className="text-sm">Naziv artikla</p>
+      <div className="flex flex-col justify-between">
+        <p className="text-sm">{product.title}</p>
+        <span onClick={() => removeItem(product.id)}>
+          <Trash
+            className="opacity-65 transition-all duration-300 hover:text-secondaryColor hover:opacity-100 cursor-pointer"
+            size={12}
+          />
+        </span>
+      </div>
     </div>
   );
 };

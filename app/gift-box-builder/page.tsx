@@ -1,16 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BuilderFull from "./components/BuilderFull";
 import Hero from "./components/Hero";
+import { useGiftStore } from "@/store/giftStore";
+import Loader from "../compontents/Loader";
 
 const Page = () => {
-  const [items, setItems] = useState(0);
+  const giftBox = useGiftStore((state) => state.baseBox);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <Loader />;
 
   return (
     <section className="section mt-10">
       <Hero />
-      {items > 0 && <BuilderFull />}
+      {giftBox && <BuilderFull />}
     </section>
   );
 };

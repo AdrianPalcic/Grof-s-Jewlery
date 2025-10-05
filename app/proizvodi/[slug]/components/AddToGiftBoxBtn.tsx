@@ -2,7 +2,7 @@
 
 import { useGiftStore } from "@/store/giftStore";
 import { Product } from "@/types/types";
-import React from "react";
+import React, { useState } from "react";
 
 const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
   const baseBox = useGiftStore((state) => state.baseBox);
@@ -13,7 +13,14 @@ const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
   const handleClick = () => {
     if (product.productType.includes("pakiranje-poklona")) {
       setBaseBox(product);
-    } else {
+    } else if (baseBox === null) {
+      alert(
+        "Molimo Vas prvo odaberite kutiju ili vrecicu u koju cete staviti poklon"
+      );
+    } else if (
+      baseBox !== null &&
+      !product.productType.includes("pakiranje-poklona")
+    ) {
       setSelectedItems(product);
     }
 
