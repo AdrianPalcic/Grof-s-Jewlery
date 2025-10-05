@@ -5,19 +5,37 @@ import { Product } from "@/types/types";
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import Link from "next/link";
+import { useGiftStore } from "@/store/giftStore";
 
 const AddToCartBtn = ({ product }: { product: Product }) => {
   const [isOpen, setIsOpen] = useState(false);
   const cart = useCartStore((state) => state.cart);
   const addToCart = useCartStore((state) => state.addToCart);
+  const baseBox = useGiftStore((state) => state.baseBox);
+  const selectedItems = useGiftStore((state) => state.selectedItems);
 
   const addCart = () => {
     const isSame = cart.find((p) => p.id === product.id);
     if (isSame) {
       setIsOpen(true);
-    } else {
-      addToCart(product);
+      return;
     }
+
+    if (baseBox && baseBox.id === product.id) {
+      alert("Radi napravi neki modal");
+      return;
+    }
+
+    if (
+      selectedItems.length > 0 &&
+      selectedItems.some((selectedItem) => selectedItem.id === product.id)
+    ) {
+      alert("Radi i ovo");
+      return;
+    }
+
+    // 4️⃣ ako je sve ok, dodaj u košaricu
+    addToCart(product);
   };
 
   return (
