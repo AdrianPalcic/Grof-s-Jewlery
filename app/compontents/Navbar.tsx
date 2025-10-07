@@ -1,10 +1,20 @@
 "use client";
 import { useCartStore } from "@/store/cartStore";
-import { ChevronDown, ShoppingCart, Menu, X, Gift } from "lucide-react";
+import {
+  ChevronDown,
+  ShoppingCart,
+  Menu,
+  X,
+  Gift,
+  Hammer,
+  HammerIcon,
+  ToolCase,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import CartModal from "./CartModal";
+import { useGiftStore } from "@/store/giftStore";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -12,6 +22,7 @@ const Navbar = () => {
   const modalOpen = useCartStore((state) => state.modalOpen);
   const lastAdded = useCartStore((state) => state.lastAdded);
   const cart = useCartStore((state) => state.cart);
+  const baseBox = useGiftStore((state) => state.baseBox);
 
   const links = [
     {
@@ -82,8 +93,15 @@ const Navbar = () => {
     <header className="w-full px-6 py-4 font-cinzel font-regular border-b bg-bgColor border-gray-200 sticky top-0 z-50 ">
       <nav className="flex items-center justify-between">
         <div className="hidden navbreak:flex items-center">
-          <Link href="/gift-box-builder">
+          <Link href="/gift-box-builder" className="relative">
             <Gift className="transition-colors duration-300 hover:text-secondaryColor" />
+            {mounted && baseBox ? (
+              <span className="absolute -right-2 top-3 bg-gray-300 text-textColor rounded-full w-6 h-6 flex items-center justify-center">
+                <Hammer className="w-3 h-3" />
+              </span>
+            ) : (
+              ""
+            )}
           </Link>
         </div>
 
@@ -120,10 +138,17 @@ const Navbar = () => {
 
           <Link
             href="/gift-box-builder"
-            className="navbreak:hidden"
+            className="navbreak:hidden relative"
             onClick={mobileOpen ? () => setMobileOpen(false) : undefined}
           >
             <Gift className="transition-colors duration-300 hover:text-secondaryColor" />
+            {mounted && baseBox ? (
+              <span className="absolute -right-2 top-3 bg-gray-300 text-textColor rounded-full w-5 h-5 flex items-center justify-center">
+                <Hammer className="w-3 h-3" />
+              </span>
+            ) : (
+              ""
+            )}
           </Link>
           <button
             className="navbreak:hidden"
