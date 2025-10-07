@@ -8,33 +8,47 @@ import Link from "next/link";
 import { useGiftStore } from "@/store/giftStore";
 
 const AddToCartBtn = ({ product }: { product: Product }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    h2: "",
+    p: "",
+    linkText: "",
+    link: "",
+  });
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
   const cart = useCartStore((state) => state.cart);
   const addToCart = useCartStore((state) => state.addToCart);
   const baseBox = useGiftStore((state) => state.baseBox);
   const selectedItems = useGiftStore((state) => state.selectedItems);
 
   const addCart = () => {
-    const isSame = cart.find((p) => p.id === product.id);
+    const isSame = cart.some((p) => p.id === product.id);
+
     if (isSame) {
+      setModalContent({
+        h2: "Ovaj Artikl Vam je već u košarici",
+        p: "Za više primjeraka molimo Vas",
+        linkText: "Kontaktirajte nas",
+        link: "/kontakt",
+      });
+
       setIsOpen(true);
       return;
     }
 
-    if (baseBox && baseBox.id === product.id) {
-      alert("Radi napravi neki modal");
-      return;
-    }
-
     if (
-      selectedItems.length > 0 &&
+      (baseBox && baseBox.id === product.id) ||
       selectedItems.some((selectedItem) => selectedItem.id === product.id)
     ) {
-      alert("Radi i ovo");
+      setModalContent({
+        h2: "Ovaj Artikl Vam je u poklonu",
+        p: "Za zasebnu kupnju, maknite ga iz poklona",
+        linkText: "Moj poklon",
+        link: "/gift-box-builder",
+      });
+      setIsOpen(true);
       return;
     }
 
-    // 4️⃣ ako je sve ok, dodaj u košaricu
     addToCart(product);
   };
 
@@ -52,13 +66,14 @@ const AddToCartBtn = ({ product }: { product: Product }) => {
           >
             <X size={16} />
           </button>
-          <h2 className="font-semibold text-lg mt-2">
-            Ovaj artikl Vam je već u košarici
-          </h2>
+          <h2 className="font-semibold text-lg mt-2">{modalContent.h2}</h2>
           <p className="">
-            Za više primjeraka molimo{" "}
-            <Link href="/kontakt" className="text-secondaryColor underline">
-              Kontaktirajte nas
+            {modalContent.p} {""}
+            <Link
+              href={modalContent.link}
+              className="text-secondaryColor underline inline-block w-full"
+            >
+              {modalContent.linkText}
             </Link>
           </p>
         </div>

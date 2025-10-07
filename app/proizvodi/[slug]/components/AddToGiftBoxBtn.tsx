@@ -10,6 +10,12 @@ import React, { useState } from "react";
 const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const [modalContent, setModalContent] = useState({
+    h2: "",
+    p: "",
+    linkText: "",
+    link: "",
+  });
   const baseBox = useGiftStore((state) => state.baseBox);
   const setBaseBox = useGiftStore((state) => state.setBaseBox);
   const setSelectedItems = useGiftStore((state) => state.addItem);
@@ -18,10 +24,26 @@ const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
 
   const handleClick = () => {
     if (cart.some((cartItem) => cartItem.id === product.id)) {
-      setMessage(
-        "Ovaj Artikl Vam je u košarici, ako ga želite pretvoriti u poklon molimo Vas maknite ga iz košarice"
-      );
-      setIsOpen(!isOpen);
+      setModalContent({
+        h2: "Ovaj Artikl Vam je u košarici",
+        p: "Za pretvaranje u poklon maknite ga iz košarice",
+        linkText: "moja košarica",
+        link: "/shopping-cart",
+      });
+      setIsOpen(true);
+      return;
+    }
+
+    const exists = selectedItems.some((item) => item.id === product.id);
+
+    if ((baseBox && baseBox.id === product.id) || exists) {
+      setModalContent({
+        h2: "Ovaj artikl Vam je več u poklonu",
+        p: "Za više primjeraka molimo Vas",
+        linkText: "Kontaktirajte nas",
+        link: "/kontakt",
+      });
+      setIsOpen(true);
       return;
     }
 
@@ -29,7 +51,7 @@ const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
       setBaseBox(product);
     } else if (baseBox === null) {
       setMessage("Prvo odaberite pakiranje za Vaš poklon");
-      setIsOpen(!isOpen);
+      setIsOpen(true);
       return;
     } else if (
       baseBox !== null &&
@@ -37,9 +59,6 @@ const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
     ) {
       setSelectedItems(product);
     }
-
-    console.log(selectedItems);
-    console.log("Ovo je base box:", baseBox);
   };
 
   return (
@@ -56,7 +75,16 @@ const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
           >
             <X size={16} />
           </button>
-          <h2 className="font-semibold text-lg mt-2">{message}</h2>
+          <h2 className="font-semibold text-lg mt-2">{modalContent.h2}</h2>
+          <p className="">
+            {modalContent.p}{" "}
+            <Link
+              href={modalContent.link}
+              className="text-secondaryColor underline inline-block w-full"
+            >
+              {modalContent.linkText}
+            </Link>
+          </p>
         </div>
       )}
     </div>
