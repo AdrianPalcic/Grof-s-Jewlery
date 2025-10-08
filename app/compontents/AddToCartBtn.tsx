@@ -14,7 +14,7 @@ const AddToCartBtn = ({ product }: { product: Product }) => {
     linkText: "",
     link: "",
   });
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
   const cart = useCartStore((state) => state.cart);
   const addToCart = useCartStore((state) => state.addToCart);
   const baseBox = useGiftStore((state) => state.baseBox);
