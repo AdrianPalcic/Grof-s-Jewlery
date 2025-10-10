@@ -15,6 +15,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import CartModal from "./CartModal";
 import { useGiftStore } from "@/store/giftStore";
+import GiftModal from "./GiftModal";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,6 +24,8 @@ const Navbar = () => {
   const lastAdded = useCartStore((state) => state.lastAdded);
   const cart = useCartStore((state) => state.cart);
   const baseBox = useGiftStore((state) => state.baseBox);
+  const giftModalOpen = useGiftStore((state) => state.modalOpen);
+  const giftLastAdded = useGiftStore((state) => state.lastAdded);
 
   const links = [
     {
@@ -150,6 +153,10 @@ const Navbar = () => {
               ""
             )}
           </Link>
+          {giftModalOpen && giftLastAdded && (
+            <GiftModal product={giftLastAdded} />
+          )}
+
           <button
             className="navbreak:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}

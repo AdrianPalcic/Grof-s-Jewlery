@@ -52,8 +52,7 @@ const BuilderFull = () => {
             <h4 className="text-2xl">Vaš total:</h4>
             <p className="text-2xl font-cormorant ">{priceWithDiscount}€</p>
           </div>
-          {/* <AddToCartBtn /> */}
-          <button className="ghost">Dodaj u košaricu</button>
+          <button className="ghost">Checkout</button>
         </div>
       </div>
     </>

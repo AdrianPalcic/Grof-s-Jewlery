@@ -4,11 +4,16 @@ import { Product } from "@/types/types";
 interface GiftStoreState {
   baseBox: Product | null;
   selectedItems: Product[];
+  modalOpen: boolean;
+  lastAdded: Product | null;
 
   setBaseBox: (box: Product) => void;
   addItem: (item: Product) => void;
   removeItem: (itemId: string) => void;
   resetGift: () => void;
+
+  openModal: (item: Product) => void;
+  closeModal: () => void;
 }
 
 const loadGiftFromStorage = (): {
@@ -31,11 +36,15 @@ const saveGiftToStorage = (state: {
 
 export const useGiftStore = create<GiftStoreState>((set, get) => ({
   ...loadGiftFromStorage(),
+  modalOpen: false,
+  lastAdded: null,
 
   setBaseBox: (box) =>
     set(() => {
       const newState = { baseBox: box, selectedItems: [] };
       saveGiftToStorage(newState);
+      get().openModal(box);
+
       return newState;
     }),
 
@@ -47,7 +56,8 @@ export const useGiftStore = create<GiftStoreState>((set, get) => ({
         selectedItems: [...get().selectedItems, item],
       };
       saveGiftToStorage(newState);
-      set(newState);
+      set({ ...newState });
+      get().openModal(item);
     }
   },
 
@@ -65,4 +75,7 @@ export const useGiftStore = create<GiftStoreState>((set, get) => ({
     saveGiftToStorage(newState);
     set(newState);
   },
+
+  openModal: (item) => set({ modalOpen: true, lastAdded: item }),
+  closeModal: () => set({ modalOpen: false, lastAdded: null }),
 }));
