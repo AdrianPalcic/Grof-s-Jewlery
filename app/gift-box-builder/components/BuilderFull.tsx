@@ -2,6 +2,7 @@ import React from "react";
 import BuilderItem from "./BuilderItem";
 import { Product } from "@/types/types";
 import { useGiftStore } from "@/store/giftStore";
+import CheckoutGiftBoxBtn from "./CheckiutGiftBoxBtn";
 
 const BuilderFull = () => {
   const { baseBox, selectedItems } = useGiftStore();
@@ -52,7 +53,7 @@ const BuilderFull = () => {
             <h4 className="text-2xl">Vaš total:</h4>
             <p className="text-2xl font-cormorant ">{priceWithDiscount}€</p>
           </div>
-          <button className="ghost">Checkout</button>
+          <CheckoutGiftBoxBtn />
         </div>
       </div>
     </>

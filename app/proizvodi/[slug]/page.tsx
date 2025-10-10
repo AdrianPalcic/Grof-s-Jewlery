@@ -1,11 +1,11 @@
 import AddToCartBtn from "@/app/compontents/AddToCartBtn";
+import AddToGiftBoxBtn from "@/app/compontents/AddToGiftBoxBtn";
 import ButtonMain from "@/app/compontents/ButtonMain";
 import ItemImages from "@/app/compontents/ItemImages";
 import { getProductByHandle } from "@/lib/shopify/product";
 import { ProductImageConnection } from "@/types/types";
 import Link from "next/link";
 import React from "react";
-import AddToGiftBoxBtn from "./components/AddToGiftBoxBtn";
 
 type PageProps = {
   params: Promise<{ slug: string }>;

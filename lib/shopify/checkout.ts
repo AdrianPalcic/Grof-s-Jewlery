@@ -35,6 +35,5 @@ export async function createCheckout(
     throw new Error("Checkout failed");
   }
 
-  // checkoutUrl se nalazi direktno na cart objektu
   return data.cartCreate.cart.checkoutUrl;
 }
