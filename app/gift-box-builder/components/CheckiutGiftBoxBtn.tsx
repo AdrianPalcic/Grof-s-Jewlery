@@ -19,7 +19,11 @@ const CheckoutGiftBoxBtn = () => {
     ];
 
     try {
-      const checkoutUrl = await createCheckout(lineItems);
+      const checkoutUrl = await createCheckout(
+        lineItems,
+        "Gift box narudžba",
+        "SMYJFZY5AE4H"
+      );
       window.location.href = checkoutUrl;
     } catch (err) {
       console.error("Checkout failed", err);

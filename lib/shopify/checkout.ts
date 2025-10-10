@@ -1,7 +1,9 @@
 import { shopifyGraphql } from "./shopify";
 
 export async function createCheckout(
-  lineItems: { variantId: string; quantity: number }[]
+  lineItems: { variantId: string; quantity: number }[],
+  note?: string,
+  discountCode?: string
 ) {
   const query = `
     mutation cartCreate($input: CartInput!) {
@@ -24,6 +26,8 @@ export async function createCheckout(
         merchandiseId: item.variantId,
         quantity: item.quantity,
       })),
+      discountCodes: discountCode || "",
+      note: note || "",
     },
   };
 

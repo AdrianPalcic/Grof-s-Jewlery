@@ -20,6 +20,7 @@ const BuilderMiniItem = ({ product }: { product: Product }) => {
       </Link>
       <div className="flex flex-col justify-between">
         <p className="text-sm">{product.title}</p>
+        <p className="text-sm">{product.priceRange.minVariantPrice.amount}€</p>
         <span onClick={() => removeItem(product.id)}>
           <Trash
             className="opacity-65 transition-all duration-300 hover:text-secondaryColor hover:opacity-100 cursor-pointer"
