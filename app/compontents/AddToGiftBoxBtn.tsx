@@ -50,7 +50,12 @@ const AddToGiftBoxBtn = ({ product }: { product: Product }) => {
     if (product.productType.includes("pakiranje-poklona")) {
       setBaseBox(product);
     } else if (baseBox === null) {
-      setMessage("Prvo odaberite pakiranje za Vaš poklon");
+      setModalContent({
+        h2: "Prvo odaberite pakiranje za Vaš poklon",
+        p: "Odaberite vrečicu ili kutiju",
+        linkText: "Poklon pakiranja",
+        link: "/kategorije/pakiranje-poklona",
+      });
       setIsOpen(true);
       return;
     } else if (
