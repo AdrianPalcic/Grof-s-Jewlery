@@ -3,6 +3,7 @@
 import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
+import { categories, infoLinks } from "../constants";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -15,23 +16,6 @@ const Footer = () => {
     setSubmitted(true);
     setEmail("");
   };
-
-  const categories = [
-    { text: "Dodaci Poklonima", slug: "dodaci-poklonima" },
-    { text: "Nakit od Papira", slug: "nakit-od-papira" },
-    { text: "Gift Boxes", slug: "gift-boxes" },
-    { text: "Package Design", slug: "package-design" },
-    { text: "Pakiranje Poklona", slug: "pakiranje-poklona" },
-    { text: "Pokloni", slug: "pokloni" },
-  ];
-
-  const infoLinks = [
-    { text: "Kontakt", slug: "kontakt" },
-    { text: "O nama", slug: "onama" },
-    { text: "Politika Privatnosti", slug: "politika-privatnosti" },
-    { text: "Kolačići", slug: "kolacici" },
-    { text: "Uvjeti Korištenja", slug: "uvjeti-koristenja" },
-  ];
 
   return (
     <footer className="flex w-full flex-wrap gap-5 px-4 sm:px-8 mb-4">

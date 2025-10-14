@@ -6,6 +6,7 @@ query getAllCollections($first: Int!) {
         id
         title
         handle
+
         description
         image {
           url

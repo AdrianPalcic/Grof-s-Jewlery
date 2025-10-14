@@ -15,35 +15,17 @@ const page = () => {
       <div className="w-full my-5">
         <p>
           {" "}
-          Više od tri desetljeća, Grof’s Jewelry simbol je vrhunske izrade i
-          bezvremenskog dizajna. Svaki komad pomno je ručno izrađen od strane
-          naših majstora obrtnika, koristeći samo najfinije materijale. Naša
-          predanost izvrsnosti nadilazi samu estetiku – obuhvaća i etičko
-          podrijetlo te održivu praksu, osiguravajući da svaki komad ne samo da
-          ukrašava, već i priča priču o vještini, tradiciji i poštovanju prema
-          materijalu. <br /> <br /> Naša predanost izvrsnosti nadilazi samu
-          estetiku – obuhvaća i etičko podrijetlo te održivu praksu,
-          osiguravajući da svaki komad ne samo da ukrašava, već i priča priču o
-          vještini, tradiciji i poštovanju prema materijalu. Više od tri
-          desetljeća, Grof’s Jewelry simbol je vrhunske izrade i bezvremenskog
-          dizajna. Svaki komad pomno je ručno izrađen od strane naših majstora
-          obrtnika, koristeći samo najfinije materijale. Naša predanost
-          izvrsnosti nadilazi samu estetiku – obuhvaća i etičko podrijetlo te
-          održivu praksu, osiguravajući da svaki komad ne samo da ukrašava, već
-          i priča priču o vještini, tradiciji i poštovanju prema materijalu.{" "}
-          <br /> <br /> Naša predanost izvrsnosti nadilazi samu estetiku –
-          obuhvaća i etičko podrijetlo te održivu praksu, osiguravajući da svaki
-          komad ne samo da ukrašava, već i priča priču o vještini, tradiciji i
-          poštovanju prema materijalu. Više od tri desetljeća, Grof’s Jewelry
-          simbol je vrhunske izrade i bezvremenskog dizajna. Svaki komad pomno
-          je ručno izrađen od strane naših majstora obrtnika, koristeći samo
-          najfinije materijale. Naša predanost izvrsnosti nadilazi samu estetiku
-          – obuhvaća i etičko podrijetlo te održivu praksu, osiguravajući da
-          svaki komad ne samo da ukrašava, već i priča priču o vještini,
-          tradiciji i poštovanju prema materijalu. <br /> <br /> Naša predanost
-          izvrsnosti nadilazi samu estetiku – obuhvaća i etičko podrijetlo te
-          održivu praksu, osiguravajući da svaki komad ne samo da ukrašava, već
-          i priča priču o vještini, tradiciji i poštovanju prema materijalu.
+          Dobrodošli u naš Grof's čarobni svijet unikatnih poklona i poklon
+          pakiranja u kojem počinjemo divne priče o poklanjanju...Vi nastavljate
+          Grof's priče i prenosite ih dalje... Svaki poklon, komad nakita,
+          poklon kutiju ili zahvalnicu kreiramo i ručno izrađujemo iz strasti,
+          vođeni zahvalnošću za svaki novi dan koji je pred nama... Grof's priča
+          je priča o prijateljstvu, o zahvalnosti, ljubavi i povezanosti u koju
+          radosno uključujemo svakog od Vas Poklanjajmo od srca, <br />{" "}
+          ostavljajmo vlastite tragove svakim poklonom koji darujemo i Spread
+          love and light,
+          <br /> Love,
+          <br /> Grof's Jewelry
         </p>
       </div>
       <CTA text="kontaktirajte nas!" link="kontakt" />

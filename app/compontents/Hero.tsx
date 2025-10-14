@@ -15,16 +15,20 @@ const Hero = () => {
   }, []);
 
   const categories = [
-    { text: "Nakit od Papira", slug: "nakit-od-papira", img: "/1.png" },
+    { text: "Nakit od Papira", slug: "nakit-od-papira", img: "/use2.jpeg" },
     {
       text: "Dodaci Poklonima",
       slug: "dodaci-poklonima",
       img: "/hero-home.png",
     },
-    { text: "Gift Boxes", slug: "gift-boxes", img: "/2.png" },
-    { text: "Package Design", slug: "package-design", img: "/3.png" },
-    { text: "Pakiranje Poklona", slug: "pakiranje-poklona", img: "/4.png" },
-    { text: "Pokloni", slug: "pokloni", img: "/5.png" },
+    { text: "Gift Boxes", slug: "gift-boxes", img: "/use1.jpg" },
+    {
+      text: "Grof's corporate collection",
+      slug: "grofs-corporate-collection",
+      img: "/use5.jpg",
+    },
+    { text: "Pakiranje Poklona", slug: "pakiranje-poklona", img: "/use4.jpg" },
+    { text: "Unikatni pokloni", slug: "unikatni-pokloni", img: "/use3.jpg" },
   ];
 
   useEffect(() => {

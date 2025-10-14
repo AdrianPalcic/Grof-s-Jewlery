@@ -9,8 +9,10 @@ const page = async () => {
   const subCategories = [
     { text: "Čestitke", slug: "cestitke" },
     { text: "Zahvalnice", slug: "zahvalnice" },
-    { text: "Inspirativne kartice", slug: "inspirativne-kartice" },
-    { text: "Knjižne oznake", slug: "knjizne-oznake" },
+    {
+      text: "Dekoracije kutija i vrečica",
+      slug: "dekoracije-kutija-i-vrecica",
+    },
   ];
 
   const subcategoriesWithProducts = await Promise.all(

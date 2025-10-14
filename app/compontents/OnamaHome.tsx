@@ -11,16 +11,13 @@ const OnamaHome = () => {
           Priča utkana u svaki detalj
         </h2>
         <p className="text-xl text-white mb-4">
-          Više od tri desetljeća, Grof’s Jewelry simbol je vrhunske izrade i
-          bezvremenskog dizajna. Svaki komad pomno je ručno izrađen od strane
-          naših majstora obrtnika, koristeći samo najfinije materijale. Naša
-          predanost izvrsnosti nadilazi samu estetiku – obuhvaća i etičko
-          podrijetlo te održivu praksu, osiguravajući da svaki komad ne samo da
-          ukrašava, već i priča priču o vještini, tradiciji i poštovanju prema
-          materijalu. <br /> <br /> Naša predanost izvrsnosti nadilazi samu
-          estetiku – obuhvaća i etičko podrijetlo te održivu praksu,
-          osiguravajući da svaki komad ne samo da ukrašava, već i priča priču o
-          vještini, tradiciji i poštovanju prema materijalu.
+          Dobrodošli u naš Grof's čarobni svijet unikatnih poklona i poklon
+          pakiranja u kojem počinjemo divne priče o poklanjanju...Vi nastavljate
+          Grof's priče i prenosite ih dalje... Svaki poklon, komad nakita,
+          poklon kutiju ili zahvalnicu kreiramo i ručno izrađujemo iz strasti,
+          vođeni zahvalnošću za svaki novi dan koji je pred nama... Grof's priča
+          je priča o prijateljstvu, o zahvalnosti, ljubavi i povezanosti u koju
+          radosno uključujemo svakog od Vas
         </p>
         <Link href={"/onama"} className="flex justify-center sm:justify-normal">
           <ButtonSecondary text="Naša Priča" />

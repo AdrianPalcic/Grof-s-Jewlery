@@ -7,9 +7,17 @@ const page = async () => {
   const categorySlug = "package-design";
 
   const subCategories = [
-    { text: "Handcrafted vizitke", slug: "handcrafted-vizitke" },
-    { text: "Poklon paketići", slug: "poklon-paketici" },
-    { text: "Zahvalnice za goste", slug: "zahvalnice-za-goste" },
+    { text: "Unique business kartice", slug: "unique-business-kartice" },
+    { text: "Thank you kartice", slug: "thank-you-kartice" },
+    { text: "Pozivnice i zahvalnice", slug: "pozivnice-i-zahvalnice" },
+    { text: "Kutije za proizvode", slug: "kutije-za-proizvode" },
+    { text: "Vrečice za proizvode", slug: "vrecice-za-proizvode" },
+    {
+      text: "Dekoriranje pakirne ambalaže",
+      slug: "dekoriranje-pakirne-ambalaze",
+    },
+    { text: "Znak pažnje za goste", slug: "znak-paznje-za-goste" },
+    { text: "Korporativni gift boxes", slug: "korporativni-gift-boxes" },
   ];
 
   const subcategoriesWithProducts = await Promise.all(

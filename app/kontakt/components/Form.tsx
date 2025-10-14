@@ -28,21 +28,6 @@ const Form = () => {
     }));
   };
 
-  // Funkcija za submit
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Podaci iz forme:", input);
-
-    setInput({
-      ime: "",
-      email: "",
-      poruka: "",
-      prihvacamUvjete: false,
-    });
-
-    router.push("/hvala");
-  };
-
   return (
     <div
       id="classic-form"
@@ -54,7 +39,11 @@ const Form = () => {
         nam se putem obrasca.
       </p>
 
-      <form className="flex flex-col gap-3 mt-4" onSubmit={handleSubmit}>
+      <form
+        action={"https://formspree.io/f/xeorvqwz"}
+        className="flex flex-col gap-3 mt-4"
+        method="POST"
+      >
         <label
           htmlFor="ime"
           className="flex flex-col gap-1 font-cormorant text-lg text-textColor font-light"

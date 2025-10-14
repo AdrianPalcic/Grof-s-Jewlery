@@ -17,7 +17,7 @@ const Categories = () => {
           <Link href="/kategorije/nakit-od-papira">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
-                src="/kat1.png"
+                src="/use2.jpeg"
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
@@ -29,17 +29,17 @@ const Categories = () => {
             </div>
           </Link>
 
-          <Link href="/kategorije/pokloni">
+          <Link href="/kategorije/unikatni-pokloni">
             <div className="relative w-full  h-[250px] sm:h-[250px]  overflow-hidden">
               <img
-                src="/kat2.png"
+                src="/use6.jpg"
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
-                Pokloni
+                Unikatni Pokloni
               </h3>
             </div>
           </Link>
@@ -47,7 +47,7 @@ const Categories = () => {
           <Link href="/kategorije/pakiranje-poklona">
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
               <img
-                src="/kat3.png"
+                src="/use5.jpg"
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
@@ -64,7 +64,7 @@ const Categories = () => {
           <Link href="/kategorije/dodaci-poklonima">
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
               <img
-                src="/kat4.png"
+                src="/use4.jpg"
                 loading="lazy"
                 alt=""
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
@@ -79,7 +79,7 @@ const Categories = () => {
           <Link href="/kategorije/gift-boxes">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
-                src="/kat5.png"
+                src="/use1.jpg"
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
@@ -91,17 +91,17 @@ const Categories = () => {
             </div>
           </Link>
 
-          <Link href="/kategorije/package-design">
+          <Link href="/kategorije/grofs-corporate-collection">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
-                src="/ant.jpeg"
+                src="/use3.jpg"
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
-                Package Design
+                Grof&apos;s corporate collection
               </h3>
             </div>
           </Link>

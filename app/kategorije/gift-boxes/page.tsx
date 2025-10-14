@@ -6,7 +6,9 @@ import { getProductsByTag } from "@/lib/shopify/productsByTag";
 const page = async () => {
   const categorySlug = "gift-boxes";
   const subCategories = [
-    { text: "Mjesečni gift boxevi", slug: "mjesecni-gift-boxevi" },
+    { text: "Zimski gift boxevi", slug: "zimski-gift-boxevi" },
+    { text: "Jesenski gift boxevi", slug: "jesenski-gift-boxevi" },
+    { text: "Božićni gift boxevi", slug: "bozicni-gift-boxevi" },
   ];
 
   const subcategoriesWithProducts = await Promise.all(

@@ -1,21 +1,13 @@
 "use client";
 import { useCartStore } from "@/store/cartStore";
-import {
-  ChevronDown,
-  ShoppingCart,
-  Menu,
-  X,
-  Gift,
-  Hammer,
-  HammerIcon,
-  ToolCase,
-} from "lucide-react";
+import { ChevronDown, ShoppingCart, Menu, X, Gift, Hammer } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import CartModal from "./CartModal";
 import { useGiftStore } from "@/store/giftStore";
 import GiftModal from "./GiftModal";
+import { links } from "../constants";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,67 +18,6 @@ const Navbar = () => {
   const baseBox = useGiftStore((state) => state.baseBox);
   const giftModalOpen = useGiftStore((state) => state.modalOpen);
   const giftLastAdded = useGiftStore((state) => state.lastAdded);
-
-  const links = [
-    {
-      text: "Nakit od papira",
-      slug: "nakit-od-papira",
-      links: [
-        { text: "Naušnice i ukosnice", slug: "nausnice-ukosnice" },
-        { text: "Broševi", slug: "brosevi" },
-        { text: "Prstenje", slug: "prstenje" },
-        { text: "Ukosnice", slug: "ukosnice" },
-        { text: "Ogrlice", slug: "ogrlice" },
-      ],
-    },
-    {
-      text: "Pokloni",
-      slug: "pokloni",
-      links: [
-        { text: "Okviri za slike", slug: "okviri-za-slike" },
-        { text: "Mala slikarska platna", slug: "mala-slikarska-platna" },
-        { text: "Dekorativne vaze", slug: "dekorativne-vaze" },
-        { text: "Dekorativne teglice", slug: "dekorativne-teglice" },
-        { text: "Magneti", slug: "magneti" },
-        { text: "Notesi", slug: "notesi" },
-        { text: "Drvene kutije", slug: "drvene-kutije" },
-        { text: "Dekoracije za dom", slug: "dekoracije-za-dom" },
-        { text: "Mikrobuketi", slug: "mikrobuketi" },
-      ],
-    },
-    {
-      text: "Pakiranje poklona",
-      slug: "pakiranje-poklona",
-      links: [
-        { text: "Kutije za poklone", slug: "kutije-za-poklone" },
-        { text: "Vrečice za poklone", slug: "vrecice-za-poklone" },
-      ],
-    },
-    {
-      text: "Dodaci poklonima",
-      slug: "dodaci-poklonima",
-      links: [
-        { text: "Čestitke", slug: "cestitke" },
-        { text: "Zahvalnice", slug: "zahvalnice" },
-        { text: "Inspirativne kartice", slug: "inspirativne-kartice" },
-        { text: "Knjižne oznake", slug: "knjizne-oznake" },
-      ],
-    },
-    {
-      text: "Gift Boxes",
-      slug: "gift-boxes",
-      links: [{ text: "Mjesečni gift boxevi", slug: "mjesecni-gift-boxevi" }],
-    },
-    {
-      text: "Package Design",
-      slug: "package-design",
-      links: [
-        { text: "Handcrafted vizitke", slug: "handcrafted-vizitke" },
-        { text: "Poklon paketići", slug: "poklon-paketici" },
-        { text: "Zahvalnice za goste", slug: "zahvalnice-za-goste" },
-      ],
-    },
-  ];
 
   useEffect(() => {
     setMounted(true);

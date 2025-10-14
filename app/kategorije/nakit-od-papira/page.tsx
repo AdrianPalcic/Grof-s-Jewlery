@@ -7,11 +7,11 @@ const page = async () => {
   const categorySlug = "nakit-od-papira";
 
   const subCategories = [
-    { text: "Naušnice i ukosnice", slug: "nausnice-ukosnice" },
+    { text: "Naušnice", slug: "nausnice" },
     { text: "Broševi", slug: "brosevi" },
     { text: "Prstenje", slug: "prstenje" },
-    { text: "Ukosnice", slug: "ukosnice" },
     { text: "Ogrlice", slug: "ogrlice" },
+    { text: "Grof's special edition", slug: "grof-special-edition" },
   ];
 
   const subcategoriesWithProducts = await Promise.all(

@@ -13,7 +13,7 @@ const KolekcijaHome = ({ collection }: { collection: Partial<Collection> }) => {
         <p className="text-xl text-black mb-4">{collection.description}</p>
         <Link
           href={`/kolekcije/${collection.handle}`}
-          className="flex justify-center sm:justify-normal"
+          className="flex justify-center sm:justify-normal w-fit"
         >
           <ButtonMain text="Pregledajte Proizvode" />
         </Link>

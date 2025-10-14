@@ -8,14 +8,19 @@ const page = async () => {
 
   const subCategories = [
     { text: "Okviri za slike", slug: "okviri-za-slike" },
-    { text: "Mala slikarska platna", slug: "mala-slikarska-platna" },
-    { text: "Dekorativne vaze", slug: "dekorativne-vaze" },
-    { text: "Dekorativne teglice", slug: "dekorativne-teglice" },
+    {
+      text: "Dekorativne vaze i teglice",
+      slug: "dekorativne-vaze-i-teglice",
+    },
+    {
+      text: "Dekorativna slikarska platna",
+      slug: "dekorativne-slikarska-platna",
+    },
+    { text: "Dekoracije za dom", slug: "dekoracije-za-dom" },
     { text: "Magneti", slug: "magneti" },
     { text: "Notesi", slug: "notesi" },
-    { text: "Drvene kutije", slug: "drvene-kutije" },
-    { text: "Dekoracije za dom", slug: "dekoracije-za-dom" },
-    { text: "Mikrobuketi", slug: "mikrobuketi" },
+    { text: "Drvene škrinjice", slug: "drvene-skrinjice" },
+    { text: "Knjižne oznake", slug: "knjizne-oznake" },
   ];
 
   const subcategoriesWithProducts = await Promise.all(
