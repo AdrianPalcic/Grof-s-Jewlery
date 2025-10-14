@@ -1,5 +1,5 @@
 import ButtonMain from "@/app/compontents/ButtonMain";
-import { LucideIcon, Mail, Phone } from "lucide-react";
+import { contactData } from "@/app/constants";
 import Link from "next/link";
 import React from "react";
 
@@ -10,24 +10,6 @@ type Link = {
 };
 
 const SpecialFrom = () => {
-  const contactData = [
-    {
-      icon: <Phone />,
-      title: "Telefon",
-      value: "+385976814488",
-    },
-    {
-      icon: <Mail />,
-      title: "Email",
-      value: "grofsjewlery@gmail.com",
-    },
-    {
-      icon: <Phone />,
-      title: "Whatsapp",
-      value: "+385976814488",
-    },
-  ];
-
   return (
     <div
       id="call-us"

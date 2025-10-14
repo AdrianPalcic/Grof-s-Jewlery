@@ -1,3 +1,5 @@
+import { Mail, Phone } from "lucide-react";
+
 export const links = [
   {
     text: "Nakit od papira",
@@ -93,4 +95,22 @@ export const infoLinks = [
   { text: "Politika Privatnosti", slug: "politika-privatnosti" },
   { text: "Kolačići", slug: "kolacici" },
   { text: "Uvjeti Korištenja", slug: "uvjeti-koristenja" },
+];
+
+export const contactData = [
+  {
+    icon: <Phone />,
+    title: "Telefon",
+    value: "+385976814488",
+  },
+  {
+    icon: <Mail />,
+    title: "Email",
+    value: "grofsjewlery@gmail.com",
+  },
+  {
+    icon: <Phone />,
+    title: "Whatsapp",
+    value: "+385976814488",
+  },
 ];
