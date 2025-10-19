@@ -6,6 +6,7 @@ import CartFull from "./components/CartFull";
 import { useCartStore } from "@/store/cartStore";
 import Loader from "../compontents/Loader";
 import { Product } from "@/types/types";
+import toast from "react-hot-toast";
 
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
@@ -22,6 +23,7 @@ const Page = () => {
     const unavailable = cart.filter((p) => p.availableForSale === false);
     if (unavailable.length > 0) {
       unavailable.forEach((item) => removeItem(item.id));
+      toast.error("Neki od vaših artikala su se rasprodali");
     }
 
     setMounted(true);

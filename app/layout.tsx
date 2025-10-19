@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./compontents/Navbar";
 import Footer from "./compontents/Footer";
+import { Toaster } from "react-hot-toast";
 
 const cinzel = localFont({
   src: [
@@ -68,6 +69,7 @@ export default async function RootLayout({
       >
         <Navbar />
         {children}
+        <Toaster position="top-center" reverseOrder={false} />
         <Footer />
       </body>
     </html>

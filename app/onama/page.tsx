@@ -15,17 +15,17 @@ const page = () => {
       <div className="w-full my-5">
         <p>
           {" "}
-          Dobrodošli u naš Grof's čarobni svijet unikatnih poklona i poklon
+          Dobrodošli u naš Grof&apos;s čarobni svijet unikatnih poklona i poklon
           pakiranja u kojem počinjemo divne priče o poklanjanju...Vi nastavljate
           Grof's priče i prenosite ih dalje... Svaki poklon, komad nakita,
           poklon kutiju ili zahvalnicu kreiramo i ručno izrađujemo iz strasti,
-          vođeni zahvalnošću za svaki novi dan koji je pred nama... Grof's priča
-          je priča o prijateljstvu, o zahvalnosti, ljubavi i povezanosti u koju
-          radosno uključujemo svakog od Vas Poklanjajmo od srca, <br />{" "}
+          vođeni zahvalnošću za svaki novi dan koji je pred nama... Grof&apos;s
+          priča je priča o prijateljstvu, o zahvalnosti, ljubavi i povezanosti u
+          koju radosno uključujemo svakog od Vas Poklanjajmo od srca, <br />{" "}
           ostavljajmo vlastite tragove svakim poklonom koji darujemo i Spread
           love and light,
           <br /> Love,
-          <br /> Grof's Jewelry
+          <br /> Grof&apos;s Jewelry
         </p>
       </div>
       <CTA text="kontaktirajte nas!" link="kontakt" />

@@ -8,7 +8,6 @@ import Loader from "../compontents/Loader";
 
 const Page = () => {
   const giftBox = useGiftStore((state) => state.baseBox);
-  const selecteditems = useGiftStore((state) => state.selectedItems);
   const resetGift = useGiftStore((state) => state.resetGift);
   const [mounted, setMounted] = useState(false);
 
