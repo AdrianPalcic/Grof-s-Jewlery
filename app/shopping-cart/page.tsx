@@ -13,7 +13,7 @@ const Page = () => {
   const cart = useCartStore((state) => state.cart);
   const removeItem = useCartStore((state) => state.removeFromCart);
   const [filtered, setFiltered] = useState<Product[]>([]);
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<Boolean>(false);
 
   useEffect(() => {
     const availableProducts = cart.filter(

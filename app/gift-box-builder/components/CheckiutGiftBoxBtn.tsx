@@ -1,12 +1,17 @@
+"use client";
+
 import { useGiftStore } from "@/store/giftStore";
 import { createCheckout } from "@/lib/shopify/checkout";
+import { useState } from "react";
 
 const CheckoutGiftBoxBtn = () => {
+  const [loading, setLoading] = useState<Boolean>(false);
   const baseBox = useGiftStore((state) => state.baseBox);
   const selectedItems = useGiftStore((state) => state.selectedItems);
 
   const handleCheckout = async () => {
     if (!baseBox) return;
+    setLoading(true);
 
     // Kreiraj lineItems
     const lineItems = [
@@ -27,12 +32,13 @@ const CheckoutGiftBoxBtn = () => {
       window.location.href = checkoutUrl;
     } catch (err) {
       console.error("Checkout failed", err);
+      setLoading(false);
     }
   };
 
   return (
     <button onClick={handleCheckout} className="ghost">
-      Checkout
+      {loading ? <span>Učitavanje...</span> : <span>Checkout</span>}
     </button>
   );
 };
