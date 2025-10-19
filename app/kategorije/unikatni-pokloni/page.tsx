@@ -3,8 +3,37 @@ import SubcategorySection from "../components/SubcategorySection";
 import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
+export const metadata = {
+  title: "Grof's Jewlery | Unikatni Pokloni",
+  description:
+    "Otkrijte Grof's Jewlery – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
+  openGraph: {
+    title: "Grof's Jewlery | Unikatni Pokloni",
+    description:
+      "Otkrijte Grof's Jewlery – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
+    url: "https://grof-s-jewlery.vercel.app/kategorije/unikatni-pokloni",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Unikatni Pokloni",
+    description:
+      "Otkrijte Grof's Jewlery – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = async () => {
-  const categorySlug = "pokloni";
+  const categorySlug = "Unikatni Pokloni";
 
   const subCategories = [
     { text: "Okviri za slike", slug: "okviri-za-slike" },
@@ -33,7 +62,7 @@ const page = async () => {
   return (
     <main className="mx-auto mt-10 mb-20 px-4 sm:px-10">
       <h1 className="text-3xl sm:text-5xl mb-10">
-        <span className="acc">Pokloni</span>
+        Unikatni <span className="acc">Pokloni</span>
       </h1>
       {subcategoriesWithProducts.map((subcategory) => (
         <SubcategorySection

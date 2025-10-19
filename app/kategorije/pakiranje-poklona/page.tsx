@@ -3,6 +3,35 @@ import SubcategorySection from "../components/SubcategorySection";
 import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
+export const metadata = {
+  title: "Grof's Jewlery | Pakiranje Poklona",
+  description:
+    "Otkrijte Grof's Jewlery – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
+  openGraph: {
+    title: "Grof's Jewlery | Pakiranje Poklona",
+    description:
+      "Otkrijte Grof's Jewlery – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
+    url: "https://grof-s-jewlery.vercel.app/kategorije/pakiranje-poklona",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Pakiranje Poklona",
+    description:
+      "Otkrijte Grof's Jewlery – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = async () => {
   const categorySlug = "pakiranje-poklona";
 

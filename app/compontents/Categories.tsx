@@ -18,7 +18,7 @@ const Categories = () => {
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
                 src="/use2.jpeg"
-                alt=""
+                alt="Nakit od Papira"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
@@ -33,7 +33,7 @@ const Categories = () => {
             <div className="relative w-full  h-[250px] sm:h-[250px]  overflow-hidden">
               <img
                 src="/use6.jpg"
-                alt=""
+                alt="Unikatni Pokloni"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
@@ -48,7 +48,7 @@ const Categories = () => {
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
               <img
                 src="/use5.jpg"
-                alt=""
+                alt="Pakiranje Poklona"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
@@ -66,7 +66,7 @@ const Categories = () => {
               <img
                 src="/use4.jpg"
                 loading="lazy"
-                alt=""
+                alt="Dodaci Poklonima"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
@@ -80,7 +80,7 @@ const Categories = () => {
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
                 src="/use1.jpg"
-                alt=""
+                alt="Gift box "
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />
@@ -95,7 +95,7 @@ const Categories = () => {
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <img
                 src="/use3.jpg"
-                alt=""
+                alt="Grof's Corporate Collection"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
               />

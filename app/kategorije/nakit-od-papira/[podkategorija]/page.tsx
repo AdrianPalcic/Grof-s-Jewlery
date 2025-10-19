@@ -9,6 +9,49 @@ type PageProps = {
   params: Promise<{ podkategorija: string }>;
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { podkategorija: string };
+}) {
+  const { podkategorija } = params;
+
+  function formatName(slug: string) {
+    return slug
+      .split("-")
+      .map((w) => w[0].toUpperCase() + w.slice(1))
+      .join(" ");
+  }
+
+  const name = formatName(podkategorija);
+
+  return {
+    title: `Grof's Jewlery | ${name}`,
+    description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
+    openGraph: {
+      title: `Grof's Jewlery | ${name}`,
+      description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
+      url: `https://grof-s-jewlery.vercel.app/kategorije/nakit-od-papira/${podkategorija}`,
+      siteName: "Grof's Jewlery",
+      images: [
+        {
+          url: "/hero-home.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: "hr_HR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Grof's Jewlery | ${name}`,
+      description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
+      images: ["/hero-home.png"],
+    },
+  };
+}
+
 export default async function Page({ params }: PageProps) {
   const { podkategorija } = await params;
 

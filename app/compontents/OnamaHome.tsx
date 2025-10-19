@@ -26,7 +26,7 @@ const OnamaHome = () => {
       <div className="flex-1 w-full">
         <img
           src="/onamaph.png"
-          alt="Najbolje kolekcije papirnatih nakita"
+          alt="Vlasnici Grof's jewlery"
           className="w-full h-full object-cover max-h-[700px]"
         />
       </div>

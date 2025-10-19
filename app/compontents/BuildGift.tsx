@@ -10,7 +10,7 @@ const BuildGift = () => {
           {/* Slika */}
           <img
             src="/one.png"
-            alt="Poklon pozadina"
+            alt="Izradite svoj poklon papirnatih nakita"
             loading="lazy"
             className="w-full h-[50vh] object-cover min-h-[400px]"
           />

@@ -2,6 +2,35 @@ import Link from "next/link";
 import React from "react";
 import ButtonMain from "../compontents/ButtonMain";
 
+export const metadata = {
+  title: "Grof's Jewlery | Hvala na poruci",
+  description:
+    "Hvala Vam na poruci! Javit ćemo Vam se u najkraćem roku. Nastavite pregledavati naš webshop.",
+  openGraph: {
+    title: "Grof's Jewlery | Hvala na poruci",
+    description:
+      "Hvala Vam na poruci! Javit ćemo Vam se u najkraćem roku. Nastavite pregledavati naš webshop.",
+    url: "https://grof-s-jewlery.vercel.app/hvala",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Hvala na poruci",
+    description:
+      "Hvala Vam na poruci! Javit ćemo Vam se u najkraćem roku. Nastavite pregledavati naš webshop.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = () => {
   return (
     <div className="w-full h-dvh flex flex-col items-center justify-center">

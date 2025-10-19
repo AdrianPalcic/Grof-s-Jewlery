@@ -3,6 +3,35 @@ import SubcategorySection from "../components/SubcategorySection";
 import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
+export const metadata = {
+  title: "Grof's Jewlery | Nakit od Papira",
+  description:
+    "Otkrijte Grof's Jewlery – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
+  openGraph: {
+    title: "Grof's Jewlery | Nakit od Papira",
+    description:
+      "Otkrijte Grof's Jewlery – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
+    url: "https://grof-s-jewlery.vercel.app/kategorije/nakit-od-papira",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Nakit od Papira",
+    description:
+      "Otkrijte Grof's Jewlery – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = async () => {
   const categorySlug = "nakit-od-papira";
 

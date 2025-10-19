@@ -3,6 +3,35 @@ import SubcategorySection from "../components/SubcategorySection";
 import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
+export const metadata = {
+  title: "Grof's Jewlery | Gift Boxes",
+  description:
+    "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewlery webshopu.",
+  openGraph: {
+    title: "Grof's Jewlery | Gift Boxes",
+    description:
+      "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewlery webshopu.",
+    url: "https://grof-s-jewlery.vercel.app/kategorije/gift-boxes",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Gift Boxes",
+    description:
+      "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewlery webshopu.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = async () => {
   const categorySlug = "gift-boxes";
   const subCategories = [

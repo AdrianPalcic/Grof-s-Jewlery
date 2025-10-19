@@ -1,5 +1,28 @@
 import React from "react";
 
+export const metadata = {
+  title: "Grof's Jewlery | Politika privatnosti",
+  description:
+    "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewlery prikuplja, koristi i štiti vaše podatke.",
+  openGraph: {
+    title: "Grof's Jewlery | Politika privatnosti",
+    description:
+      "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewlery prikuplja, koristi i štiti vaše podatke.",
+    url: "https://grof-s-jewlery.vercel.app/politika-privatnosti",
+    siteName: "Grof's Jewlery",
+    images: [{ url: "/hero-home.png", width: 1200, height: 630 }],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Politika privatnosti",
+    description:
+      "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewlery prikuplja, koristi i štiti vaše podatke.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const PrivacyPolicyPage = () => {
   return (
     <section className="max-w-4xl mx-auto p-6 sm:p-10">

@@ -6,6 +6,53 @@ import { getAllCollections } from "@/lib/shopify/collections";
 import { Image } from "@/types/types";
 import { Hero } from "./components/Hero";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { kolekcija: string };
+}) {
+  const { kolekcija } = params;
+
+  const collections = await getAllCollections(2);
+  const collection = collections.find((c) => c.handle === "jesenska-kolekcija");
+
+  const title = collection?.title
+    ? `${collection.title} | Grof's Jewlery`
+    : "Grof's Jewlery | Kolekcija";
+
+  const description = collection?.description
+    ? collection.description
+    : "Otkrijte naše proizvode u kolekciji.";
+
+  const image = collection?.image?.url || "/collection.png";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://grof-s-jewlery.vercel.app/kolekcije/${kolekcija}`,
+      siteName: "Grof's Jewlery",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: "hr_HR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
+
 type PageProps = {
   params: Promise<{ kolekcija: string }>;
 };

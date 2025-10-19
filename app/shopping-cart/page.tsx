@@ -7,6 +7,7 @@ import { useCartStore } from "@/store/cartStore";
 import Loader from "../compontents/Loader";
 import { Product } from "@/types/types";
 import toast from "react-hot-toast";
+import Head from "next/head";
 
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
@@ -32,9 +33,37 @@ const Page = () => {
   if (!mounted) return <Loader />;
 
   return (
-    <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
-      {cart.length === 0 ? <CartEmpty /> : <CartFull products={filtered} />}
-    </section>
+    <>
+      <Head>
+        <title>Grof's Jewlery | Shopping Cart</title>
+        <meta
+          name="description"
+          content="Pregledajte svoj shopping cart i upravljajte odabranim proizvodima u Grof's Jewlery webshopu."
+        />
+        <meta property="og:title" content="Grof's Jewlery | Shopping Cart" />
+        <meta
+          property="og:description"
+          content="Pregledajte svoj shopping cart i upravljajte odabranim proizvodima u Grof's Jewlery webshopu."
+        />
+        <meta
+          property="og:url"
+          content="https://grof-s-jewlery.vercel.app/shopping-cart"
+        />
+        <meta property="og:site_name" content="Grof's Jewlery" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/hero-home.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Grof's Jewlery | Shopping Cart" />
+        <meta
+          name="twitter:description"
+          content="Pregledajte svoj shopping cart i upravljajte odabranim proizvodima u Grof's Jewlery webshopu."
+        />
+        <meta name="twitter:image" content="/hero-home.png" />
+      </Head>
+      <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
+        {cart.length === 0 ? <CartEmpty /> : <CartFull products={filtered} />}
+      </section>
+    </>
   );
 };
 

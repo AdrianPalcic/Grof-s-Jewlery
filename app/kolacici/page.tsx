@@ -1,5 +1,34 @@
 import React from "react";
 
+export const metadata = {
+  title: "Grof's Jewlery | Politika kolačića",
+  description:
+    "Saznajte kako Grof's Jewlery webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
+  openGraph: {
+    title: "Grof's Jewlery | Politika kolačića",
+    description:
+      "Saznajte kako Grof's Jewlery webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
+    url: "https://grof-s-jewlery.vercel.app/kolacici",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Politika kolačića",
+    description:
+      "Saznajte kako Grof's Jewlery webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = () => {
   return (
     <section className="max-w-4xl mx-auto p-6 sm:p-10">
@@ -41,18 +70,18 @@ const page = () => {
       </h2>
       <p className="mb-4">
         Prilikom prvog posjeta webshopu, prikazat će vam se banner s opcijom
-        “Prihvaćam sve”. Klikom na taj gumb prihvaćate korištenje kolačića. Od
-        tog trenutka banner se neće ponovno prikazivati jer se vaša odluka
-        pohranjuje u pregledniku.
+        &quot;Prihvaćam sve&quot;. Klikom na taj gumb prihvaćate korištenje
+        kolačića. Od tog trenutka banner se neće ponovno prikazivati jer se vaša
+        odluka pohranjuje u pregledniku.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
         4. Upravljanje kolačićima
       </h2>
       <p className="mb-4">
-        S obzirom da koristimo samo gumb “Prihvaćam sve”, korisnik ne mijenja
-        pojedinačne vrste kolačića. Stranica funkcionira samo s obaveznim i
-        prihvaćenim kolačićima.
+        S obzirom da koristimo samo gumb &quot;Prihvaćam sve&quot;, korisnik ne
+        mijenja pojedinačne vrste kolačića. Stranica funkcionira samo s
+        obaveznim i prihvaćenim kolačićima.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">5. Kontakt</h2>

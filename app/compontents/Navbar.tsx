@@ -45,7 +45,7 @@ const Navbar = () => {
         >
           <Image
             src="/logo.jpg"
-            alt="logo"
+            alt="Grofs Jewlery logo"
             width={60}
             height={60}
             className="mix-blend-darken"

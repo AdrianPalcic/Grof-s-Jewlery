@@ -1,6 +1,29 @@
 import React from "react";
 import CTA from "../compontents/CTA";
 
+export const metadata = {
+  title: "Grof's Jewlery | O nama",
+  description:
+    "Dobrodošli u Grof's Jewlery – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
+  openGraph: {
+    title: "Grof's Jewlery | O nama",
+    description:
+      "Dobrodošli u Grof's Jewlery – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
+    url: "https://grof-s-jewlery.vercel.app/onama",
+    siteName: "Grof's Jewlery",
+    images: [{ url: "/kontakt.png", width: 1200, height: 630 }],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | O nama",
+    description:
+      "Dobrodošli u Grof's Jewlery – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
+    images: ["/kontakt.png"],
+  },
+};
+
 const page = () => {
   return (
     <main className="px-4 sm:px-10 mx-auto mt-10 mb-20 ">

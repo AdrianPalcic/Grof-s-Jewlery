@@ -22,7 +22,7 @@ const ItemImages = ({ images }: { images: Image[] }) => {
           <img
             key={idx}
             src={img.url}
-            alt="Papirnata Naušnica"
+            alt={img.altText}
             className={`flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover  cursor-pointer transition-opacity duration-300 hover:opacity-70 ${
               activeImg === img ? "ring-2 ring-secondaryColor" : ""
             }`}

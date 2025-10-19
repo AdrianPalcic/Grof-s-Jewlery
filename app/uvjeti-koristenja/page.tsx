@@ -1,5 +1,34 @@
 import React from "react";
 
+export const metadata = {
+  title: "Grof's Jewlery | Uvjeti korištenja",
+  description:
+    "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
+  openGraph: {
+    title: "Grof's Jewlery | Uvjeti korištenja",
+    description:
+      "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
+    url: "https://grof-s-jewlery.vercel.app/uvjeti-koristenja",
+    siteName: "Grof's Jewlery",
+    images: [
+      {
+        url: "/hero-home.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grof's Jewlery | Uvjeti korištenja",
+    description:
+      "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
+    images: ["/hero-home.png"],
+  },
+};
+
 const page = () => {
   return (
     <section className="max-w-4xl mx-auto p-6 sm:p-10">
