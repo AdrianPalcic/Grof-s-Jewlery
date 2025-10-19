@@ -2,7 +2,7 @@
 
 import { ChevronDown, ChevronUp, Trash } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BuilderMiniItem from "./BuilderMiniItem";
 import { Product } from "@/types/types";
 import { useGiftStore } from "@/store/giftStore";
@@ -10,7 +10,29 @@ import { useGiftStore } from "@/store/giftStore";
 const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
   const [isVisible, setIsVisible] = useState(false);
   const selectedItems = useGiftStore((state) => state.selectedItems);
+  const removeItem = useGiftStore((state) => state.removeItem);
+  const [filtered, setFiltered] = useState<Product[]>([]);
   const resetGift = useGiftStore((state) => state.resetGift);
+
+  useEffect(() => {
+    if (selectedItems.length === 0) {
+      setFiltered([]);
+      return;
+    }
+
+    const availableProduct = selectedItems.filter(
+      (item) => item.availableForSale === true
+    );
+    setFiltered(availableProduct);
+
+    const unavailable = selectedItems.filter(
+      (item) => item.availableForSale === false
+    );
+    if (unavailable.length > 0) {
+      unavailable.forEach((item) => removeItem(item.id));
+    }
+  }, [selectedItems, removeItem]);
+
   return (
     <div className="flex justify-between items-center w-full py-2">
       <div className="flex gap-4 w-full h-full">
@@ -30,7 +52,7 @@ const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
             <h3 className="text-[15px] smm:text-[16px]">
               {item.priceRange.minVariantPrice.amount}€
             </h3>
-            {selectedItems.length > 0 && (
+            {filtered.length > 0 && (
               <>
                 {" "}
                 <button
@@ -52,8 +74,8 @@ const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
                     !isVisible ? "hidden " : "flex "
                   }  flex-col mt-2 gap-4 `}
                 >
-                  {selectedItems.map((item) => (
-                    <BuilderMiniItem product={item} key={item.title} />
+                  {filtered.map((item) => (
+                    <BuilderMiniItem product={item} key={item.id} />
                   ))}
                 </div>
               </>
