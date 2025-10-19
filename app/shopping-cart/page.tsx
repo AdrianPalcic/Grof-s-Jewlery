@@ -9,6 +9,7 @@ import { Product } from "@/types/types";
 
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
+  const removeItem = useCartStore((state) => state.removeFromCart);
   const [filtered, setFiltered] = useState<Product[]>([]);
   const [mounted, setMounted] = useState(false);
 
@@ -17,8 +18,14 @@ const Page = () => {
       (product) => product.availableForSale === true
     );
     setFiltered(availableProducts);
+
+    const unavailable = cart.filter((p) => p.availableForSale === false);
+    if (unavailable.length > 0) {
+      unavailable.forEach((item) => removeItem(item.id));
+    }
+
     setMounted(true);
-  }, [cart]);
+  }, [cart, removeItem]);
 
   if (!mounted) return <Loader />;
 
