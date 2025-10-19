@@ -84,9 +84,9 @@ export const categories = [
   { text: "Dodaci Poklonima", slug: "dodaci-poklonima" },
   { text: "Nakit od Papira", slug: "nakit-od-papira" },
   { text: "Gift Boxes", slug: "gift-boxes" },
-  { text: "Package Design", slug: "package-design" },
+  { text: "Grof's Corporate Collection", slug: "grofs-corporate-collection" },
   { text: "Pakiranje Poklona", slug: "pakiranje-poklona" },
-  { text: "Pokloni", slug: "pokloni" },
+  { text: "Unikatni Pokloni", slug: "unikatni-pokloni" },
 ];
 
 export const infoLinks = [
