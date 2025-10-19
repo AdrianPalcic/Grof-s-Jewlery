@@ -26,7 +26,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Grof's Jewlery | DIY Gift Box</title>
+        <title>Grof&apos;s Jewlery | DIY Gift Box</title>
         <meta
           name="description"
           content="Kreirajte svoju savršenu poklon kutiju s Grof's Jewlery. Odaberite proizvode, prilagodite i sastavite poklon po želji."

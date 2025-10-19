@@ -35,7 +35,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Grof's Jewlery | Shopping Cart</title>
+        <title>Grof&apos;s Jewlery | Shopping Cart</title>
         <meta
           name="description"
           content="Pregledajte svoj shopping cart i upravljajte odabranim proizvodima u Grof's Jewlery webshopu."
