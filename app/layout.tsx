@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./compontents/Navbar";
 import Footer from "./compontents/Footer";
 import { Toaster } from "react-hot-toast";
+import CookieBanner from "./compontents/CookieBanner";
 
 const cinzel = localFont({
   src: [
@@ -70,6 +71,7 @@ export default async function RootLayout({
         <Navbar />
         {children}
         <Toaster position="top-center" reverseOrder={false} />
+        <CookieBanner />
         <Footer />
       </body>
     </html>
