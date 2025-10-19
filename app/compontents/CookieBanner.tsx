@@ -29,7 +29,7 @@ const CookieBanner = () => {
         />
         <p className="text-gray-800 text-lg text-center mt-12">
           Ovaj webshop koristi kolačiće kako bi poboljšao vaše iskustvo. Klikom
-          na "Prihvaćam sve" pristajete na korištenje kolačića.
+          na &quot;Prihvaćam sve&quot; pristajete na korištenje kolačića.
         </p>
         <button
           onClick={handleAccept}
