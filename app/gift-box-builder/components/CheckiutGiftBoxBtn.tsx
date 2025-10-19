@@ -5,7 +5,7 @@ import { createCheckout } from "@/lib/shopify/checkout";
 import { useState } from "react";
 
 const CheckoutGiftBoxBtn = () => {
-  const [loading, setLoading] = useState<Boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const baseBox = useGiftStore((state) => state.baseBox);
   const selectedItems = useGiftStore((state) => state.selectedItems);
 
