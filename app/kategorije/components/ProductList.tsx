@@ -49,17 +49,10 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
       <ItemGrid products={products} />
 
       <div className="flex justify-center my-6">
-        {hasNextPage ? (
+        {products.length < 25 && (
           <button className="ghost" onClick={loadMore} disabled={loading}>
             {loading ? "Učitavanje..." : "Učitaj više proizvoda"}
           </button>
-        ) : (
-          <Link
-            href="/"
-            className="font-cormorant duration-200 transition-colors hover:text-secondaryColor"
-          >
-            Vidjeli ste sve proizvode
-          </Link>
         )}
       </div>
     </div>
