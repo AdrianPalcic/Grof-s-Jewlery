@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import BuilderMiniItem from "./BuilderMiniItem";
 import { Product } from "@/types/types";
 import { useGiftStore } from "@/store/giftStore";
+import toast from "react-hot-toast";
 
 const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,6 +31,7 @@ const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
     );
     if (unavailable.length > 0) {
       unavailable.forEach((item) => removeItem(item.id));
+      toast.error("Neki od vaših artikala su se rasprodali");
     }
   }, [selectedItems, removeItem]);
 

@@ -1,15 +1,19 @@
 import React from "react";
 import BuilderItem from "./BuilderItem";
-import { Product } from "@/types/types";
 import { useGiftStore } from "@/store/giftStore";
 import CheckoutGiftBoxBtn from "./CheckiutGiftBoxBtn";
 
 const BuilderFull = () => {
   const { baseBox, selectedItems } = useGiftStore();
+
+  const availableItems = selectedItems.filter(
+    (item) => item.availableForSale === true
+  );
+
   const boxPrice = parseFloat(
     baseBox?.priceRange.minVariantPrice.amount ?? "0"
   );
-  const selectedItemsPrice = selectedItems.reduce((sum, item) => {
+  const selectedItemsPrice = availableItems.reduce((sum, item) => {
     const itemPrice = parseFloat(item.priceRange.minVariantPrice.amount ?? "0");
     return sum + itemPrice;
   }, 0);

@@ -5,6 +5,7 @@ import BuilderFull from "./components/BuilderFull";
 import Hero from "./components/Hero";
 import { useGiftStore } from "@/store/giftStore";
 import Loader from "../compontents/Loader";
+import toast from "react-hot-toast";
 
 const Page = () => {
   const giftBox = useGiftStore((state) => state.baseBox);
@@ -14,6 +15,7 @@ const Page = () => {
   useEffect(() => {
     if (giftBox?.availableForSale === false) {
       resetGift();
+      toast.error("Vaša poklon kutija se rasprodala :(");
     }
     setMounted(true);
   }, [giftBox]);
