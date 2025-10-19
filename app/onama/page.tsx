@@ -17,7 +17,7 @@ const page = () => {
           {" "}
           Dobrodošli u naš Grof&apos;s čarobni svijet unikatnih poklona i poklon
           pakiranja u kojem počinjemo divne priče o poklanjanju...Vi nastavljate
-          Grof's priče i prenosite ih dalje... Svaki poklon, komad nakita,
+          Grof&apos;s priče i prenosite ih dalje... Svaki poklon, komad nakita,
           poklon kutiju ili zahvalnicu kreiramo i ručno izrađujemo iz strasti,
           vođeni zahvalnošću za svaki novi dan koji je pred nama... Grof&apos;s
           priča je priča o prijateljstvu, o zahvalnosti, ljubavi i povezanosti u

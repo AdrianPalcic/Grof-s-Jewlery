@@ -27,7 +27,7 @@ const Page = async ({ params }: PageProps) => {
 
   const products = await getCollectionProducts({
     handle: kolekcija,
-    first: 20,
+    first: 25,
   });
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">

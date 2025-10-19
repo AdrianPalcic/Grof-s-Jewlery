@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Product } from "@/types/types";
 import { getProductsByTagPaginated } from "@/lib/shopify/getProductsPaginated";
 import ItemGrid from "@/app/compontents/ItemGrid";
-import Link from "next/link";
 
 interface Props {
   initialProducts: Product[];
@@ -46,15 +45,23 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
 
   return (
     <div>
-      <ItemGrid products={products} />
+      {products.length !== 0 ? (
+        <ItemGrid products={products} />
+      ) : (
+        <div className="w-full mx-auto flex justify-center">
+          <p>Nema proizvoda iz ove kategorije</p>
+        </div>
+      )}
 
-      <div className="flex justify-center my-6">
-        {products.length < 25 && (
-          <button className="ghost" onClick={loadMore} disabled={loading}>
-            {loading ? "Učitavanje..." : "Učitaj više proizvoda"}
-          </button>
-        )}
-      </div>
+      {products.length !== 0 && (
+        <div className="flex justify-center my-6">
+          {products.length < 25 && (
+            <button className="ghost" onClick={loadMore} disabled={loading}>
+              {loading ? "Učitavanje..." : "Učitaj više proizvoda"}
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };
