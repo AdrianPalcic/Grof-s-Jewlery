@@ -33,7 +33,7 @@ export const metadata = {
 };
 
 const page = async () => {
-  const categorySlug = "Unikatni Pokloni";
+  const categorySlug = "unikatni-pokloni";
 
   const subCategories = [
     { text: "Okviri za slike", slug: "okviri-za-slike" },

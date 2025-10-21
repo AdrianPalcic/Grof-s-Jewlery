@@ -35,7 +35,7 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
             <Link
               key={product.id}
               href={`/proizvodi/${product.handle}`}
-              className="w-full smm:w-[48%] overflow-hidden"
+              className="w-full smm:w-[48%] overflow-hidden relative"
             >
               <img
                 src={product.featuredImage?.url || "/placeholder.png"}

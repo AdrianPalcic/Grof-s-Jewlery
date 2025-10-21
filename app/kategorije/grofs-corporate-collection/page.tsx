@@ -33,7 +33,7 @@ export const metadata = {
 };
 
 const page = async () => {
-  const categorySlug = "Grof's Corporate Collection";
+  const categorySlug = "grofs-corporate-collection";
 
   const subCategories = [
     { text: "Unique business kartice", slug: "unique-business-kartice" },

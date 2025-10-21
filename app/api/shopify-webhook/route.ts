@@ -4,12 +4,19 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json(); // Shopify šalje JSON
-    // financial_status može biti: "paid", "pending", "authorized", itd.
     const isPaid = body.financial_status === "paid";
 
     console.log("Webhook received:");
     console.log("Order ID:", body.id);
     console.log("Is paid?", isPaid);
+
+    body.line_items.forEach((item: any) => {
+      if (item.customAttributes && item.customAttributes.length > 0) {
+        console.log("🎁 Gift Box kupljen:", item.title);
+      } else {
+        console.log("🛒 Regularni proizvod:", item.title);
+      }
+    });
 
     return NextResponse.json({ received: true });
   } catch (err) {
