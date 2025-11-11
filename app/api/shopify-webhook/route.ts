@@ -1,4 +1,11 @@
 // /app/api/shopify-webhook/route.ts
+
+interface Api {
+  customAttributes: string;
+  title: string;
+}
+
+import { Product } from "@/types/types";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -10,7 +17,7 @@ export async function POST(req: NextRequest) {
     console.log("Order ID:", body.id);
     console.log("Is paid?", isPaid);
 
-    body.line_items.forEach((item: any) => {
+    body.line_items.forEach((item: Api) => {
       if (item.customAttributes && item.customAttributes.length > 0) {
         console.log("🎁 Gift Box kupljen:", item.title);
       } else {
