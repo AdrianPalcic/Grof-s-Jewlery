@@ -2,6 +2,7 @@ import { Product } from "@/types/types";
 import React from "react";
 import Link from "next/link";
 import AddToCartBtn from "./AddToCartBtn";
+import Image from "next/image";
 
 const ItemGrid = ({ products }: { products: Product[] }) => {
   return (
@@ -13,11 +14,13 @@ const ItemGrid = ({ products }: { products: Product[] }) => {
               href={`/proizvodi/${product.handle}`}
               className="overflow-hidden relative"
             >
-              <img
+              <Image
                 src={product.featuredImage?.url || "/placeholder.png"}
                 alt={product.featuredImage?.altText || product.title}
                 loading="lazy"
                 className="w-full min-h-[150px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-70 "
+                width={150}
+                height={250}
               />
               {product.availableForSale === false ? (
                 <span className="sold-out">Rasprodano</span>

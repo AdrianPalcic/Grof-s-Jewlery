@@ -6,11 +6,11 @@ import CartFull from "./components/CartFull";
 import { useCartStore } from "@/store/cartStore";
 import Loader from "../compontents/Loader";
 import { Product } from "@/types/types";
-import toast from "react-hot-toast";
 import Head from "next/head";
 
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
   const removeItem = useCartStore((state) => state.removeFromCart);
   const [filtered, setFiltered] = useState<Product[]>([]);
   const [mounted, setMounted] = useState<boolean>(false);
@@ -24,7 +24,10 @@ const Page = () => {
     const unavailable = cart.filter((p) => p.availableForSale === false);
     if (unavailable.length > 0) {
       unavailable.forEach((item) => removeItem(item.id));
-      toast.error("Neki od vaših artikala su se rasprodali");
+    }
+    //Na ovaj nacin clearamo cart kada netko nesto kupi
+    if (availableProducts.length < 1) {
+      clearCart();
     }
 
     setMounted(true);

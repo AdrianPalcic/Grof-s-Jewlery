@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="flex w-full flex-wrap gap-5 px-4 sm:px-8 mb-4">
       <div className="flex-1 min-w-[250px]">
-        <h2 className="text-3xl mb-2">Grof&apos;s Jewlery</h2>
+        <h2 className="text-3xl mb-2">Grof&apos;s Jewelry</h2>
         <p className="font-cormorant">
           Izuzetan nakit izrađen za one koji cijene najfinije stvari u životu.
         </p>
@@ -59,12 +59,6 @@ const Footer = () => {
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Zapratite nas</h3>
         <div className="flex gap-2 items-center mt-2">
-          <Link href="https://www.facebook.com" className="group">
-            <Facebook
-              color="#5A5A5A"
-              className="group-hover:text-secondaryColor "
-            />
-          </Link>
           <Link href="https://www.instagram.com" className="group">
             <Instagram
               color="#5A5A5A"

@@ -18,9 +18,7 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
   const tag = initialTag;
 
   const loadMore = async () => {
-    if (!hasNextPage) return;
     setLoading(true);
-
     try {
       const {
         products: newProducts,
@@ -28,12 +26,14 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
         hasNextPage: nextPage,
       } = await getProductsByTagPaginated(25, tag, lastCursor || undefined);
 
+      console.log("cursor prije slanja:", lastCursor);
+      console.log("API returned:", newProducts);
       setProducts((prev) => {
         // Deduplikacija po ID-u
         const all = [...prev, ...newProducts];
         return Array.from(new Map(all.map((p) => [p.id, p])).values());
       });
-
+      console.log(products);
       setLastCursor(endCursor || null);
       setHasNextPage(nextPage);
     } catch (err) {
@@ -53,15 +53,13 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
         </div>
       )}
 
-      {products.length !== 0 && (
-        <div className="flex justify-center my-6">
-          {products.length < 25 && (
-            <button className="ghost" onClick={loadMore} disabled={loading}>
-              {loading ? "Učitavanje..." : "Učitaj više proizvoda"}
-            </button>
-          )}
-        </div>
-      )}
+      <div className="flex justify-center my-6">
+        {hasNextPage && (
+          <button onClick={loadMore} className="ghost">
+            Učitaj još
+          </button>
+        )}
+      </div>
     </div>
   );
 };

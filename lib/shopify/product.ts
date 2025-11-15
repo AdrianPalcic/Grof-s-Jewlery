@@ -6,7 +6,7 @@ export async function getProductByHandle(handle: string): Promise<Product> {
   const data = await shopifyGraphql(GET_PRODUCT_BY_HANDLE, { handle });
 
   if (!data) {
-    console.error("Failed to fetch product by handle");
+    console.error("Ne mogu dohvatiti");
   }
 
   return data.product;

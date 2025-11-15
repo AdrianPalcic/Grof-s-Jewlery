@@ -27,8 +27,8 @@ export const links = [
       },
       { text: "Dekoracije za dom", slug: "dekoracije-za-dom" },
       { text: "Magneti", slug: "magneti" },
-      { text: "Notesi", slug: "notesi" },
       { text: "Drvene škrinjice", slug: "drvene-skrinjice" },
+      { text: "Notesi", slug: "notesi" },
       { text: "Knjižne oznake", slug: "knjizne-oznake" },
     ],
   },
@@ -106,7 +106,7 @@ export const contactData = [
   {
     icon: <Mail />,
     title: "Email",
-    value: "grofsjewlery@gmail.com",
+    value: "grofsjewelry@gmail.com",
   },
   {
     icon: <Phone />,

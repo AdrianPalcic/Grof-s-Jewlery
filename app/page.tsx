@@ -48,7 +48,7 @@ export default async function Home() {
   return (
     <main className="mx-auto w-full max-w-[1700px]">
       <Hero />
-      <KolekcijaHome collection={collection[0]} />
+      {/* {collection ? <KolekcijaHome collection={collection[0]} /> : ""} */}
       <OnamaHome />
       <Bestsellers products={fiveProducts} />
       <Categories />

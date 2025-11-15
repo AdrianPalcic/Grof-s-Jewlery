@@ -16,7 +16,6 @@ const Page = () => {
   useEffect(() => {
     if (giftBox?.availableForSale === false) {
       resetGift();
-      toast.error("Vaša poklon kutija se rasprodala :(");
     }
     setMounted(true);
   }, [giftBox, resetGift]);
