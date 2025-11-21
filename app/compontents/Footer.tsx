@@ -59,7 +59,7 @@ const Footer = () => {
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Zapratite nas</h3>
         <div className="flex gap-2 items-center mt-2">
-          <Link href="https://www.instagram.com" className="group">
+          <Link href="https://www.instagram.com/grof_s_jewelry_unique_gifts/" className="group" target="_blank">
             <Instagram
               color="#5A5A5A"
               className="group-hover:text-secondaryColor"
