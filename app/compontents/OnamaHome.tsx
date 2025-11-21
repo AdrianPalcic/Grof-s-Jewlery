@@ -11,13 +11,20 @@ const OnamaHome = () => {
           Priča utkana u svaki detalj
         </h2>
         <p className="text-xl text-white mb-4">
-          Dobrodošli u naš Grof&apos;s čarobni svijet unikatnih poklona i poklon
-          pakiranja u kojem počinjemo divne priče o poklanjanju...Vi nastavljate
-          Grof&apos;s priče i prenosite ih dalje... Svaki poklon, komad nakita,
-          poklon kutiju ili zahvalnicu kreiramo i ručno izrađujemo iz strasti,
-          vođeni zahvalnošću za svaki novi dan koji je pred nama... Grof&apos;s
-          priča je priča o prijateljstvu, o zahvalnosti, ljubavi i povezanosti u
-          koju radosno uključujemo svakog od Vas
+          {" "}
+          Dobrodošli u naš Grof&apos;s čarobni svijet unikatnog nakita, posebnih
+          poklona i poklon pakiranja...
+          <br /> Ja sam Iva... Kreiram i ručno izrađujem sa strašću svaki komad
+          nakita, poklon, poklon kutiju ili zahvalnicu koji ćete pronaći kod
+          nas, kako bi mogli poklanjati neponovljive i posebne poklone koji nose
+          male priče i podsjetnike...
+          <br /> Vi nastavljate Grof&apos;s priče i prenosite ih dalje...
+          <br /> Grof&apos;s priča je priča o prijateljstvu, o zahvalnosti,
+          ljubavi i povezanosti u koju radosno uključujemo svakog od Vas..
+          <br />. Poklanjajmo od srca, ostavljajmo vlastite tragove svakim
+          poklonom koji darujemo i Spread love and light,
+          <br /> Love,
+          <br /> Grof&apos;s Jewelry
         </p>
         <Link href={"/onama"} className="flex justify-center sm:justify-normal">
           <ButtonSecondary text="Naša Priča" />
@@ -25,7 +32,7 @@ const OnamaHome = () => {
       </div>
       <div className="flex-1 w-full">
         <img
-          src="/onamaph.png"
+          src="/puna.jpeg"
           alt="Vlasnici Grof's jewlery"
           className="w-full h-full object-cover max-h-[700px]"
         />
