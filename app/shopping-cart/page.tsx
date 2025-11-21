@@ -25,13 +25,12 @@ const Page = () => {
     if (unavailable.length > 0) {
       unavailable.forEach((item) => removeItem(item.id));
     }
-    //Na ovaj nacin clearamo cart kada netko nesto kupi
-    if (availableProducts.length < 1) {
+    if (availableProducts.length < 1 && cart.length > 0) {
       clearCart();
     }
 
     setMounted(true);
-  }, [cart, removeItem]);
+  }, [cart]);
 
   if (!mounted) return <Loader />;
 

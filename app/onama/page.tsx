@@ -30,7 +30,7 @@ const page = () => {
       <h1 className="text-3xl sm:text-5xl">O nama</h1>
       <div className="w-full flex items-center justify-center min-h-[300px] h-[300px] sm:h-[500px] mt-5">
         <img
-          src="/kontakt.png"
+          src="/onama.jpeg"
           alt="Ručno rađeni papirnati nakit"
           className="w-full h-full object-cover"
         />

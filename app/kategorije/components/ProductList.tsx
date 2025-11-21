@@ -54,7 +54,7 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
       )}
 
       <div className="flex justify-center my-6">
-        {hasNextPage && (
+        {products.length >= 25 && (
           <button onClick={loadMore} className="ghost">
             Učitaj još
           </button>

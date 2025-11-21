@@ -18,7 +18,7 @@ const Page = () => {
       resetGift();
     }
     setMounted(true);
-  }, [giftBox, resetGift]);
+  }, [giftBox]);
 
   if (!mounted) return <Loader />;
 
