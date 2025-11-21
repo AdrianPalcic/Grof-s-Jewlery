@@ -44,9 +44,9 @@ const page = () => {
           nakita, poklon, poklon kutiju ili zahvalnicu koji ćete pronaći kod
           nas, kako bi mogli poklanjati neponovljive i posebne poklone koji nose
           male priče i podsjetnike...
-          <br /> Vi nastavljate Grof's priče i prenosite ih dalje...
-          <br /> Grof's priča je priča o prijateljstvu, o zahvalnosti, ljubavi i
-          povezanosti u koju radosno uključujemo svakog od Vas..
+          <br /> Vi nastavljate Grof&apos;s priče i prenosite ih dalje...
+          <br /> Grof&apos;s priča je priča o prijateljstvu, o zahvalnosti,
+          ljubavi i povezanosti u koju radosno uključujemo svakog od Vas..
           <br />. Poklanjajmo od srca, ostavljajmo vlastite tragove svakim
           poklonom koji darujemo i Spread love and light,
           <br /> Love,
