@@ -16,12 +16,46 @@ export async function generateMetadata({
 }) {
   const { podkategorija } = params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "okviri-za-slike",
+      value: "Okviri za Slike",
+    },
+    {
+      text: "dekorativne-vaze-i-teglice",
+      value: "Dekorativne Vaze i Teglice",
+    },
+    {
+      text: "dekorativne-slikarska-platna",
+      value: "Dekorativna Slikarska Platna",
+    },
+    {
+      text: "dekoracije-za-dom",
+      value: "Dekoracije za Dom",
+    },
+    {
+      text: "magneti",
+      value: "Magneti",
+    },
+    {
+      text: "drvene-skrinjice",
+      value: "Drvene Škrinjice",
+    },
+    {
+      text: "notesi",
+      value: "Notesi",
+    },
+    {
+      text: "knjizne-oznake",
+      value: "Knjižne oznake",
+    },
+  ];
+
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
 
   const name = formatName(podkategorija);
 
@@ -55,12 +89,48 @@ export async function generateMetadata({
 export default async function Page({ params }: PageProps) {
   const { podkategorija } = await params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "okviri-za-slike",
+      value: "Okviri za Slike",
+    },
+    {
+      text: "dekorativne-vaze-i-teglice",
+      value: "Dekorativne Vaze i Teglice",
+    },
+    {
+      text: "dekorativne-slikarska-platna",
+      value: "Dekorativna Slikarska Platna",
+    },
+    {
+      text: "dekoracije-za-dom",
+      value: "Dekoracije za Dom",
+    },
+    {
+      text: "magneti",
+      value: "Magneti",
+    },
+    {
+      text: "drvene-skrinjice",
+      value: "Drvene Škrinjice",
+    },
+    {
+      text: "notesi",
+      value: "Notesi",
+    },
+    {
+      text: "knjizne-oznake",
+      value: "Knjižne oznake",
+    },
+  ];
+
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
+
+  const name = formatName(podkategorija);
 
   const { products: initialProducts } = await getProductsByTagPaginated(
     25,
@@ -69,7 +139,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
-      <Hero name={formatName(podkategorija)} />
+      <Hero name={name} />
       <ProductList
         initialProducts={initialProducts}
         initialTag={podkategorija}

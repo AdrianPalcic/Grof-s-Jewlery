@@ -16,12 +16,26 @@ export async function generateMetadata({
 }) {
   const { podkategorija } = params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "zimski-gift-boxevi",
+      value: "Zimski Gift Boxevi",
+    },
+    {
+      text: "jesenski-gift-boxevi",
+      value: "Jesenski Gift Boxevi",
+    },
+    {
+      text: "bozicni-gift-boxevi",
+      value: "Božićni Gift Boxevi",
+    },
+  ];
+
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
 
   const name = formatName(podkategorija);
 
@@ -55,12 +69,28 @@ export async function generateMetadata({
 export default async function Page({ params }: PageProps) {
   const { podkategorija } = await params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "zimski-gift-boxevi",
+      value: "Zimski Gift Boxevi",
+    },
+    {
+      text: "jesenski-gift-boxevi",
+      value: "Jesenski Gift Boxevi",
+    },
+    {
+      text: "bozicni-gift-boxevi",
+      value: "Božićni Gift Boxevi",
+    },
+  ];
+
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
+
+  const name = formatName(podkategorija);
 
   const { products: initialProducts } = await getProductsByTagPaginated(
     25,
@@ -69,7 +99,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
-      <Hero name={formatName(podkategorija)} />
+      <Hero name={name} />
       <ProductList
         initialProducts={initialProducts}
         initialTag={podkategorija}

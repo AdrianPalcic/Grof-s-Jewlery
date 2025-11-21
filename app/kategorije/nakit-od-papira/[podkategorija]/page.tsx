@@ -55,12 +55,34 @@ export async function generateMetadata({
 export default async function Page({ params }: PageProps) {
   const { podkategorija } = await params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "nausnice",
+      value: "Naušnice",
+    },
+    {
+      text: "brosevi",
+      value: "Broševi",
+    },
+    {
+      text: "ogrlice",
+      value: "Ogrlice",
+    },
+    {
+      text: "prstenje",
+      value: "Prstenje",
+    },
+    {
+      text: "grof-special-edition",
+      value: "Grof's Special Edition",
+    },
+  ];
+
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
 
   const { products: initialProducts } = await getProductsByTagPaginated(
     25,

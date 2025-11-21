@@ -16,15 +16,48 @@ export async function generateMetadata({
 }) {
   const { podkategorija } = params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "unique-business-kartice",
+      value: "Unique Business Kartice",
+    },
+    {
+      text: "thank-you-kartice",
+      value: "Thank You Kartice",
+    },
+    {
+      text: "pozivnice-i-zahvalnice",
+      value: "Pozivnice I Zahvalnice",
+    },
+    {
+      text: "kutije-za-proizvode",
+      value: "Kutije Za Proizvode",
+    },
+    {
+      text: "vrecice-za-proizvode",
+      value: "Vrečice Za Proizvode",
+    },
+    {
+      text: "dekoriranje-pakirne-ambalaze",
+      value: "Dekoriranje Pakirne Ambalaže",
+    },
+    {
+      text: "znak-paznje-za-goste",
+      value: "Znak Paznje Za Goste",
+    },
+    {
+      text: "korporativni-gift-boxes",
+      value: "Korporativni Gift Boxes",
+    },
+  ];
+
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
 
   const name = formatName(podkategorija);
-
   return {
     title: `Grof's Jewlery | ${name}`,
     description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
@@ -55,13 +88,48 @@ export async function generateMetadata({
 export default async function Page({ params }: PageProps) {
   const { podkategorija } = await params;
 
-  function formatName(slug: string) {
-    return slug
-      .split("-")
-      .map((w) => w[0].toUpperCase() + w.slice(1))
-      .join(" ");
-  }
+  const subcatNames = [
+    {
+      text: "unique-business-kartice",
+      value: "Unique Business Kartice",
+    },
+    {
+      text: "thank-you-kartice",
+      value: "Thank You Kartice",
+    },
+    {
+      text: "pozivnice-i-zahvalnice",
+      value: "Pozivnice I Zahvalnice",
+    },
+    {
+      text: "kutije-za-proizvode",
+      value: "Kutije Za Proizvode",
+    },
+    {
+      text: "vrecice-za-proizvode",
+      value: "Vrečice Za Proizvode",
+    },
+    {
+      text: "dekoriranje-pakirne-ambalaze",
+      value: "Dekoriranje Pakirne Ambalaže",
+    },
+    {
+      text: "znak-paznje-za-goste",
+      value: "Znak Paznje Za Goste",
+    },
+    {
+      text: "korporativni-gift-boxes",
+      value: "Korporativni Gift Boxes",
+    },
+  ];
 
+  const formatName = (slug: string) => {
+    const current = subcatNames.find((name) => name.text === slug);
+    if (!current) return "Grof's Jewelry";
+    return current.value;
+  };
+
+  const name = formatName(podkategorija);
   const { products: initialProducts } = await getProductsByTagPaginated(
     25,
     podkategorija
@@ -69,7 +137,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
-      <Hero name={formatName(podkategorija)} />
+      <Hero name={name} />
       <ProductList
         initialProducts={initialProducts}
         initialTag={podkategorija}
