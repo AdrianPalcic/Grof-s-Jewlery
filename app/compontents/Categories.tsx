@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -16,11 +17,13 @@ const Categories = () => {
         <div className="flex flex-col gap-4 flex-1 min-w-[250px]">
           <Link href="/kategorije/nakit-od-papira">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
-              <img
+              <Image
                 src="/use2.jpeg"
                 alt="Nakit od Papira"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
@@ -31,11 +34,13 @@ const Categories = () => {
 
           <Link href="/kategorije/unikatni-pokloni">
             <div className="relative w-full  h-[250px] sm:h-[250px]  overflow-hidden">
-              <img
-                src="/use6.jpg"
+              <Image
+                src="/unikatni.jpg"
                 alt="Unikatni Pokloni"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
@@ -46,11 +51,13 @@ const Categories = () => {
 
           <Link href="/kategorije/pakiranje-poklona">
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
-              <img
-                src="/use5.jpg"
+              <Image
+                src="/pakiranje.jpg"
                 alt="Pakiranje Poklona"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
@@ -63,11 +70,13 @@ const Categories = () => {
         <div className="flex flex-col gap-4 flex-1 min-w-[250px]">
           <Link href="/kategorije/dodaci-poklonima">
             <div className="relative w-full  h-[250px] sm:h-[300px]  overflow-hidden">
-              <img
-                src="/use4.jpg"
+              <Image
+                src="/dodaci.jpg"
                 loading="lazy"
                 alt="Dodaci Poklonima"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
@@ -78,11 +87,13 @@ const Categories = () => {
 
           <Link href="/kategorije/gift-boxes">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
-              <img
-                src="/use1.jpg"
+              <Image
+                src="/gift.jpg"
                 alt="Gift box "
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
@@ -93,11 +104,13 @@ const Categories = () => {
 
           <Link href="/kategorije/grofs-corporate-collection">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
-              <img
-                src="/use3.jpg"
+              <Image
+                src="/business.jpg"
                 alt="Grof's Corporate Collection"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">

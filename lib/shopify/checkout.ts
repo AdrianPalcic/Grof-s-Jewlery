@@ -26,7 +26,7 @@ export async function createCheckout(
         merchandiseId: item.variantId,
         quantity: item.quantity,
       })),
-      discountCodes: discountCode || "",
+      discountCodes: discountCode ? [discountCode] : [],
       note: note || "",
     },
   };
