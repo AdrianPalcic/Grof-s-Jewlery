@@ -19,16 +19,24 @@ const Hero = () => {
     {
       text: "Dodaci Poklonima",
       slug: "dodaci-poklonima",
-      img: "/hero-home.png",
+      img: "/dodaci.jpg",
     },
-    { text: "Gift Boxes", slug: "gift-boxes", img: "/use1.jpg" },
+    { text: "Gift Boxes", slug: "gift-boxes", img: "gift.jpg" },
     {
       text: "Grof's corporate collection",
       slug: "grofs-corporate-collection",
-      img: "/use5.jpg",
+      img: "/business.jpg",
     },
-    { text: "Pakiranje Poklona", slug: "pakiranje-poklona", img: "/use4.jpg" },
-    { text: "Unikatni pokloni", slug: "unikatni-pokloni", img: "/use3.jpg" },
+    {
+      text: "Pakiranje Poklona",
+      slug: "pakiranje-poklona",
+      img: "/pakiranje.jpg",
+    },
+    {
+      text: "Unikatni pokloni",
+      slug: "unikatni-pokloni",
+      img: "/unikatni.jpg",
+    },
   ];
 
   useEffect(() => {
