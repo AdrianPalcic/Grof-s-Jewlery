@@ -8,6 +8,7 @@ import CheckoutBtn from "./CheckoutBtn";
 const CartFull = ({ products }: { products: Product[] }) => {
   const total = calculateTotal(products);
 
+  console.log(products);
   return (
     <section>
       <div className="flex flex-col sm:flex-row mb-5  w-full items-left sm:items-center gap-2 sm:gap-0 justify-between ">
