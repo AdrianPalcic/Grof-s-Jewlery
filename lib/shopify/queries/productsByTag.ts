@@ -1,5 +1,5 @@
 export const GET_PRODUCTS_BY_TAG = `query GetProductsByTag($tag: String!, $first: Int!) {
-  products(first: $first, query: $tag) {
+  products(first: $first, query: $tag, sortKey: CREATED_AT, reverse: true) {
     edges {
       node {
         id

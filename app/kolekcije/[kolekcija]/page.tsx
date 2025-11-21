@@ -76,6 +76,7 @@ const Page = async ({ params }: PageProps) => {
     handle: kolekcija,
     first: 25,
   });
+
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
       <Hero image={image} name={collection?.title || ""} />

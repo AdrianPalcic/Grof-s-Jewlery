@@ -1,12 +1,13 @@
 export const GET_PRODUCTS_BY_TAG_W_CURSOR = `
   query GetProductsByTagWithCursor($tag: String!, $first: Int!, $after: String) {
-    products(first: $first, query: $tag, after: $after) {
+    products(first: $first, query: $tag, after: $after, sortKey: CREATED_AT, reverse: true) {
       edges {
         cursor
         node {
           id
           title
           handle
+          updatedAt
           productType 
           featuredImage { 
             url 

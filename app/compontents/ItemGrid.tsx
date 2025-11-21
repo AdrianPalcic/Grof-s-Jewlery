@@ -35,7 +35,7 @@ const ItemGrid = ({ products }: { products: Product[] }) => {
                 </h2>
               </Link>
               <p className="mb-2 text-sm font-cormorant">
-                {"€" + product.priceRange.minVariantPrice.amount}
+                {"€" + product.priceRange.minVariantPrice.amount + "0"}
               </p>
             </div>
           </div>

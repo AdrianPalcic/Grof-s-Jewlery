@@ -8,12 +8,13 @@ export const GET_COLLECTION_PRODUCTS = `query GetCollectionProducts($handle: Str
       url
       altText
     }
-    products(first: $first) {
+    products(first: $first, sortKey: CREATED_AT, reverse: true) {
       edges {
         node {
           id
           title
           handle
+          updatedAt
           description
           featuredImage {
             url

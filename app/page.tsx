@@ -44,11 +44,12 @@ export default async function Home() {
   const collection = collections.filter((col) => col.handle !== "frontpage");
 
   const fiveProducts = await getFiveProducts(5);
+  console.log(fiveProducts[0]);
 
   return (
     <main className="mx-auto w-full max-w-[1700px]">
       <Hero />
-      {/* {collection ? <KolekcijaHome collection={collection[0]} /> : ""} */}
+      {collection ? <KolekcijaHome collection={collection[0]} /> : ""}
       <OnamaHome />
       <Bestsellers products={fiveProducts} />
       <Categories />
