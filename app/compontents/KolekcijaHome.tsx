@@ -2,10 +2,22 @@ import Link from "next/link";
 import React from "react";
 import ButtonMain from "./ButtonMain";
 import { Collection } from "@/types/types";
+import Image from "next/image";
 
-const KolekcijaHome = ({ collection }: { collection: Partial<Collection> }) => {
+const KolekcijaHome = ({
+  collection,
+  idx,
+}: {
+  collection: Partial<Collection>;
+  idx: number;
+}) => {
+  if (!collection) return;
+
   return (
-    <section className="flex flex-col lg:flex-row px-2 sm:px-10 items-center  gap-10 mx-auto mb-20">
+    <section
+      className={`flex px-2 sm:px-10 items-center gap-10 mx-auto mb-20 flex-col 
+    ${idx % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+    >
       <div className="flex-1">
         <h2 className="text-center sm:text-left text-3xl mb-4 border-b-2 border-solid border-secondaryColor">
           {collection.title}
@@ -19,10 +31,12 @@ const KolekcijaHome = ({ collection }: { collection: Partial<Collection> }) => {
         </Link>
       </div>
       <div className="flex-1 w-full">
-        <img
-          src={collection.image?.url}
-          alt={collection.image?.altText}
+        <Image
+          src={collection.image?.url || "/collection.png"}
+          alt={collection.image?.altText || "Grof's jewelry kolekcija"}
           className="w-full h-full object-cover max-h-[700px]"
+          width={350}
+          height={350}
         />
       </div>
     </section>

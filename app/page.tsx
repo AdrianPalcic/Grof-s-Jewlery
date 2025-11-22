@@ -55,11 +55,10 @@ export default async function Home() {
   return (
     <main className="mx-auto w-full max-w-[1700px]">
       <Hero />
-      {filteredCollections ? (
-        <KolekcijaHome collection={filteredCollections[0]} />
-      ) : (
-        ""
-      )}
+      {filteredCollections &&
+        filteredCollections.map((collection, idx) => (
+          <KolekcijaHome collection={collection} idx={idx + 1} key={idx} />
+        ))}
       <OnamaHome />
       <Bestsellers products={fiveProducts} />
       <Categories />
