@@ -42,7 +42,7 @@ const Categories = () => {
                 width={500}
                 height={500}
               />
-              <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparjent" />
               <h3 className="absolute bottom-3 left-3 text-white text-lg font-semibold">
                 Unikatni Pokloni
               </h3>
