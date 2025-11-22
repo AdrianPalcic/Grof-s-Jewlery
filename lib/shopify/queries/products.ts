@@ -1,7 +1,6 @@
 export const GET_PRODUCTS = `query GetProducts($count: Int!) {
   products(first: $count, sortKey: CREATED_AT, reverse: true ) {
     edges {
-    
       node {
         id
         updatedAt

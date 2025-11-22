@@ -59,32 +59,16 @@ const Footer = () => {
       <div className="flex-1 min-w-[250px]">
         <h3 className="uppercase text-lg font-semibold mb-2">Zapratite nas</h3>
         <div className="flex gap-2 items-center mt-2">
-          <Link href="https://www.instagram.com/grof_s_jewelry_unique_gifts/" className="group" target="_blank">
+          <Link
+            href="https://www.instagram.com/grof_s_jewelry_unique_gifts/"
+            className="group"
+            target="_blank"
+          >
             <Instagram
               color="#5A5A5A"
               className="group-hover:text-secondaryColor"
             />
           </Link>
-        </div>
-
-        <div className="mt-4">
-          <h3 className="uppercase text-lg font-semibold mb-2">Newsletter</h3>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Vaš email"
-              className="p-2 border border-secondaryColor font-cinzel  w-full"
-              required
-            />
-            <button type="submit" className="ghost">
-              Prijavi se
-            </button>
-            {submitted && (
-              <p className="text-green-600 text-sm">Hvala na prijavi!</p>
-            )}
-          </form>
         </div>
       </div>
     </footer>

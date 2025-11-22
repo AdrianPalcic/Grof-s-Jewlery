@@ -1,12 +1,10 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import BuilderFull from "./components/BuilderFull";
 import Hero from "./components/Hero";
 import { useGiftStore } from "@/store/giftStore";
 import Loader from "../compontents/Loader";
-import toast from "react-hot-toast";
 
 const Page = () => {
   const giftBox = useGiftStore((state) => state.baseBox);

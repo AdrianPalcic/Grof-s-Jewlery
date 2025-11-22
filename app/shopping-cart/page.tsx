@@ -16,16 +16,16 @@ const Page = () => {
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    const availableProducts = cart.filter(
-      (product) => product.availableForSale === true
-    );
+    const availableProducts = cart.filter((p) => p.availableForSale);
+    const unavailable = cart.filter((p) => !p.availableForSale);
+
     setFiltered(availableProducts);
 
-    const unavailable = cart.filter((p) => p.availableForSale === false);
     if (unavailable.length > 0) {
       unavailable.forEach((item) => removeItem(item.id));
     }
-    if (availableProducts.length < 1 && cart.length > 0) {
+
+    if (availableProducts.length === 0 && cart.length > 0) {
       clearCart();
     }
 
