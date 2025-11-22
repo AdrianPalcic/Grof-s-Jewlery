@@ -18,7 +18,7 @@ const Categories = () => {
           <Link href="/kategorije/nakit-od-papira">
             <div className="relative w-full  h-[250px] sm:h-[400px]  overflow-hidden">
               <Image
-                src="/use2.jpeg"
+                src="/novanaus.jpg"
                 alt="Nakit od Papira"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"

@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   const categories = [
-    { text: "Nakit od Papira", slug: "nakit-od-papira", img: "/use2.jpeg" },
+    { text: "Nakit od Papira", slug: "nakit-od-papira", img: "/novanaus.jpg" },
     {
       text: "Dodaci Poklonima",
       slug: "dodaci-poklonima",
