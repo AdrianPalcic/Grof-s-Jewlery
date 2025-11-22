@@ -7,6 +7,7 @@ import { useCartStore } from "@/store/cartStore";
 import Loader from "../compontents/Loader";
 import { Product } from "@/types/types";
 import Head from "next/head";
+import { syncCart } from "@/lib/shopify/syncCart";
 
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
@@ -16,21 +17,14 @@ const Page = () => {
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    const availableProducts = cart.filter((p) => p.availableForSale);
-    const unavailable = cart.filter((p) => !p.availableForSale);
-
-    setFiltered(availableProducts);
-
-    if (unavailable.length > 0) {
-      unavailable.forEach((item) => removeItem(item.id));
-    }
-
-    if (availableProducts.length === 0 && cart.length > 0) {
-      clearCart();
-    }
-
+    const fetchFreshProducts = async () => {
+      const ids = cart.map((item) => item.id);
+      const freshProducts = await syncCart(ids);
+      console.log(freshProducts);
+    };
+    fetchFreshProducts();
     setMounted(true);
-  }, [cart]);
+  }, []);
 
   if (!mounted) return <Loader />;
 
@@ -63,7 +57,7 @@ const Page = () => {
         <meta name="twitter:image" content="/hero-home.png" />
       </Head>
       <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
-        {cart.length === 0 ? <CartEmpty /> : <CartFull products={filtered} />}
+        {cart.length === 0 ? <CartEmpty /> : <CartFull products={cart} />}
       </section>
     </>
   );
