@@ -20,6 +20,9 @@ p {
   font-family: "cormorant";
   font-size: 20px;
 }
+.give-font {
+  font-family: "cormorant";
+}
 
 @layer utilities {
   .btn {

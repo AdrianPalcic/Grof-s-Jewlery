@@ -5,6 +5,7 @@ import Navbar from "./compontents/Navbar";
 import Footer from "./compontents/Footer";
 import { Toaster } from "react-hot-toast";
 import CookieBanner from "./compontents/CookieBanner";
+import Note from "./compontents/Note";
 
 const cinzel = localFont({
   src: [
@@ -68,6 +69,7 @@ export default async function RootLayout({
         suppressHydrationWarning
         className={`${cinzel.variable} ${cormorant.variable} bg-bgColor text-textColor antialiased`}
       >
+        <Note />
         <Navbar />
         {children}
         <Toaster position="top-center" reverseOrder={false} />
