@@ -8,6 +8,7 @@ import BuildGift from "./compontents/BuildGift";
 import CTA from "./compontents/CTA";
 import { getAllCollections } from "@/lib/shopify/collections";
 import { getFiveProducts } from "@/lib/shopify/fiveProducts";
+import { getCollectionProducts } from "@/lib/shopify/collectionProducts";
 
 // ✅ SEO Metadata za Home stranicu
 export const metadata = {
@@ -41,15 +42,24 @@ export const metadata = {
 
 export default async function Home() {
   const collections = await getAllCollections(2);
-  const collection = collections.filter((col) => col.handle !== "frontpage");
+  const filteredCollections = collections.filter(
+    (col) => col.handle !== "frontpage"
+  );
+  console.log(filteredCollections);
 
-  const fiveProducts = await getFiveProducts(5);
-  console.log(fiveProducts[0]);
+  const fiveProducts = await getCollectionProducts({
+    handle: filteredCollections[0].handle,
+    first: 25,
+  });
 
   return (
     <main className="mx-auto w-full max-w-[1700px]">
       <Hero />
-      {collection ? <KolekcijaHome collection={collection[0]} /> : ""}
+      {filteredCollections ? (
+        <KolekcijaHome collection={filteredCollections[0]} />
+      ) : (
+        ""
+      )}
       <OnamaHome />
       <Bestsellers products={fiveProducts} />
       <Categories />
