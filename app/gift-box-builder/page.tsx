@@ -5,6 +5,7 @@ import BuilderFull from "./components/BuilderFull";
 import Hero from "./components/Hero";
 import { useGiftStore } from "@/store/giftStore";
 import Loader from "../compontents/Loader";
+import { getProductByHandle } from "@/lib/shopify/product";
 
 const Page = () => {
   const giftBox = useGiftStore((state) => state.baseBox);
@@ -12,10 +13,20 @@ const Page = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (giftBox?.availableForSale === false) {
-      resetGift();
-    }
-    setMounted(true);
+    const getBaseBox = async () => {
+      if (!giftBox) return;
+
+      const baseBox = await getProductByHandle(giftBox.handle);
+      if (!baseBox) return;
+
+      if (baseBox.availableForSale === false) {
+        resetGift();
+      }
+      console.log(baseBox);
+      setMounted(true);
+    };
+
+    getBaseBox();
   }, [giftBox]);
 
   if (!mounted) return <Loader />;

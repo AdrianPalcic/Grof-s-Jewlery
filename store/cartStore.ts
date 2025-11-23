@@ -50,6 +50,13 @@ export const useCartStore = create<CartState>((set, get) => ({
       return { cart: updatedCart };
     }),
 
+  removeItems: (ids: string[]) => {
+    set((state) => {
+      const updatedCart = state.cart.filter((i) => ids.includes(i.id));
+      saveCartToStorage(updatedCart);
+      return { cart: updatedCart };
+    });
+  },
   clearCart: () => {
     saveCartToStorage([]);
     set({ cart: [] });

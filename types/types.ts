@@ -48,6 +48,7 @@ export type CartState = {
   cart: Product[];
   addToCart: (item: Product) => void;
   removeFromCart: (id: string) => void;
+  removeItems: (ids: string[]) => void;
   clearCart: () => void;
   modalOpen: boolean;
   lastAdded: Product | null;

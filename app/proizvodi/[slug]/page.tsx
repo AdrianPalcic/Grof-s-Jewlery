@@ -51,8 +51,6 @@ export default async function Page({ params }: PageProps) {
   const product = await getProductByHandle(params.slug);
   const images = product.images.edges.map((edge) => edge.node);
 
-  console.log(product.priceRange?.minVariantPrice?.amount);
-
   return (
     <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
       <div className="flex flex-col-reverse lg:flex-row-reverse px-2 sm:px-10 items-center gap-2 lg:gap-10 mx-auto mb-20 py-10">

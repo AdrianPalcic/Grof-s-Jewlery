@@ -11,6 +11,7 @@ interface GiftStoreState {
   addItem: (item: Product) => void;
   removeItem: (itemId: string) => void;
   resetGift: () => void;
+  removeItems: (ids: string[]) => void;
 
   openModal: (item: Product) => void;
   closeModal: () => void;
@@ -65,6 +66,15 @@ export const useGiftStore = create<GiftStoreState>((set, get) => ({
     const newState = {
       baseBox: get().baseBox,
       selectedItems: get().selectedItems.filter((i) => i.id !== itemId),
+    };
+    saveGiftToStorage(newState);
+    set(newState);
+  },
+
+  removeItems: (ids: string[]) => {
+    const newState = {
+      baseBox: get().baseBox,
+      selectedItems: get().selectedItems.filter((i) => !ids.includes(i.id)),
     };
     saveGiftToStorage(newState);
     set(newState);

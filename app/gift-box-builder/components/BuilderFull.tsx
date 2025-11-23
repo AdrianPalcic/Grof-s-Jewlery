@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BuilderItem from "./BuilderItem";
 import { useGiftStore } from "@/store/giftStore";
 import CheckoutGiftBoxBtn from "./CheckiutGiftBoxBtn";
+import { Product } from "@/types/types";
+import { syncCart } from "@/lib/shopify/syncCart";
 
 const BuilderFull = () => {
-  const { baseBox, selectedItems } = useGiftStore();
+  const { baseBox, selectedItems, removeItems } = useGiftStore();
+  const [filteredItems, setFilteredItems] = useState<Product[]>([]);
 
-  const availableItems = selectedItems.filter(
-    (item) => item.availableForSale === true
-  );
+  useEffect(() => {
+    const getSelectedItems = async () => {
+      if (!selectedItems) return;
 
+      let available: Product[] = [];
+      let unavailable: Product[] = [];
+
+      const ids = selectedItems.map((item) => item.id);
+      const freshProducts = await syncCart(ids);
+
+      if (!freshProducts) return;
+
+      freshProducts.forEach((product) => {
+        if (product.availableForSale === true) {
+          available.push(product);
+        } else {
+          unavailable.push(product);
+        }
+      });
+
+      if (available.length > 0) {
+        setFilteredItems(available);
+      }
+
+      if (unavailable.length > 0) {
+        const idsToRemove = unavailable.map((p) => p.id);
+        removeItems(idsToRemove);
+      }
+    };
+    getSelectedItems();
+  }, [selectedItems]);
   const boxPrice = parseFloat(
     baseBox?.priceRange.minVariantPrice.amount ?? "0"
   );
-  const selectedItemsPrice = availableItems.reduce((sum, item) => {
+  const selectedItemsPrice = filteredItems.reduce((sum, item) => {
     const itemPrice = parseFloat(item.priceRange.minVariantPrice.amount ?? "0");
     return sum + itemPrice;
   }, 0);
@@ -55,7 +85,9 @@ const BuilderFull = () => {
           </div>
           <div className="flex gap-4 items-center mb-2">
             <h4 className="text-2xl">Vaš total:</h4>
-            <p className="text-2xl font-cormorant ">{priceWithDiscount}€</p>
+            <p className="text-2xl font-cormorant ">
+              {priceWithDiscount.toFixed(2)}€
+            </p>
           </div>
           <CheckoutGiftBoxBtn />
         </div>

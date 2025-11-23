@@ -12,7 +12,7 @@ import { syncCart } from "@/lib/shopify/syncCart";
 const Page = () => {
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
-  const removeItem = useCartStore((state) => state.removeFromCart);
+  const removeItems = useCartStore((state) => state.removeItems);
   const [filtered, setFiltered] = useState<Product[]>([]);
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -40,11 +40,10 @@ const Page = () => {
       }
 
       if (unavailable.length > 0) {
-        unavailable.forEach((product) => {
-          removeItem(product.id);
-        });
+        const idsToRemove = unavailable.map((p) => p.id);
+        removeItems(idsToRemove);
       }
-      console.log(cart);
+
       setMounted(true);
     };
     fetchFreshProducts();
