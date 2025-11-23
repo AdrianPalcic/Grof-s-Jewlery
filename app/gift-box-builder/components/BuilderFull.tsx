@@ -13,8 +13,8 @@ const BuilderFull = () => {
     const getSelectedItems = async () => {
       if (!selectedItems) return;
 
-      let available: Product[] = [];
-      let unavailable: Product[] = [];
+      const available: Product[] = [];
+      const unavailable: Product[] = [];
 
       const ids = selectedItems.map((item) => item.id);
       const freshProducts = await syncCart(ids);

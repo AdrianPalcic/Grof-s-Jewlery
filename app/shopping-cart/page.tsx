@@ -19,8 +19,8 @@ const Page = () => {
   useEffect(() => {
     const fetchFreshProducts = async () => {
       if (!cart.length) return;
-      let available: Product[] = [];
-      let unavailable: Product[] = [];
+      const available: Product[] = [];
+      const unavailable: Product[] = [];
 
       const ids = cart.map((item) => item.id);
       const freshProducts = await syncCart(ids);
