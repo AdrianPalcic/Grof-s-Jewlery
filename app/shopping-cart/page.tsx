@@ -18,13 +18,37 @@ const Page = () => {
 
   useEffect(() => {
     const fetchFreshProducts = async () => {
+      if (!cart.length) return;
+      let available: Product[] = [];
+      let unavailable: Product[] = [];
+
       const ids = cart.map((item) => item.id);
       const freshProducts = await syncCart(ids);
-      console.log(freshProducts);
+
+      if (!freshProducts) return;
+
+      freshProducts.forEach((product) => {
+        if (product.availableForSale === true) {
+          available.push(product);
+        } else {
+          unavailable.push(product);
+        }
+      });
+
+      if (available.length > 0) {
+        setFiltered(available);
+      }
+
+      if (unavailable.length > 0) {
+        unavailable.forEach((product) => {
+          removeItem(product.id);
+        });
+      }
+      console.log(cart);
     };
     fetchFreshProducts();
     setMounted(true);
-  }, []);
+  }, [cart]);
 
   if (!mounted) return <Loader />;
 
@@ -57,7 +81,11 @@ const Page = () => {
         <meta name="twitter:image" content="/hero-home.png" />
       </Head>
       <section className="px-4 sm:px-10 mx-auto mt-10 mb-20">
-        {cart.length === 0 ? <CartEmpty /> : <CartFull products={cart} />}
+        {filtered.length === 0 ? (
+          <CartEmpty />
+        ) : (
+          <CartFull products={filtered} />
+        )}
       </section>
     </>
   );
