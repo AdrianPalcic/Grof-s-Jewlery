@@ -45,9 +45,9 @@ const Page = () => {
         });
       }
       console.log(cart);
+      setMounted(true);
     };
     fetchFreshProducts();
-    setMounted(true);
   }, [cart]);
 
   if (!mounted) return <Loader />;
