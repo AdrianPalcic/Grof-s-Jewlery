@@ -14,18 +14,24 @@ const Page = () => {
 
   useEffect(() => {
     const getBaseBox = async () => {
-      if (!giftBox) return;
+      if (!giftBox) {
+        setMounted(true);
+        return;
+      }
 
       const baseBox = await getProductByHandle(giftBox.handle);
-      if (!baseBox) return;
+      if (!baseBox) {
+        setMounted(true);
+        return;
+      }
 
       if (baseBox.availableForSale === false) {
         resetGift();
       }
+      setMounted(true);
     };
 
     getBaseBox();
-    setMounted(true);
   }, [giftBox]);
 
   if (!mounted) return <Loader />;

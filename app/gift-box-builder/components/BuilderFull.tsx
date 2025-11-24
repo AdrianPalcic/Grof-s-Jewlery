@@ -40,6 +40,7 @@ const BuilderFull = () => {
     };
     getSelectedItems();
   }, [selectedItems]);
+
   const boxPrice = parseFloat(
     baseBox?.priceRange.minVariantPrice.amount ?? "0"
   );
@@ -48,9 +49,11 @@ const BuilderFull = () => {
     return sum + itemPrice;
   }, 0);
 
-  const totalPrice = boxPrice + selectedItemsPrice;
+  const totalPrice =
+    selectedItems.length >= 1 ? boxPrice + selectedItemsPrice : boxPrice;
 
-  const priceWithDiscount = totalPrice * 0.9;
+  const priceWithDiscount =
+    selectedItems.length >= 1 ? totalPrice * 0.9 : totalPrice;
 
   return (
     <>
@@ -79,10 +82,12 @@ const BuilderFull = () => {
               {totalPrice}€
             </p>
           </div>
-          <div className="flex gap-4 items-center">
-            <p className="text-left">Popust na Gift Box:</p>
-            <p className="text-left text-secondaryColor font-bold">10%</p>
-          </div>
+          {selectedItems.length >= 1 && (
+            <div className="flex gap-4 items-center">
+              <p className="text-left">Popust na Gift Box:</p>
+              <p className="text-left text-secondaryColor font-bold">10%</p>
+            </div>
+          )}
           <div className="flex gap-4 items-center mb-2">
             <h4 className="text-2xl">Vaš total:</h4>
             <p className="text-2xl font-cormorant ">
