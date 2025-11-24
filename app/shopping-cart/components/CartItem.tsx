@@ -3,6 +3,7 @@
 import { useCartStore } from "@/store/cartStore";
 import { Product } from "@/types/types";
 import { Trash } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -28,10 +29,12 @@ const CartItem = ({
             href={`/proizvodi/${product.handle}`}
             className="w-[100px] smm:w-[150px] h-[100px]"
           >
-            <img
-              src={product.featuredImage?.url}
+            <Image
+              src={product.featuredImage?.url || ""}
               alt="Artikl"
               className="w-full h-full object-cover transition-opacity duration-200 hover:opacity-90"
+              width={100}
+              height={100}
             />
           </Link>
 

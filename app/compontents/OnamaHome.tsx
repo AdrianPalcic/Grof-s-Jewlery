@@ -36,6 +36,8 @@ const OnamaHome = () => {
           src="/puna.jpeg"
           alt="Vlasnici Grof's jewlery"
           className="w-full h-full object-cover max-h-[700px]"
+          width={500}
+          height={500}
         />
       </div>
     </section>

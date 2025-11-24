@@ -26,6 +26,8 @@ const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
             src={item.featuredImage?.url || ""}
             alt={item.featuredImage?.altText || ""}
             className="w-full h-full object-cover transition-opacity duration-200 hover:opacity-90"
+            width={50}
+            height={50}
           />
         </Link>
         <div className="flex flex-col gap-1 justify-between">

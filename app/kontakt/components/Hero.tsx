@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
@@ -14,10 +15,12 @@ const Hero = () => {
           </p>
         </div>
         <div className="w-full flex items-center justify-center min-h-[300px] h-[300px] sm:h-[500px]">
-          <img
-            src="/kontakt.png"
+          <Image
+            src="/onama.jpeg"
             alt="Ručno rađeni papirnati nakit"
             className="w-full h-full object-cover"
+            width={500}
+            height={500}
           />
         </div>
       </div>

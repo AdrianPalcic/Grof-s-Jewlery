@@ -17,6 +17,8 @@ const BuilderMiniItem = ({ product }: { product: Product }) => {
           src={product.featuredImage?.url || ""}
           alt={product.featuredImage?.altText || ""}
           className="w-full h-full object-cover"
+          width={50}
+          height={50}
         />
       </Link>
       <div className="flex flex-col justify-between">

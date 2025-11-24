@@ -14,6 +14,8 @@ const BuildGift = () => {
             alt="Izradite svoj poklon papirnatih nakita"
             loading="lazy"
             className="w-full h-[50vh] object-cover min-h-[400px]"
+            width={500}
+            height={500}
           />
 
           <div className="absolute inset-0 bg-black/40"></div>

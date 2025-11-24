@@ -24,6 +24,8 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
             alt={first.featuredImage?.altText || first.title}
             loading="lazy"
             className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+            width={500}
+            height={500}
           />
           {!first.availableForSale && (
             <span className="sold-out">Rasprodano</span>
@@ -43,6 +45,8 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
                 alt={product.featuredImage?.altText || product.title}
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-300 hover:scale-[1.02]"
+                width={500}
+                height={500}
               />
               {!product.availableForSale && (
                 <span className="sold-out">Rasprodano</span>

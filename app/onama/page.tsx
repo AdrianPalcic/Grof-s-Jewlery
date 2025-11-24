@@ -1,5 +1,6 @@
 import React from "react";
 import CTA from "../compontents/CTA";
+import Image from "next/image";
 
 export const metadata = {
   title: "Grof's Jewelry | O nama",
@@ -29,10 +30,12 @@ const page = () => {
     <main className="px-4 sm:px-10 mx-auto mt-10 mb-20 ">
       <h1 className="text-3xl sm:text-5xl">O nama</h1>
       <div className="w-full flex items-center justify-center min-h-[300px] h-[300px] sm:h-[500px] mt-5">
-        <img
+        <Image
           src="/onama.jpeg"
           alt="Ručno rađeni papirnati nakit"
           className="w-full h-full object-cover"
+          width={500}
+          height={500}
         />
       </div>
       <div className="w-full my-5">

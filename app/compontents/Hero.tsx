@@ -96,6 +96,8 @@ const Hero = () => {
             src={categories[currentIndex].img}
             alt={categories[currentIndex].text}
             className="w-full h-full object-cover"
+            width={500}
+            height={500}
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </motion.div>
