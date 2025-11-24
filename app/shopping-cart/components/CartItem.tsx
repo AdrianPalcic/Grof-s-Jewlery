@@ -6,8 +6,19 @@ import { Trash } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const CartItem = ({ product }: { product: Product }) => {
+const CartItem = ({
+  product,
+  setFiltered,
+}: {
+  product: Product;
+  setFiltered: React.Dispatch<React.SetStateAction<Product[]>>;
+}) => {
   const deleteItem = useCartStore((state) => state.removeFromCart);
+
+  const handleDelete = (id: string) => {
+    deleteItem(id);
+    setFiltered((filtered) => filtered.filter((p) => p.id !== product.id));
+  };
 
   return (
     <div id="item" className="w-full  py-2 ">
@@ -32,7 +43,7 @@ const CartItem = ({ product }: { product: Product }) => {
               </h3>
             </div>
             <div className="flex gap-1">
-              <span onClick={() => deleteItem(product.id)}>
+              <span onClick={() => handleDelete(product.id)}>
                 <Trash
                   className="opacity-65 transition-all duration-300 hover:text-secondaryColor hover:opacity-100 cursor-pointer"
                   size={15}

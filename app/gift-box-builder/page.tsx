@@ -22,11 +22,10 @@ const Page = () => {
       if (baseBox.availableForSale === false) {
         resetGift();
       }
-      console.log(baseBox);
-      setMounted(true);
     };
 
     getBaseBox();
+    setMounted(true);
   }, [giftBox]);
 
   if (!mounted) return <Loader />;

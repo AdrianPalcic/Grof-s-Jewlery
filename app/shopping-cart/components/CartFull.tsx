@@ -5,7 +5,13 @@ import { Product } from "@/types/types";
 import { calculateTotal } from "@/utils/calculateTotal";
 import CheckoutBtn from "./CheckoutBtn";
 
-const CartFull = ({ products }: { products: Product[] }) => {
+const CartFull = ({
+  products,
+  setFiltered,
+}: {
+  products: Product[];
+  setFiltered: React.Dispatch<React.SetStateAction<Product[]>>;
+}) => {
   const total = calculateTotal(products);
 
   return (
@@ -30,6 +36,7 @@ const CartFull = ({ products }: { products: Product[] }) => {
               <CartItem
                 key={`${product.id}-${product.handle}`}
                 product={product}
+                setFiltered={setFiltered}
               />
             );
           })}

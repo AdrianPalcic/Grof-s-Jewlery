@@ -18,14 +18,20 @@ const Page = () => {
 
   useEffect(() => {
     const fetchFreshProducts = async () => {
-      if (!cart.length) return;
+      if (!cart.length) {
+        setMounted(true);
+        return;
+      }
       const available: Product[] = [];
       const unavailable: Product[] = [];
 
       const ids = cart.map((item) => item.id);
       const freshProducts = await syncCart(ids);
 
-      if (!freshProducts) return;
+      if (!freshProducts) {
+        setMounted(true);
+        return;
+      }
 
       freshProducts.forEach((product) => {
         if (product.availableForSale === true) {
@@ -43,7 +49,6 @@ const Page = () => {
         const idsToRemove = unavailable.map((p) => p.id);
         removeItems(idsToRemove);
       }
-
       setMounted(true);
     };
     fetchFreshProducts();
@@ -83,7 +88,7 @@ const Page = () => {
         {filtered.length === 0 ? (
           <CartEmpty />
         ) : (
-          <CartFull products={filtered} />
+          <CartFull products={filtered} setFiltered={setFiltered} />
         )}
       </section>
     </>
