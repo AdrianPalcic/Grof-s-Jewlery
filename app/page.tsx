@@ -45,7 +45,6 @@ export default async function Home() {
   const filteredCollections = collections.filter(
     (col) => col.handle !== "frontpage"
   );
-  console.log(filteredCollections);
 
   const fiveProducts = await getCollectionProducts({
     handle: filteredCollections[0].handle,
