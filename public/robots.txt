@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://grofsjewelry.com
+
+# Sitemaps
+Sitemap: https://grofsjewelry.com/sitemap.xml
