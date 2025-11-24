@@ -1,4 +1,5 @@
 import { Product } from "@/types/types";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -18,7 +19,7 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
           href={`/proizvodi/${first.handle}`}
           className="flex-1 overflow-hidden relative"
         >
-          <img
+          <Image
             src={first.featuredImage?.url || "/placeholder.png"}
             alt={first.featuredImage?.altText || first.title}
             loading="lazy"
@@ -37,7 +38,7 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
               href={`/proizvodi/${product.handle}`}
               className="w-full smm:w-[48%] overflow-hidden relative"
             >
-              <img
+              <Image
                 src={product.featuredImage?.url || "/placeholder.png"}
                 alt={product.featuredImage?.altText || product.title}
                 loading="lazy"
