@@ -8,7 +8,7 @@ export const metadata = {
     title: "Grof's jewelry | Politika privatnosti",
     description:
       "Pročitajte našu politiku privatnosti i saznajte kako Grof's jewelry prikuplja, koristi i štiti vaše podatke.",
-    url: "https://grof-s-jewelry.vercel.app/politika-privatnosti",
+    url: "https://grofsjewelry.com/politika-privatnosti",
     siteName: "Grof's jewelry",
     images: [{ url: "/hero-home.png", width: 1200, height: 630 }],
     locale: "hr_HR",
