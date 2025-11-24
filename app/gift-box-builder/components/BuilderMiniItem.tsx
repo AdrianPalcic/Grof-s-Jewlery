@@ -3,6 +3,7 @@
 import { useGiftStore } from "@/store/giftStore";
 import { Product } from "@/types/types";
 import { Trash } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -12,9 +13,9 @@ const BuilderMiniItem = ({ product }: { product: Product }) => {
   return (
     <div className="flex gap-4">
       <Link href={`/proizvodi/${product.handle}`} className="w-[50px] h-[50px]">
-        <img
-          src={product.featuredImage?.url}
-          alt={product.featuredImage?.altText}
+        <Image
+          src={product.featuredImage?.url || ""}
+          alt={product.featuredImage?.altText || ""}
           className="w-full h-full object-cover"
         />
       </Link>

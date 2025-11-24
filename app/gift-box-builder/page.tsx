@@ -53,7 +53,7 @@ const Page = () => {
         <meta property="og:image" content="/hero-home.png" />
         <meta
           property="og:url"
-          content="https://grof-s-jewlery.vercel.app/gift-box-builder"
+          content="https://grofsjewelry/gift-box-builder"
         />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="hr_HR" />

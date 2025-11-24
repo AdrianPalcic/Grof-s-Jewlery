@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import ButtonMain from "./ButtonMain";
+import Image from "next/image";
 
 const BuildGift = () => {
   return (
@@ -8,7 +9,7 @@ const BuildGift = () => {
       <div className="flex flex-col gap-3 w-full">
         <div className="relative w-full overflow-hidden">
           {/* Slika */}
-          <img
+          <Image
             src="/one.png"
             alt="Izradite svoj poklon papirnatih nakita"
             loading="lazy"

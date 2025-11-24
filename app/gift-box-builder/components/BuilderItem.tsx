@@ -7,6 +7,7 @@ import BuilderMiniItem from "./BuilderMiniItem";
 import { Product } from "@/types/types";
 import { useGiftStore } from "@/store/giftStore";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,9 +22,9 @@ const BuilderItem = ({ item, price }: { item: Product; price: number }) => {
           href={`/proizvodi/${item.handle}`}
           className="w-[100px] smm:w-[150px] h-[120px]"
         >
-          <img
-            src={item.featuredImage?.url}
-            alt={item.featuredImage?.altText}
+          <Image
+            src={item.featuredImage?.url || ""}
+            alt={item.featuredImage?.altText || ""}
             className="w-full h-full object-cover transition-opacity duration-200 hover:opacity-90"
           />
         </Link>

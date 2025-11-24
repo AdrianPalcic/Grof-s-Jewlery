@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import ButtonMain from "./ButtonMain";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const Hero = () => {
   const [firstRender, setFirstRender] = useState(true);
@@ -91,7 +92,7 @@ const Hero = () => {
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={(e, info) => handleSwipe(info.offset.x)}
         >
-          <img
+          <Image
             src={categories[currentIndex].img}
             alt={categories[currentIndex].text}
             className="w-full h-full object-cover"

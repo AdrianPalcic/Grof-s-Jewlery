@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import ButtonMain from "./ButtonMain";
 import ButtonSecondary from "./ButtonSecondary";
+import Image from "next/image";
 
 const OnamaHome = () => {
   return (
@@ -31,7 +32,7 @@ const OnamaHome = () => {
         </Link>
       </div>
       <div className="flex-1 w-full">
-        <img
+        <Image
           src="/puna.jpeg"
           alt="Vlasnici Grof's jewlery"
           className="w-full h-full object-cover max-h-[700px]"
