@@ -2,25 +2,25 @@ import React from "react";
 import CTA from "../compontents/CTA";
 
 export const metadata = {
-  title: "Grof's Jewlery | O nama",
+  title: "Grof's Jewelry | O nama",
   description:
-    "Dobrodošli u Grof's Jewlery – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
+    "Dobrodošli u Grof's Jewelry – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
   openGraph: {
-    title: "Grof's Jewlery | O nama",
+    title: "Grof's Jewelry | O nama",
     description:
-      "Dobrodošli u Grof's Jewlery – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
-    url: "https://grof-s-jewlery.vercel.app/onama",
-    siteName: "Grof's Jewlery",
-    images: [{ url: "/kontakt.png", width: 1200, height: 630 }],
+      "Dobrodošli u Grof's Jewelry – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
+    url: "https://grofsjewelry.com/onama",
+    siteName: "Grof's Jewelry",
+    images: [{ url: "/onama.jpeg", width: 1200, height: 630 }],
     locale: "hr_HR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | O nama",
+    title: "Grof's Jewelry | O nama",
     description:
-      "Dobrodošli u Grof's Jewlery – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
-    images: ["/kontakt.png"],
+      "Dobrodošli u Grof's Jewelry – otkrijte naš čarobni svijet unikatnih poklona, ručno rađenog nakita i poklon pakiranja.",
+    images: ["/onama.jpeg"],
   },
 };
 

@@ -4,15 +4,15 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 export const metadata = {
-  title: "Grof's Jewlery | Unikatni Pokloni",
+  title: "Grof's Jewelry | Unikatni Pokloni",
   description:
-    "Otkrijte Grof's Jewlery – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
+    "Otkrijte Grof's Jewelry – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
   openGraph: {
-    title: "Grof's Jewlery | Unikatni Pokloni",
+    title: "Grof's Jewelry | Unikatni Pokloni",
     description:
-      "Otkrijte Grof's Jewlery – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
-    url: "https://grof-s-jewlery.vercel.app/kategorije/unikatni-pokloni",
-    siteName: "Grof's Jewlery",
+      "Otkrijte Grof's Jewelry – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
+    url: "https://grofsjewelry.com/kategorije/unikatni-pokloni",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -25,9 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Unikatni Pokloni",
+    title: "Grof's Jewelry | Unikatni Pokloni",
     description:
-      "Otkrijte Grof's Jewlery – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
+      "Otkrijte Grof's Jewelry – unikatni pokloni, okviri, dekorativne vaze, platna i drvene škrinjice za posebne trenutke.",
     images: ["/hero-home.png"],
   },
 };

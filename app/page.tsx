@@ -7,19 +7,18 @@ import Reviews from "./compontents/Reviews";
 import BuildGift from "./compontents/BuildGift";
 import CTA from "./compontents/CTA";
 import { getAllCollections } from "@/lib/shopify/collections";
-import { getFiveProducts } from "@/lib/shopify/fiveProducts";
 import { getCollectionProducts } from "@/lib/shopify/collectionProducts";
 
 // ✅ SEO Metadata za Home stranicu
 export const metadata = {
-  title: "Grof's Jewlery | Handmade Paper Jewelry",
+  title: "Grof's Jewelry | Handmade Paper Jewelry",
   description:
     "Dobrodošli u Grof's Jewlery – otkrijte najbolje proizvode, kolekcije i poklon setove.",
   openGraph: {
     title: "Grof's Jewlery | Handmade Paper Jewelry",
     description:
       "Dobrodošli u Grof's Jewlery – otkrijte najbolje proizvode, kolekcije i poklon setove.",
-    url: "grof-s-jewlery.vercel.app",
+    url: "https://grofsjewelry.com",
     siteName: "Grof's Jewlery",
     images: [
       {
@@ -33,9 +32,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Handmade Paper Jewelry",
+    title: "Grof's Jewelry | Handmade Paper Jewelry",
     description:
-      "Dobrodošli u Grof's Jewlery – otkrijte najbolje proizvode, kolekcije i poklon setove.",
+      "Dobrodošli u Grof's Jewelry – otkrijte najbolje proizvode, kolekcije i poklon setove.",
     images: ["/hero-home.png"],
   },
 };

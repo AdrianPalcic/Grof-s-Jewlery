@@ -4,15 +4,15 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 export const metadata = {
-  title: "Grof's Jewlery | Pakiranje Poklona",
+  title: "Grof's Jewelry | Pakiranje Poklona",
   description:
-    "Otkrijte Grof's Jewlery – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
+    "Otkrijte Grof's Jewelry – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
   openGraph: {
-    title: "Grof's Jewlery | Pakiranje Poklona",
+    title: "Grof's Jewelry | Pakiranje Poklona",
     description:
-      "Otkrijte Grof's Jewlery – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
-    url: "https://grof-s-jewlery.vercel.app/kategorije/pakiranje-poklona",
-    siteName: "Grof's Jewlery",
+      "Otkrijte Grof's Jewelry – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
+    url: "https://grofsjewelry.com/kategorije/pakiranje-poklona",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -25,9 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Pakiranje Poklona",
+    title: "Grof's Jewelry | Pakiranje Poklona",
     description:
-      "Otkrijte Grof's Jewlery – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
+      "Otkrijte Grof's Jewelry – kutije i vrećice za poklone, idealne za personalizirane poklone i unikatna pakiranja.",
     images: ["/hero-home.png"],
   },
 };

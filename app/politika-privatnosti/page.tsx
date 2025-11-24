@@ -1,24 +1,24 @@
 import React from "react";
 
 export const metadata = {
-  title: "Grof's Jewlery | Politika privatnosti",
+  title: "Grof's Jewelry | Politika privatnosti",
   description:
-    "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewlery prikuplja, koristi i štiti vaše podatke.",
+    "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewelry prikuplja, koristi i štiti vaše podatke.",
   openGraph: {
-    title: "Grof's Jewlery | Politika privatnosti",
+    title: "Grof's Jewelry | Politika privatnosti",
     description:
-      "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewlery prikuplja, koristi i štiti vaše podatke.",
-    url: "https://grof-s-jewlery.vercel.app/politika-privatnosti",
-    siteName: "Grof's Jewlery",
+      "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewelry prikuplja, koristi i štiti vaše podatke.",
+    url: "https://grof-s-Jewelry.vercel.app/politika-privatnosti",
+    siteName: "Grof's Jewelry",
     images: [{ url: "/hero-home.png", width: 1200, height: 630 }],
     locale: "hr_HR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Politika privatnosti",
+    title: "Grof's Jewelry | Politika privatnosti",
     description:
-      "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewlery prikuplja, koristi i štiti vaše podatke.",
+      "Pročitajte našu politiku privatnosti i saznajte kako Grof's Jewelry prikuplja, koristi i štiti vaše podatke.",
     images: ["/hero-home.png"],
   },
 };
@@ -100,7 +100,7 @@ const PrivacyPolicyPage = () => {
       <p className="mb-4">
         Ako imate pitanja u vezi ove politike privatnosti, kontaktirajte nas na:
         <br />
-        <strong>Email:</strong> grofsjewlery@gmail.com
+        <strong>Email:</strong> grofsJewelry@gmail.com
       </p>
 
       <p className="text-sm mt-6">Zadnja izmjena: 19.10.2025.</p>

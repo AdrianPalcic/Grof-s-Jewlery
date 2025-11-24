@@ -18,14 +18,14 @@ export async function generateMetadata({
   const ogImage = product.images.edges[0]?.node.url || "/hero-home.png";
 
   return {
-    title: `Grof's Jewlery | ${product.title}`,
+    title: `Grof's Jewelry | ${product.title}`,
     description:
       product.description || "Pregledajte naš unikatni nakit i poklone.",
     openGraph: {
-      title: `Grof's Jewlery | ${product.title}`,
+      title: `Grof's Jewelry | ${product.title}`,
       description:
         product.description || "Pregledajte naš unikatni nakit i poklone.",
-      url: `https://grof-s-jewlery.vercel.app/proizvodi/${params.slug}`,
+      url: `https://grofsjewelry.com/proizvodi/${params.slug}`,
       siteName: "Grof's Jewlery",
       images: [
         {
@@ -39,7 +39,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Grof's Jewlery | ${product.title}`,
+      title: `Grof's Jewelry | ${product.title}`,
       description:
         product.description || "Pregledajte naš unikatni nakit i poklone.",
       images: [ogImage],

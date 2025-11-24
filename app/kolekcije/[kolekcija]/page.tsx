@@ -17,8 +17,8 @@ export async function generateMetadata({
   const collection = collections.find((c) => c.handle === "jesenska-kolekcija");
 
   const title = collection?.title
-    ? `${collection.title} | Grof's Jewlery`
-    : "Grof's Jewlery | Kolekcija";
+    ? `${collection.title} | Grof's Jewelry`
+    : "Grof's Jewelry | Kolekcija";
 
   const description = collection?.description
     ? collection.description
@@ -32,8 +32,8 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://grof-s-jewlery.vercel.app/kolekcije/${kolekcija}`,
-      siteName: "Grof's Jewlery",
+      url: `https://grofsjewelry.com/kolekcije/${kolekcija}`,
+      siteName: "Grof's Jewelry",
       images: [
         {
           url: image,

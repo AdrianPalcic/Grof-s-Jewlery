@@ -4,15 +4,15 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 export const metadata = {
-  title: "Grof's Jewlery | Dodaci Poklonima",
+  title: "Grof's Jewelry | Dodaci Poklonima",
   description:
-    "Otkrijte dodatke za poklone u Grof's Jewlery webshopu – čestitke, zahvalnice i dekoracije kutija i vrečica.",
+    "Otkrijte dodatke za poklone u Grof's Jewelry webshopu – čestitke, zahvalnice i dekoracije kutija i vrečica.",
   openGraph: {
-    title: "Grof's Jewlery | Dodaci Poklonima",
+    title: "Grof's Jewelry | Dodaci Poklonima",
     description:
-      "Otkrijte dodatke za poklone u Grof's Jewlery webshopu – čestitke, zahvalnice i dekoracije kutija i vrečica.",
-    url: "https://grof-s-jewlery.vercel.app/kategorije/dodaci-poklonima",
-    siteName: "Grof's Jewlery",
+      "Otkrijte dodatke za poklone u Grof's Jewelry webshopu – čestitke, zahvalnice i dekoracije kutija i vrečica.",
+    url: "https://grofsjewelry.com/kategorije/dodaci-poklonima",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -25,9 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Dodaci Poklonima",
+    title: "Grof's Jewelry | Dodaci Poklonima",
     description:
-      "Otkrijte dodatke za poklone u Grof's Jewlery webshopu – čestitke, zahvalnice i dekoracije kutija i vrečica.",
+      "Otkrijte dodatke za poklone u Grof's Jewelry webshopu – čestitke, zahvalnice i dekoracije kutija i vrečica.",
     images: ["/hero-home.png"],
   },
 };

@@ -40,13 +40,13 @@ export async function generateMetadata({
   const name = formatName(podkategorija);
 
   return {
-    title: `Grof's Jewlery | ${name}`,
-    description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
+    title: `Grof's Jewelry | ${name}`,
+    description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewelry webshopu – savršen izbor za vaše poklone.`,
     openGraph: {
-      title: `Grof's Jewlery | ${name}`,
-      description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
-      url: `https://grof-s-jewlery.vercel.app/kategorije/gift-boxes/${podkategorija}`,
-      siteName: "Grof's Jewlery",
+      title: `Grof's Jewelry | ${name}`,
+      description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewelry webshopu – savršen izbor za vaše poklone.`,
+      url: `https://grofsjewelry.com/kategorije/gift-boxes/${podkategorija}`,
+      siteName: "Grof's Jewelry",
       images: [
         {
           url: "/hero-home.png",
@@ -59,8 +59,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Grof's Jewlery | ${name}`,
-      description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewlery webshopu – savršen izbor za vaše poklone.`,
+      title: `Grof's Jewelry | ${name}`,
+      description: `Otkrijte proizvode iz podkategorije ${name} u Grof's Jewelry webshopu – savršen izbor za vaše poklone.`,
       images: ["/hero-home.png"],
     },
   };

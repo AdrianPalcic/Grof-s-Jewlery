@@ -4,25 +4,25 @@ import Form from "./components/Form";
 import SpecialFrom from "./components/SpecialFrom";
 
 export const metadata = {
-  title: "Grof's Jewlery | Kontakt",
+  title: "Grof's Jewelry | Kontakt",
   description:
-    "Kontaktirajte Grof's Jewlery – pošaljite upit ili poruku i naš tim će Vam se javiti u najkraćem roku.",
+    "Kontaktirajte Grof's Jewelry – pošaljite upit ili poruku i naš tim će Vam se javiti u najkraćem roku.",
   openGraph: {
-    title: "Grof's Jewlery | Kontakt",
+    title: "Grof's Jewelry | Kontakt",
     description:
-      "Kontaktirajte Grof's Jewlery – pošaljite upit ili poruku i naš tim će Vam se javiti u najkraćem roku.",
-    url: "https://grof-s-jewlery.vercel.app/kontakt",
-    siteName: "Grof's Jewlery",
-    images: [{ url: "/kontakt.png", width: 1200, height: 630 }],
+      "Kontaktirajte Grof's Jewelry – pošaljite upit ili poruku i naš tim će Vam se javiti u najkraćem roku.",
+    url: "https://grofsjewelry.com/kontakt",
+    siteName: "Grof's Jewelry",
+    images: [{ url: "/onama.jpeg", width: 1200, height: 630 }],
     locale: "hr_HR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Kontakt",
+    title: "Grof's Jewelry | Kontakt",
     description:
-      "Kontaktirajte Grof's Jewlery – pošaljite upit ili poruku i naš tim će Vam se javiti u najkraćem roku.",
-    images: ["/kontakt.png"],
+      "Kontaktirajte Grof's Jewelry – pošaljite upit ili poruku i naš tim će Vam se javiti u najkraćem roku.",
+    images: ["/onama.jpeg"],
   },
 };
 

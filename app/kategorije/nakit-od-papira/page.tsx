@@ -4,15 +4,15 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 export const metadata = {
-  title: "Grof's Jewlery | Nakit od Papira",
+  title: "Grof's Jewelry | Nakit od Papira",
   description:
-    "Otkrijte Grof's Jewlery – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
+    "Otkrijte Grof's Jewelry – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
   openGraph: {
-    title: "Grof's Jewlery | Nakit od Papira",
+    title: "Grof's Jewelry | Nakit od Papira",
     description:
-      "Otkrijte Grof's Jewlery – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
-    url: "https://grof-s-jewlery.vercel.app/kategorije/nakit-od-papira",
-    siteName: "Grof's Jewlery",
+      "Otkrijte Grof's Jewelry – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
+    url: "https://grof-s-Jewelry.vercel.app/kategorije/nakit-od-papira",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -25,9 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Nakit od Papira",
+    title: "Grof's Jewelry | Nakit od Papira",
     description:
-      "Otkrijte Grof's Jewlery – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
+      "Otkrijte Grof's Jewelry – unikatni nakit od papira, uključujući naušnice, broševe, prstenje i ogrlice.",
     images: ["/hero-home.png"],
   },
 };

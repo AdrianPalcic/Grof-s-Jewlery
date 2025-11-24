@@ -3,15 +3,15 @@ import React from "react";
 import ButtonMain from "../compontents/ButtonMain";
 
 export const metadata = {
-  title: "Grof's Jewlery | Hvala na poruci",
+  title: "Grof's Jewelry | Hvala na poruci",
   description:
     "Hvala Vam na poruci! Javit ćemo Vam se u najkraćem roku. Nastavite pregledavati naš webshop.",
   openGraph: {
-    title: "Grof's Jewlery | Hvala na poruci",
+    title: "Grof's Jewelry | Hvala na poruci",
     description:
       "Hvala Vam na poruci! Javit ćemo Vam se u najkraćem roku. Nastavite pregledavati naš webshop.",
-    url: "https://grof-s-jewlery.vercel.app/hvala",
-    siteName: "Grof's Jewlery",
+    url: "https://grofsjewelry.com/hvala",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -24,7 +24,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Hvala na poruci",
+    title: "Grof's Jewelry | Hvala na poruci",
     description:
       "Hvala Vam na poruci! Javit ćemo Vam se u najkraćem roku. Nastavite pregledavati naš webshop.",
     images: ["/hero-home.png"],

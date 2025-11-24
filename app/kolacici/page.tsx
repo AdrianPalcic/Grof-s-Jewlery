@@ -1,15 +1,15 @@
 import React from "react";
 
 export const metadata = {
-  title: "Grof's Jewlery | Politika kolačića",
+  title: "Grof's Jewelry | Politika kolačića",
   description:
-    "Saznajte kako Grof's Jewlery webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
+    "Saznajte kako Grof's Jewelry webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
   openGraph: {
-    title: "Grof's Jewlery | Politika kolačića",
+    title: "Grof's Jewelry | Politika kolačića",
     description:
-      "Saznajte kako Grof's Jewlery webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
-    url: "https://grof-s-jewlery.vercel.app/kolacici",
-    siteName: "Grof's Jewlery",
+      "Saznajte kako Grof's Jewelry webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
+    url: "https://grofsjewelry/kolacici",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -22,9 +22,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Politika kolačića",
+    title: "Grof's Jewelry | Politika kolačića",
     description:
-      "Saznajte kako Grof's Jewlery webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
+      "Saznajte kako Grof's Jewelry webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
     images: ["/hero-home.png"],
   },
 };
@@ -88,7 +88,7 @@ const page = () => {
       <p className="mb-4">
         Ako imate pitanja o našoj politici kolačića, kontaktirajte nas na:
         <br />
-        <strong>Email:</strong> grofsjewlery@gmail.com
+        <strong>Email:</strong> grofsJewelry@gmail.com
       </p>
 
       <p className="text-sm mt-6">Zadnja izmjena: 19.10.2025.</p>

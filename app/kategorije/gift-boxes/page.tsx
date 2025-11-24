@@ -4,15 +4,15 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 export const metadata = {
-  title: "Grof's Jewlery | Gift Boxes",
+  title: "Grof's Jewelry | Gift Boxes",
   description:
-    "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewlery webshopu.",
+    "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewelry webshopu.",
   openGraph: {
-    title: "Grof's Jewlery | Gift Boxes",
+    title: "Grof's Jewelry | Gift Boxes",
     description:
-      "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewlery webshopu.",
-    url: "https://grof-s-jewlery.vercel.app/kategorije/gift-boxes",
-    siteName: "Grof's Jewlery",
+      "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewelry webshopu.",
+    url: "https://grofsjewelry.com/kategorije/gift-boxes",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -25,9 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Gift Boxes",
+    title: "Grof's Jewelry | Gift Boxes",
     description:
-      "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewlery webshopu.",
+      "Otkrijte našu kolekciju Gift Boxeva – savršeni pokloni za svaku prigodu u Grof's Jewelry webshopu.",
     images: ["/hero-home.png"],
   },
 };

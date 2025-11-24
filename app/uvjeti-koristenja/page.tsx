@@ -1,15 +1,15 @@
 import React from "react";
 
 export const metadata = {
-  title: "Grof's Jewlery | Uvjeti korištenja",
+  title: "Grof's Jewelry | Uvjeti korištenja",
   description:
     "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
   openGraph: {
-    title: "Grof's Jewlery | Uvjeti korištenja",
+    title: "Grof's Jewelry | Uvjeti korištenja",
     description:
       "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
-    url: "https://grof-s-jewlery.vercel.app/uvjeti-koristenja",
-    siteName: "Grof's Jewlery",
+    url: "https://grofsjewelry.com",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -22,9 +22,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Uvjeti korištenja",
+    title: "Grof's Jewelry | Uvjeti korištenja",
     description:
-      "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
+      "Pročitajte uvjete korištenja Grof's Jewelry webshopa – prava, obveze i informacije za korisnike.",
     images: ["/hero-home.png"],
   },
 };
@@ -118,7 +118,7 @@ const page = () => {
         Ako imate pitanja u vezi ovih uvjeta korištenja, slobodno nas
         kontaktirajte:
         <br />
-        <strong>Email:</strong> grofsjewlery@gmail.com
+        <strong>Email:</strong> grofsjewelry@gmail.com
       </p>
 
       <p className="text-sm mt-6">Zadnja izmjena: 19.10.2025.</p>

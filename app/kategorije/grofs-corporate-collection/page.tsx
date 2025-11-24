@@ -4,15 +4,15 @@ import { Product } from "@/types/types";
 import { getProductsByTag } from "@/lib/shopify/productsByTag";
 
 export const metadata = {
-  title: "Grof's Jewlery | Grof's Corporate Collection",
+  title: "Grof's Jewelry | Grof's Corporate Collection",
   description:
     "Otkrijte Grof's Corporate Collection – unikatne poslovne poklone, kartice, kutije i dekoracije za vašu tvrtku.",
   openGraph: {
-    title: "Grof's Jewlery | Grof's Corporate Collection",
+    title: "Grof's Jewelry | Grof's Corporate Collection",
     description:
       "Otkrijte Grof's Corporate Collection – unikatne poslovne poklone, kartice, kutije i dekoracije za vašu tvrtku.",
-    url: "https://grof-s-jewlery.vercel.app/kategorije/grofs-corporate-collection",
-    siteName: "Grof's Jewlery",
+    url: "https://grofsjewelry.com/kategorije/grofs-corporate-collection",
+    siteName: "Grof's Jewelry",
     images: [
       {
         url: "/hero-home.png",
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewlery | Grof's Corporate Collection",
+    title: "Grof's Jewelry | Grof's Corporate Collection",
     description:
       "Otkrijte Grof's Corporate Collection – unikatne poslovne poklone, kartice, kutije i dekoracije za vašu tvrtku.",
     images: ["/hero-home.png"],
