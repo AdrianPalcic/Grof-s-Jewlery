@@ -9,14 +9,6 @@ const Footer = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    console.log("Newsletter email submitted:", email);
-    setSubmitted(true);
-    setEmail("");
-  };
-
   return (
     <footer className="flex w-full flex-wrap gap-5 px-4 sm:px-8 mb-4">
       <div className="flex-1 min-w-[250px]">
@@ -69,6 +61,28 @@ const Footer = () => {
               className="group-hover:text-secondaryColor"
             />
           </Link>
+        </div>
+      </div>
+      <div className="flex-1 min-w-[250px]">
+        <h3 className="uppercase text-lg font-semibold mb-2">
+          Informacije o nama
+        </h3>
+
+        <div className="font-cormorant">
+          <p>
+            <strong>Grof's Jewelry</strong>, obrt za usluge, proizvodnju i
+            trgovinu.
+          </p>
+
+          <p>Vl. Iva Peroš.</p>
+
+          <p>Zagreb, Kopernikova ulica 112.</p>
+
+          <p>OIB: 19706383007</p>
+
+          <p>grofsjewelry@gmail.com</p>
+
+          <p>Nije u sustavu PDV-a prema čl. 90 Zakona o PDV-u</p>
         </div>
       </div>
     </footer>

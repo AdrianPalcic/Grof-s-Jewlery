@@ -8,7 +8,7 @@ export const metadata = {
     title: "Grof's Jewelry | Politika kolačića",
     description:
       "Saznajte kako Grof's Jewelry webshop koristi kolačiće za poboljšanje iskustva i funkcioniranje stranice.",
-    url: "https://grofsjewelry/kolacici",
+    url: "https://grofsjewelry.com/kolacici",
     siteName: "Grof's Jewelry",
     images: [
       {
@@ -29,21 +29,23 @@ export const metadata = {
   },
 };
 
-const page = () => {
+const Page = () => {
   return (
     <section className="max-w-4xl mx-auto p-6 sm:p-10">
       <h1 className="text-3xl font-bold mb-6">Politika kolačića</h1>
 
       <p className="mb-4">
-        Naš webshop koristi kolačiće kako bismo poboljšali vaše iskustvo i
-        osigurali pravilno funkcioniranje stranice.
+        Ova stranica koristi kolačiće radi poboljšanja korisničkog iskustva,
+        pravilnog funkcioniranja košarice i postupka kupnje, te analize
+        korištenja webshopa. Korištenjem ove stranice pristajete na upotrebu
+        kolačića sukladno ovoj politici.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">1. Što su kolačići?</h2>
       <p className="mb-4">
-        Kolačići su male tekstualne datoteke koje se pohranjuju na vaš uređaj
-        kada posjetite web stranicu. Omogućuju nam prepoznavanje vašeg uređaja i
-        poboljšanje korisničkog iskustva.
+        Kolačići su male tekstualne datoteke koje se spremaju na vaš uređaj kada
+        posjetite web stranicu. Omogućuju prepoznavanje uređaja, pamćenje vaših
+        postavki i ispravno funkcioniranje web trgovine.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
@@ -51,17 +53,20 @@ const page = () => {
       </h2>
       <ul className="list-disc ml-6 mb-4">
         <li>
-          <strong>Neophodni kolačići:</strong> omogućuju osnovne funkcije weba,
-          npr. košaricu i login session. Ovi kolačići ne zahtijevaju privolu.
+          <strong>Neophodni kolačići:</strong> omogućuju osnovne funkcije web
+          trgovine, poput dodavanja proizvoda u košaricu, funkcioniranje
+          checkouta i sigurnosne provjere. Ovi kolačići ne mogu biti isključeni
+          jer su neophodni za rad webshopa.
         </li>
         <li>
-          <strong>Analitički kolačići:</strong> prate promet i ponašanje
-          korisnika radi poboljšanja web stranice. Aktiviraju se samo ako
+          <strong>Analitički kolačići:</strong> koriste se za praćenje
+          statistike posjeta i ponašanja korisnika. Aktiviraju se samo ako
           korisnik prihvati kolačiće.
         </li>
         <li>
-          <strong>Marketing kolačići:</strong> koriste se za personalizaciju
-          oglasa i remarketing. Aktiviraju se samo uz privolu korisnika.
+          <strong>Marketinški kolačići:</strong> omogućuju prikaz ciljanih
+          oglasa i remarketing (npr. putem Facebook Piksela ili Google Ads-a,
+          ako su postavljeni). Aktiviraju se samo uz privolu.
         </li>
       </ul>
 
@@ -69,31 +74,32 @@ const page = () => {
         3. Prihvaćanje kolačića
       </h2>
       <p className="mb-4">
-        Prilikom prvog posjeta webshopu, prikazat će vam se banner s opcijom
-        &quot;Prihvaćam sve&quot;. Klikom na taj gumb prihvaćate korištenje
-        kolačića. Od tog trenutka banner se neće ponovno prikazivati jer se vaša
-        odluka pohranjuje u pregledniku.
+        Prilikom prvog posjeta prikazuje se obavijest o kolačićima s opcijom
+        &quot;Prihvaćam sve&quot;. Klikom na tu opciju pristajete na korištenje
+        svih vrsta kolačića. Vaša odluka pohranjuje se u pregledniku kako se
+        banner ne bi ponovno prikazivao.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
-        4. Upravljanje kolačićima
+        4. Upravljanje i brisanje kolačića
       </h2>
       <p className="mb-4">
-        S obzirom da koristimo samo gumb &quot;Prihvaćam sve&quot;, korisnik ne
-        mijenja pojedinačne vrste kolačića. Stranica funkcionira samo s
-        obaveznim i prihvaćenim kolačićima.
+        Korisnik može u bilo kojem trenutku obrisati ili blokirati kolačiće
+        putem postavki svog preglednika (Chrome, Firefox, Safari, Edge).
+        Onemogućavanje neophodnih kolačića može uzrokovati nepravilno
+        funkcioniranje webshopa, uključujući košaricu i checkout.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">5. Kontakt</h2>
       <p className="mb-4">
-        Ako imate pitanja o našoj politici kolačića, kontaktirajte nas na:
+        Za dodatne informacije možete nas kontaktirati na:
         <br />
-        <strong>Email:</strong> grofsJewelry@gmail.com
+        <strong>Email:</strong> grofsjewelry@gmail.com
       </p>
 
-      <p className="text-sm mt-6">Zadnja izmjena: 19.10.2025.</p>
+      <p className="text-sm mt-6">Zadnja izmjena: 28.11.2025.</p>
     </section>
   );
 };
 
-export default page;
+export default Page;

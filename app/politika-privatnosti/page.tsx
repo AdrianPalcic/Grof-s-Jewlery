@@ -25,85 +25,140 @@ export const metadata = {
 
 const PrivacyPolicyPage = () => {
   return (
-    <section className="max-w-4xl mx-auto p-6 sm:p-10">
+    <section className="max-w-4xl mx-auto p-6 sm:p-10 font-cinzel">
       <h1 className="text-3xl font-bold mb-6">Politika privatnosti</h1>
 
       <p className="mb-4">
-        Vaša privatnost nam je važna. Ova politika privatnosti objašnjava kako
-        prikupljamo, koristimo i štitimo vaše podatke kada koristite naš
-        webshop.
+        Ova Politika privatnosti opisuje kako Grof's Jewelry prikuplja, koristi
+        i štiti vaše osobne podatke u skladu s Općom uredbom o zaštiti podataka
+        (GDPR) i Zakonom o provedbi Opće uredbe o zaštiti podataka.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
-        1. Prikupljanje podataka
+        1. Koje podatke prikupljamo
       </h2>
+      <p className="mb-4">Prilikom korištenja webshopa prikupljamo:</p>
+
+      <ul className="list-disc ml-6 mb-4 font-cinzel">
+        <li>Ime i prezime</li>
+        <li>Adresu dostave i adresu za naplatu</li>
+        <li>Email adresu</li>
+        <li>Broj telefona</li>
+        <li>Podatke o narudžbi (proizvodi, količine, cijena)</li>
+        <li>
+          Podatke o plaćanju — napomena: Grof’s Jewelry ne prikuplja niti ne
+          obrađuje podatke o karticama, sve se obrađuje putem sigurnih payment
+          procesora integriranih u Shopify.
+        </li>
+        <li>
+          Tehničke podatke poput IP adrese, tipa uređaja, preglednika, kolačića
+          te informacije o korištenju stranice (prikuplja Shopify).
+        </li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold mt-6 mb-2">
+        2. Zašto prikupljamo podatke
+      </h2>
+      <p className="mb-4">Podatke obrađujemo radi:</p>
+
+      <ul className="list-disc ml-6 mb-4">
+        <li>obrada narudžbi i dostave proizvoda,</li>
+        <li>slanja potvrda i komunikacije s kupcima,</li>
+        <li>poboljšanja rada webshopa i korisničkog iskustva,</li>
+        <li>računovodstvenih i zakonskih obveza obrta,</li>
+        <li>sigurnosti sustava i prevencije zloupotreba.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold mt-6 mb-2">
+        3. Kolačići (Cookies)
+      </h2>
+
       <p className="mb-4">
-        Prikupljamo informacije koje nam dobrovoljno dajete, uključujući:
+        Shopify koristi kolačiće za pravilno funkcioniranje webshopa, sigurnost,
+        analitiku i obradu plaćanja. Korištenjem web stranice pristajete na
+        uporabu kolačića.
       </p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Osobne podatke (ime, prezime, e-mail, adresa za dostavu)</li>
-        <li>Podatke o plaćanju (npr. putem Shopify Payments)</li>
-        <li>Podatke o narudžbama i povijest kupnje</li>
-      </ul>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">
-        2. Korištenje podataka
-      </h2>
-      <p className="mb-4">Vaše podatke koristimo kako bismo:</p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Obradili narudžbe i izvršili dostavu</li>
-        <li>Komunicirali s vama u vezi narudžbi i promocija</li>
-        <li>Poboljšali naš webshop i korisničko iskustvo</li>
-        <li>Pratili statistiku i analitiku posjeta</li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6 mb-2">
-        3. Kolačići i praćenje
-      </h2>
       <p className="mb-4">
-        Koristimo kolačiće i slične tehnologije kako bismo poboljšali
-        funkcionalnost weba i analizirali promet. Možete kontrolirati postavke
-        kolačića putem vašeg preglednika.
+        Najčešći Shopify kolačići uključuju: <code>cart</code>,{" "}
+        <code>_shopify_y</code>, <code>_shopify_s</code>,{" "}
+        <code>checkout_token</code> i druge potrebne za funkcioniranje trgovine.
+      </p>
+
+      <p className="mb-4">
+        Kolačiće možete kontrolirati ili obrisati u postavkama vašeg
+        preglednika.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
         4. Dijeljenje podataka s trećim stranama
       </h2>
-      <p className="mb-4">
-        Ne prodajemo vaše podatke. Podatke možemo dijeliti s:
-      </p>
+
+      <p className="mb-4">Podatke dijelimo isključivo s:</p>
+
       <ul className="list-disc ml-6 mb-4">
-        <li>Servisima za obradu plaćanja (Shopify Payments, PayPal itd.)</li>
-        <li>Dostavnim službama radi izvršenja narudžbi</li>
-        <li>
-          Analitičkim alatima i marketing platformama (Google Analytics, Shopify
-          apps)
-        </li>
+        <li>Shopify Inc. (platforma webshopa),</li>
+        <li>procesorima plaćanja (Stripe, PayPal i dr.),</li>
+        <li>dostavnim službama radi isporuke narudžbi,</li>
+        <li>računovodstvom zbog zakonskih obveza.</li>
       </ul>
+
+      <p className="mb-4">
+        Ne prodajemo osobne podatke i ne dijelimo ih u marketinške svrhe.
+      </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
         5. Sigurnost podataka
       </h2>
       <p className="mb-4">
-        Poduzimamo odgovarajuće tehničke i organizacijske mjere kako bismo
-        zaštitili vaše podatke od neovlaštenog pristupa, izmjene ili gubitka.
+        Primjenjujemo tehničke i organizacijske mjere zaštite kako bismo
+        spriječili neovlašteni pristup, gubitak ili zloupotrebu podataka.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">6. Vaša prava</h2>
-      <p className="mb-4">
-        Imate pravo zatražiti pristup, ispravak ili brisanje svojih osobnih
-        podataka. Također možete se odjaviti s marketinških obavijesti u bilo
-        kojem trenutku.
-      </p>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">6. Prava korisnika</h2>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">7. Kontakt</h2>
+      <p className="mb-4">Kupac ima pravo:</p>
+
+      <ul className="list-disc ml-6 mb-4">
+        <li>zatražiti pristup svojim osobnim podacima,</li>
+        <li>zatražiti ispravak netočnih podataka,</li>
+        <li>zatražiti brisanje podataka (ako to nije protivno zakonu),</li>
+        <li>zatražiti ograničenje obrade,</li>
+        <li>zatražiti prijenos podataka,</li>
+        <li>podnijeti prigovor na obradu podataka.</li>
+      </ul>
+
       <p className="mb-4">
-        Ako imate pitanja u vezi ove politike privatnosti, kontaktirajte nas na:
+        Za ostvarivanje prava možete nas kontaktirati na:
         <br />
         <strong>Email:</strong> grofsjewelry@gmail.com
       </p>
 
-      <p className="text-sm mt-6">Zadnja izmjena: 19.10.2025.</p>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">
+        7. Rješavanje sporova
+      </h2>
+      <p className="mb-4">
+        Kupci mogu podnijeti pritužbe putem platforme za online rješavanje
+        sporova:{" "}
+        <a
+          href="https://ec.europa.eu/consumers/odr/"
+          className="text-blue-600 underline"
+        >
+          https://ec.europa.eu/consumers/odr/
+        </a>
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-6 mb-2">
+        8. Kontakt za zaštitu podataka
+      </h2>
+      <p className="mb-4">
+        Za sva pitanja vezana uz privatnost i zaštitu podataka kontaktirajte
+        nas:
+        <br />
+        <strong>Email:</strong> grofsjewelry@gmail.com
+      </p>
+
+      <p className="text-sm mt-6">Zadnja izmjena: 28.11.2025.</p>
     </section>
   );
 };

@@ -95,6 +95,7 @@ export const infoLinks = [
   { text: "Politika Privatnosti", slug: "politika-privatnosti" },
   { text: "Kolačići", slug: "kolacici" },
   { text: "Uvjeti Korištenja", slug: "uvjeti-koristenja" },
+  { text: "Uvjeti Prodaje", slug: "uvjeti-prodaje" },
 ];
 
 export const contactData = [

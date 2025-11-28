@@ -11,11 +11,11 @@ import { getCollectionProducts } from "@/lib/shopify/collectionProducts";
 
 // ✅ SEO Metadata za Home stranicu
 export const metadata = {
-  title: "Grof's Jewelry | Handmade Paper Jewelry",
+  title: "Grof's Jewelry | Unique Gifts",
   description:
     "Dobrodošli u Grof's Jewlery – otkrijte najbolje proizvode, kolekcije i poklon setove.",
   openGraph: {
-    title: "Grof's Jewlery | Handmade Paper Jewelry",
+    title: "Grof's Jewlery | Unique Gifts",
     description:
       "Dobrodošli u Grof's Jewlery – otkrijte najbolje proizvode, kolekcije i poklon setove.",
     url: "https://grofsjewelry.com",
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grof's Jewelry | Handmade Paper Jewelry",
+    title: "Grof's Jewelry | Unique Gifts",
     description:
       "Dobrodošli u Grof's Jewelry – otkrijte najbolje proizvode, kolekcije i poklon setove.",
     images: ["/hero-home.png"],

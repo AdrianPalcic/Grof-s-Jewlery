@@ -3,12 +3,12 @@ import React from "react";
 export const metadata = {
   title: "Grof's Jewelry | Uvjeti korištenja",
   description:
-    "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
+    "Pročitajte uvjete korištenja Grof's Jewelry web trgovine. Saznajte pravila kupnje, odgovornosti i korištenja sadržaja.",
   openGraph: {
     title: "Grof's Jewelry | Uvjeti korištenja",
     description:
-      "Pročitajte uvjete korištenja Grof's Jewlery webshopa – prava, obveze i informacije za korisnike.",
-    url: "https://grofsjewelry.com",
+      "Pročitajte uvjete korištenja Grof's Jewelry web trgovine. Saznajte pravila kupnje, odgovornosti i korištenja sadržaja.",
+    url: "https://grofsjewelry.com/uvjeti-koristenja",
     siteName: "Grof's Jewelry",
     images: [
       {
@@ -24,106 +24,99 @@ export const metadata = {
     card: "summary_large_image",
     title: "Grof's Jewelry | Uvjeti korištenja",
     description:
-      "Pročitajte uvjete korištenja Grof's Jewelry webshopa – prava, obveze i informacije za korisnike.",
+      "Pročitajte uvjete korištenja Grof's Jewelry web trgovine. Saznajte pravila kupnje, odgovornosti i korištenja sadržaja.",
     images: ["/hero-home.png"],
   },
 };
 
-const page = () => {
+const Page = () => {
   return (
     <section className="max-w-4xl mx-auto p-6 sm:p-10">
       <h1 className="text-3xl font-bold mb-6">Uvjeti korištenja</h1>
 
       <p className="mb-4">
-        Dobrodošli na naš webshop! Molimo vas da pažljivo pročitate ove uvjete
-        korištenja prije nego što koristite naše usluge.
+        Ovi Uvjeti korištenja reguliraju korištenje webshopa Grof's Jewelry.
+        Korištenjem ove stranice prihvaćate sve dolje navedene uvjete.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">
-        1. Prihvaćanje uvjeta
-      </h2>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">1. Opće odredbe</h2>
       <p className="mb-4">
-        Korištenjem ovog webshopa, prihvaćate ove uvjete korištenja i obvezujete
-        se pridržavati ih. Ako se ne slažete s uvjetima, nemojte koristiti naš
-        webshop.
+        Webshop Grof's Jewelry (u nastavku: “webshop”) u vlasništvu je obrta
+        Grof's Jewelry, obrt za usluge, proizvodnju i trgovinu, vl. Iva Peroš,
+        sa sjedištem u Zagrebu, Kopernikova ulica 112.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
         2. Korištenje webshopa
       </h2>
       <p className="mb-4">
-        Slažete se da ćete webshop koristiti isključivo u legalne i dopuštene
-        svrhe. Zabranjeno je:
+        Webshop se može koristiti za pregled proizvoda, kupnju i komunikaciju s
+        prodavateljem. Zabranjeno je korištenje stranice u svrhe koje mogu
+        prouzročiti štetu webshopu, vlasniku ili drugim korisnicima.
       </p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Pristupati neovlaštenim dijelovima webshopa</li>
-        <li>Krađa ili zlouporaba sadržaja i podataka</li>
-        <li>Korištenje webshopa za ilegalne aktivnosti</li>
-      </ul>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">
-        3. Registracija i korisnički račun
-      </h2>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">3. Cijene i plaćanje</h2>
       <p className="mb-4">
-        Ako kreirate korisnički račun, odgovorni ste za očuvanje privatnosti
-        vaših podataka i lozinke. Svi podaci koje pružite moraju biti točni i
-        ažurni.
+        Sve cijene izražene su u eurima (EUR). Webshop nije u sustavu PDV-a
+        prema članku 90. Zakona o PDV-u. Plaćanje se obavlja putem dostupnih
+        metoda na checkout stranici, a transakcije obrađuje Shopify Payments ili
+        drugi integrirani pružatelji usluga plaćanja.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
-        4. Narudžbe i plaćanja
+        4. Proces narudžbe i dostava
       </h2>
       <p className="mb-4">
-        Svi proizvodi i cijene objavljeni na webshopu podložni su promjenama bez
-        prethodne najave. Plaćanja se obrađuju putem sigurnih servisa (npr.
-        Shopify Payments, PayPal). Cijene su u eurima i uključuju sve relevantne
-        poreze ako nije drugačije naznačeno.
-      </p>
-
-      <h2 className="text-2xl font-semibold mt-6 mb-2">5. Dostava i povrat</h2>
-      <p className="mb-4">
-        Dostava se vrši putem odabranih kurirskih službi. Rokovi i troškovi
-        dostave navedeni su u procesu checkouta. Povrat robe je moguć prema
-        našoj politici povrata koju možete pronaći na webshopu.
+        Narudžba je potvrđena kada primite e-mail potvrde. Dostava se vrši putem
+        dostavne službe navedene pri kupnji. Rokovi dostave mogu varirati ovisno
+        o lokaciji i dostupnosti proizvoda.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
-        6. Ograničenje odgovornosti
+        5. Povrati i reklamacije
       </h2>
       <p className="mb-4">
-        Trudimo se osigurati točnost informacija na webshopu, ali ne jamčimo da
-        su svi podaci uvijek potpuni ili ažurni. Ne odgovaramo za bilo kakvu
-        štetu nastalu korištenjem webshopa ili proizvoda kupljenih putem njega.
+        Kupac ima pravo na povrat prema Zakonu o zaštiti potrošača. Detaljna
+        politika povrata nalazi se na stranici “Reklamacije i povrati”.
+        Proizvodi moraju biti nekorišteni i neoštećeni kako bi se ostvarilo
+        pravo povrata, osim u slučaju proizvodne greške.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-6 mb-2">6. Odgovornost</h2>
+      <p className="mb-4">
+        Webshop nastoji pružiti točne i ažurirane informacije o proizvodima, ali
+        ne jamči potpunu točnost svih prikazanih podataka. Webshop ne snosi
+        odgovornost za eventualne tehničke probleme ili privremenu nedostupnost
+        stranice.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
-        7. Prava intelektualnog vlasništva
+        7. Intelektualno vlasništvo
       </h2>
       <p className="mb-4">
-        Svi sadržaji webshopa, uključujući tekstove, slike, logotipe i kod,
-        zaštićeni su autorskim pravima i drugim pravima intelektualnog
-        vlasništva. Zabranjeno je njihovo kopiranje ili distribucija bez našeg
-        dopuštenja.
+        Svi sadržaji na webshopu, uključujući fotografije, tekstove i grafička
+        rješenja, zaštićeni su autorskim pravima i ne smiju se koristiti bez
+        prethodne pisane suglasnosti vlasnika.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">8. Promjene uvjeta</h2>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">
+        8. Izmjene uvjeta korištenja
+      </h2>
       <p className="mb-4">
-        Zadržavamo pravo izmjene ovih uvjeta korištenja u bilo kojem trenutku.
-        Sve promjene bit će objavljene na ovoj stranici, a datum zadnje izmjene
-        bit će naveden na dnu.
+        Webshop zadržava pravo izmjene uvjeta korištenja bez prethodne najave.
+        Preporučujemo povremenu provjeru ove stranice.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">9. Kontakt</h2>
       <p className="mb-4">
-        Ako imate pitanja u vezi ovih uvjeta korištenja, slobodno nas
-        kontaktirajte:
+        Za bilo kakva pitanja možete nas kontaktirati na:
         <br />
         <strong>Email:</strong> grofsjewelry@gmail.com
       </p>
 
-      <p className="text-sm mt-6">Zadnja izmjena: 19.10.2025.</p>
+      <p className="text-sm mt-6">Zadnja izmjena: 28.11.2025.</p>
     </section>
   );
 };
 
-export default page;
+export default Page;

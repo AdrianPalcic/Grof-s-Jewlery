@@ -1,9 +1,8 @@
 import { getProductByHandle } from "@/lib/shopify/product";
 import AddToCartBtn from "@/app/compontents/AddToCartBtn";
 import AddToGiftBoxBtn from "@/app/compontents/AddToGiftBoxBtn";
-import ButtonMain from "@/app/compontents/ButtonMain";
 import ItemImages from "@/app/compontents/ItemImages";
-import Link from "next/link";
+
 import React from "react";
 import { Metadata } from "next";
 
