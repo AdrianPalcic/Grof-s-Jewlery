@@ -12,10 +12,15 @@ declare global {
   interface Window {
     dataLayer: any[];
     gtag: (...args: any[]) => void;
+    __ga4_initialized?: boolean;
   }
 }
 
-export default function CookieConsentBanner() {
+export default function CookieConsentBanner({
+  gaMeasurementId,
+}: {
+  gaMeasurementId?: string;
+}) {
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [consent, setConsent] = useState<CookieConsent>({
@@ -25,6 +30,11 @@ export default function CookieConsentBanner() {
   });
 
   useEffect(() => {
+    const storedConsent = getStoredConsent();
+    if (storedConsent) {
+      setConsent(storedConsent as unknown as CookieConsent);
+    }
+
     if (shouldShowBanner()) {
       setShowBanner(true);
     }
@@ -39,7 +49,7 @@ export default function CookieConsentBanner() {
     saveConsent(allConsent);
     setConsent(allConsent);
     setShowBanner(false);
-    loadNonEssentialScripts(allConsent);
+    loadNonEssentialScripts(allConsent, gaMeasurementId);
   };
 
   const handleRejectAll = () => {
@@ -56,7 +66,7 @@ export default function CookieConsentBanner() {
   const handleSaveSettings = () => {
     saveConsent(consent);
     setShowBanner(false);
-    loadNonEssentialScripts(consent);
+    loadNonEssentialScripts(consent, gaMeasurementId);
   };
 
   const toggleConsent = (key: keyof CookieConsent) => {
@@ -206,21 +216,42 @@ export default function CookieConsentBanner() {
   );
 }
 
-function loadNonEssentialScripts(consent: CookieConsent) {
+function loadNonEssentialScripts(
+  consent: CookieConsent,
+  gaMeasurementId?: string
+) {
   // Load Google Analytics if analytics consent given
   if (consent.analytics) {
-    // Example: Load GA4
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID";
-    document.head.appendChild(script);
+    const gaId = gaMeasurementId || (process.env as any)?.NEXT_PUBLIC_GA_ID;
+    if (!gaId) {
+      console.warn("GA4 measurement ID not provided. Skipping GA load.");
+    } else {
+      const existingScript = document.getElementById("ga4-script");
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.id = "ga4-script";
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
+      }
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag =
+        window.gtag ||
+        function (...args: any[]) {
+          (window.dataLayer = window.dataLayer || []).push(args);
+        };
+
+      // Initialize only once per page load
+      if (!(window as any).__ga4_initialized) {
+        window.gtag("js", new Date());
+        window.gtag("config", gaId);
+        (window as any).__ga4_initialized = true;
+      } else {
+        // If already initialized, ensure config is called for this ID (idempotent)
+        window.gtag("config", gaId);
+      }
     }
-    gtag("js", new Date());
-    gtag("config", "YOUR_GA_ID");
   }
 
   // Load marketing scripts if marketing consent given

@@ -35,7 +35,15 @@ export const saveConsent = (consent: CookieConsent): void => {
 
 export const clearConsent = (): void => {
   if (typeof window === "undefined") return;
-  localStorage.removeItem(CONSENT_KEY);
+  try {
+    localStorage.removeItem(CONSENT_KEY);
+  } catch (err) {
+    // localStorage may be unavailable or restricted (e.g., in incognito or due to browser settings)
+    // Log the error so it's visible during development; do not throw in production flow.
+    // Keeping behavior similar to `saveConsent` which doesn't throw.
+    // eslint-disable-next-line no-console
+    console.error("Failed to clear cookie consent from localStorage:", err);
+  }
 };
 
 export const hasConsentExpired = (record: ConsentRecord): boolean => {

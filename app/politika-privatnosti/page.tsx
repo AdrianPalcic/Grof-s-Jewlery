@@ -101,8 +101,8 @@ const PrivacyPolicyPage = () => {
       </p>
 
       <p className="mb-4">
-        Mogu se vratiti i konfigurirati banner za pristanak svakom vremenu ili
-        direktno u postavkama vašeg preglednika.
+        Možete ponovno prikazati i konfigurirati banner za pristanak u bilo
+        kojem trenutku ili direktno u postavkama vašeg preglednika.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">

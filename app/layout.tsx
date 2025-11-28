@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./compontents/Navbar";
 import Footer from "./compontents/Footer";
-import CookieBanner from "./compontents/CookieBanner";
 import Note from "./compontents/Note";
 import { Analytics } from "@vercel/analytics/next";
 import CookieConsentBanner from "./components/CookieConsentBanner";
