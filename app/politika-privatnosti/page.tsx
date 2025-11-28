@@ -29,9 +29,9 @@ const PrivacyPolicyPage = () => {
       <h1 className="text-3xl font-bold mb-6">Politika privatnosti</h1>
 
       <p className="mb-4">
-        Ova Politika privatnosti opisuje kako Grof's Jewelry prikuplja, koristi
-        i štiti vaše osobne podatke u skladu s Općom uredbom o zaštiti podataka
-        (GDPR) i Zakonom o provedbi Opće uredbe o zaštiti podataka.
+        Ova Politika privatnosti opisuje kako Grof&apos;s Jewelry prikuplja,
+        koristi i štiti vaše osobne podatke u skladu s Općom uredbom o zaštiti
+        podataka (GDPR) i Zakonom o provedbi Opće uredbe o zaštiti podataka.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
@@ -46,9 +46,9 @@ const PrivacyPolicyPage = () => {
         <li>Broj telefona</li>
         <li>Podatke o narudžbi (proizvodi, količine, cijena)</li>
         <li>
-          Podatke o plaćanju — napomena: Grof’s Jewelry ne prikuplja niti ne
-          obrađuje podatke o karticama, sve se obrađuje putem sigurnih payment
-          procesora integriranih u Shopify.
+          Podatke o plaćanju — napomena: Grof&apos;s Jewelry ne prikuplja niti
+          ne obrađuje podatke o karticama, sve se obrađuje putem sigurnih
+          payment procesora integriranih u Shopify.
         </li>
         <li>
           Tehničke podatke poput IP adrese, tipa uređaja, preglednika, kolačića
@@ -74,14 +74,14 @@ const PrivacyPolicyPage = () => {
       </h2>
 
       <p className="mb-4">
-        Grof's Jewelry koristi kolačiće za različite svrhe:
+        Grof&apos;s Jewelry koristi kolačiće za različite svrhe:
       </p>
 
       <ul className="list-disc ml-6 mb-4">
         <li>
           <strong>Nužni kolačići (Essential):</strong> Potrebni za sigurnost i
           funkcioniranje webshopa — primjenjuju se automatski bez vašeg
-          pristanka.
+          pristanka.{" "}
         </li>
         <li>
           <strong>Analitički kolačići:</strong> Koriste se samo nakon vašeg

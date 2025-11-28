@@ -30,6 +30,7 @@ const Page = () => {
 
       if (!freshProducts) {
         setMounted(true);
+        clearCart();
         return;
       }
 
@@ -52,7 +53,7 @@ const Page = () => {
       setMounted(true);
     };
     fetchFreshProducts();
-  }, [cart]);
+  }, [cart, removeItems]);
 
   if (!mounted) return <Loader />;
 

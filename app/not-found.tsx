@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ButtonMain from "./compontents/ButtonMain";
 
 export default function NotFound() {
