@@ -61,7 +61,7 @@ const PrivacyPolicyPage = () => {
       </h2>
       <p className="mb-4">Podatke obrađujemo radi:</p>
 
-      <ul className="list-disc ml-6 mb-4">
+      <ul className="list-disc ml-6 mb-4 font-cinzel">
         <li>obrada narudžbi i dostave proizvoda,</li>
         <li>slanja potvrda i komunikacije s kupcima,</li>
         <li>poboljšanja rada webshopa i korisničkog iskustva,</li>
@@ -79,9 +79,9 @@ const PrivacyPolicyPage = () => {
 
       <ul className="list-disc ml-6 mb-4">
         <li>
-          <strong>Neobavezni kolačići (Essential):</strong> Potrebni za
-          sigurnost i funkcioniranje webshopa — primjenjuju se automatski bez
-          vašeg pristanka.
+          <strong>Nužni kolačići (Essential):</strong> Potrebni za sigurnost i
+          funkcioniranje webshopa — primjenjuju se automatski bez vašeg
+          pristanka.
         </li>
         <li>
           <strong>Analitički kolačići:</strong> Koriste se samo nakon vašeg

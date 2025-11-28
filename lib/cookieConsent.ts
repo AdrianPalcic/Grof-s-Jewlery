@@ -17,7 +17,32 @@ export const getStoredConsent = (): ConsentRecord | null => {
   if (typeof window === "undefined") return null;
   try {
     const stored = localStorage.getItem(CONSENT_KEY);
-    return stored ? JSON.parse(stored) : null;
+    if (!stored) return null;
+
+    const parsed = JSON.parse(stored);
+
+    // Basic runtime validation of the parsed shape
+    if (typeof parsed !== "object" || parsed === null) return null;
+
+    // Validate top-level fields
+    if (typeof parsed.version !== "string") return null;
+    if (typeof parsed.timestamp !== "number" || !Number.isFinite(parsed.timestamp))
+      return null;
+
+    // Validate consent object and its flags
+    const consentObj = parsed.consent;
+    if (typeof consentObj !== "object" || consentObj === null) return null;
+
+    if (
+      typeof consentObj.essential !== "boolean" ||
+      typeof consentObj.analytics !== "boolean" ||
+      typeof consentObj.marketing !== "boolean"
+    ) {
+      return null;
+    }
+
+    // All checks passed — return typed record
+    return parsed as ConsentRecord;
   } catch {
     return null;
   }

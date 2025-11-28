@@ -222,7 +222,7 @@ function loadNonEssentialScripts(
 ) {
   // Load Google Analytics if analytics consent given
   if (consent.analytics) {
-    const gaId = gaMeasurementId || (process.env as any)?.NEXT_PUBLIC_GA_ID;
+    const gaId = gaMeasurementId || process.env.NEXT_PUBLIC_GA_ID;
     if (!gaId) {
       console.warn("GA4 measurement ID not provided. Skipping GA load.");
     } else {
