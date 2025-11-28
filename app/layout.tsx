@@ -6,6 +6,7 @@ import Footer from "./compontents/Footer";
 import CookieBanner from "./compontents/CookieBanner";
 import Note from "./compontents/Note";
 import { Analytics } from "@vercel/analytics/next";
+import CookieConsentBanner from "./components/CookieConsentBanner";
 
 const cinzel = localFont({
   src: [
@@ -73,7 +74,7 @@ export default async function RootLayout({
         <Navbar />
         {children}
         <Analytics />
-        <CookieBanner />
+        <CookieConsentBanner />
         <Footer />
       </body>
     </html>

@@ -74,20 +74,35 @@ const PrivacyPolicyPage = () => {
       </h2>
 
       <p className="mb-4">
-        Shopify koristi kolačiće za pravilno funkcioniranje webshopa, sigurnost,
-        analitiku i obradu plaćanja. Korištenjem web stranice pristajete na
-        uporabu kolačića.
+        Grof's Jewelry koristi kolačiće za različite svrhe:
+      </p>
+
+      <ul className="list-disc ml-6 mb-4">
+        <li>
+          <strong>Neobavezni kolačići (Essential):</strong> Potrebni za
+          sigurnost i funkcioniranje webshopa — primjenjuju se automatski bez
+          vašeg pristanka.
+        </li>
+        <li>
+          <strong>Analitički kolačići:</strong> Koriste se samo nakon vašeg
+          eksplicitnog pristanka za analizu korištenja stranice.
+        </li>
+        <li>
+          <strong>Marketinški kolačići:</strong> Koriste se samo nakon vašeg
+          eksplicitnog pristanka za personalizirane oglase i retargeting.
+        </li>
+      </ul>
+
+      <p className="mb-4">
+        <strong>Važno:</strong> Shopify koristi kolačiće za funkcioniranje
+        webshopa. Samo Shopify kolačići potrebni za sigurnost i plaćanje
+        postavljaju se bez pristanka. Svi ostali kolačići zahtijevaju vašu
+        eksplicitnu suglasnost.
       </p>
 
       <p className="mb-4">
-        Najčešći Shopify kolačići uključuju: <code>cart</code>,{" "}
-        <code>_shopify_y</code>, <code>_shopify_s</code>,{" "}
-        <code>checkout_token</code> i druge potrebne za funkcioniranje trgovine.
-      </p>
-
-      <p className="mb-4">
-        Kolačiće možete kontrolirati ili obrisati u postavkama vašeg
-        preglednika.
+        Mogu se vratiti i konfigurirati banner za pristanak svakom vremenu ili
+        direktno u postavkama vašeg preglednika.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
