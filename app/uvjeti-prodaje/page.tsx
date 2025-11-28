@@ -35,9 +35,10 @@ const Page = () => {
       <h1 className="text-3xl font-bold mb-6">Uvjeti prodaje</h1>
 
       <p className="mb-4">
-        Ovi uvjeti prodaje reguliraju kupnju proizvoda u webshopu Grof's
-        Jewelry, vlasništvo obrta Grof's Jewelry, obrt za usluge, proizvodnju i
-        trgovinu, vl. Iva Peroš, Kopernikova 112, Zagreb, OIB: 19706383007.
+        Ovi uvjeti prodaje reguliraju kupnju proizvoda u webshopu Grof&apos;s
+        Jewelry, vlasništvo obrta Grof&apos;s Jewelry, obrt za usluge,
+        proizvodnju i trgovinu, vl. Iva Peroš, Kopernikova 112, Zagreb, OIB:
+        19706383007.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">1. Narudžba</h2>

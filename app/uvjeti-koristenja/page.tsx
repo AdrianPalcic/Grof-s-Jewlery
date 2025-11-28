@@ -35,15 +35,15 @@ const Page = () => {
       <h1 className="text-3xl font-bold mb-6">Uvjeti korištenja</h1>
 
       <p className="mb-4">
-        Ovi Uvjeti korištenja reguliraju korištenje webshopa Grof's Jewelry.
-        Korištenjem ove stranice prihvaćate sve dolje navedene uvjete.
+        Ovi Uvjeti korištenja reguliraju korištenje webshopa Grof&apos;s
+        Jewelry. Korištenjem ove stranice prihvaćate sve dolje navedene uvjete.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">1. Opće odredbe</h2>
       <p className="mb-4">
-        Webshop Grof's Jewelry (u nastavku: “webshop”) u vlasništvu je obrta
-        Grof's Jewelry, obrt za usluge, proizvodnju i trgovinu, vl. Iva Peroš,
-        sa sjedištem u Zagrebu, Kopernikova ulica 112.
+        Webshop Grof&apos;s Jewelry (u nastavku: “webshop”) u vlasništvu je
+        obrta Grof&apos;s Jewelry, obrt za usluge, proizvodnju i trgovinu, vl.
+        Iva Peroš, sa sjedištem u Zagrebu, Kopernikova ulica 112.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-2">
