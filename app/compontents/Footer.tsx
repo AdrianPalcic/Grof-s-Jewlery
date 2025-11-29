@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className="font-cormorant">
           <p>
-            <strong>Grof's Jewelry</strong>, obrt za usluge, proizvodnju i
+            <strong>Grof&apos;s Jewelry</strong>, obrt za usluge, proizvodnju i
             trgovinu.
           </p>
 

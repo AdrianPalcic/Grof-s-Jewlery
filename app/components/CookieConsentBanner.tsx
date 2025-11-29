@@ -10,8 +10,8 @@ import {
 
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
     __ga4_initialized?: boolean;
   }
 }
@@ -238,15 +238,16 @@ function loadNonEssentialScripts(
       window.dataLayer = window.dataLayer || [];
       window.gtag =
         window.gtag ||
-        function (...args: any[]) {
+        function (...args: unknown[]) {
           (window.dataLayer = window.dataLayer || []).push(args);
         };
 
       // Initialize only once per page load
-      if (!(window as any).__ga4_initialized) {
+      const winWithGA = window as unknown as { __ga4_initialized?: boolean };
+      if (!winWithGA.__ga4_initialized) {
         window.gtag("js", new Date());
         window.gtag("config", gaId);
-        (window as any).__ga4_initialized = true;
+        winWithGA.__ga4_initialized = true;
       } else {
         // If already initialized, ensure config is called for this ID (idempotent)
         window.gtag("config", gaId);
