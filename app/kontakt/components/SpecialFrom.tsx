@@ -57,7 +57,7 @@ const SpecialFrom = () => {
           );
         })}
       </div>
-      <Link href="mail:grofsjewlery@gmail.com">
+      <Link href="mail:grofsjewelry@gmail.com">
         <ButtonMain text="Pošaljite nam poruku" />
       </Link>
       <p className="mt-2">Nastojimo odgovoriti na custom upite unutar 24h</p>

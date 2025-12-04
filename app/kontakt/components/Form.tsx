@@ -1,7 +1,7 @@
 "use client";
 
+import { sendResendEmail } from "@/lib/resend/resend";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Form = () => {
@@ -11,10 +11,9 @@ const Form = () => {
     poruka: "",
     prihvacamUvjete: false,
   });
+  const [message, setMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const router = useRouter();
-
-  // Funkcija za update state-a
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -28,6 +27,27 @@ const Form = () => {
     }));
   };
 
+  const send = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await sendResendEmail({
+        ime: input.ime,
+        email: input.email,
+        poruka: input.poruka,
+      });
+      setInput({ ime: "", email: "", poruka: "", prihvacamUvjete: false });
+      setMessage("Poruka poslana! Javiti ćemo se u najkraćem roku");
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      alert("Došlo je do greške pri slanju poruke.");
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div
       id="classic-form"
@@ -39,11 +59,7 @@ const Form = () => {
         nam se putem obrasca.
       </p>
 
-      <form
-        action={"https://formspree.io/f/xeorvqwz"}
-        className="flex flex-col gap-3 mt-4"
-        method="POST"
-      >
+      <form onSubmit={send} className="flex flex-col gap-3 mt-4" method="POST">
         <label
           htmlFor="ime"
           className="flex flex-col gap-1 font-cormorant text-lg text-textColor font-light"
@@ -111,9 +127,15 @@ const Form = () => {
           </div>
         </div>
 
-        <button className="btn w-fit" type="submit">
-          Pošaljite nam poruku
-        </button>
+        {!message ? (
+          <button className="btn w-fit" type="submit">
+            {!loading ? "Pošaljite nam poruku" : "Slanje..."}
+          </button>
+        ) : (
+          <div className="w-full px-3 pt-6 flex justify-center items-center">
+            <p className="font-bold text-secondaryColor text-2xl">{message}</p>
+          </div>
+        )}
       </form>
     </div>
   );
