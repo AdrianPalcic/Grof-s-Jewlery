@@ -6,6 +6,7 @@ import { getAllCollections } from "@/lib/shopify/collections";
 import { Image } from "@/types/types";
 import { Hero } from "./components/Hero";
 
+// Metadata za SEO
 export async function generateMetadata({
   params,
 }: {
@@ -14,15 +15,14 @@ export async function generateMetadata({
   const { kolekcija } = params;
 
   const collections = await getAllCollections(2);
-  const collection = collections.find((c) => c.handle === "jesenska-kolekcija");
+  const collection = collections.find((c) => c.handle === kolekcija);
 
   const title = collection?.title
     ? `${collection.title} | Grof's Jewelry`
     : "Grof's Jewelry | Kolekcija";
 
-  const description = collection?.description
-    ? collection.description
-    : "Otkrijte naše proizvode u kolekciji.";
+  const description =
+    collection?.description || "Otkrijte naše proizvode u kolekciji.";
 
   const image = collection?.image?.url || "/collection.png";
 
@@ -53,25 +53,25 @@ export async function generateMetadata({
   };
 }
 
+// PageProps tip
 type PageProps = {
-  params: Promise<{ kolekcija: string }>;
+  params: { kolekcija: string };
 };
 
+// Page komponenta
 const Page = async ({ params }: PageProps) => {
-  const { kolekcija } = await params;
+  const { kolekcija } = params;
 
+  // Dohvati kolekcije i nađi ovu po handle-u
   const collections = await getAllCollections(2);
-  const collection = collections.find(
-    (collection) => collection.handle === kolekcija
-  );
+  const collection = collections.find((c) => c.handle === kolekcija);
 
   const image: Image = collection?.image || {
     url: "/collection.png",
     altText: "Collection",
   };
 
-  console.log(collection);
-
+  // Dohvati proizvode za kolekciju
   const products = await getCollectionProducts({
     handle: kolekcija,
     first: 25,
