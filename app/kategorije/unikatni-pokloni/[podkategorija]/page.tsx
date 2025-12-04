@@ -1,7 +1,6 @@
 import React from "react";
 import Hero from "../../components/Hero";
-import Link from "next/link";
-import ButtonMain from "@/app/compontents/ButtonMain";
+
 import { getProductsByTagPaginated } from "@/lib/shopify/getProductsPaginated";
 import ProductList from "../../components/ProductList";
 import CTA from "../../components/CTA";
@@ -13,9 +12,9 @@ type PageProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { podkategorija: string };
+  params: Promise<{ podkategorija: string }>;
 }) {
-  const { podkategorija } = params;
+  const { podkategorija } = await params;
 
   const subcatNames = [
     {

@@ -22,9 +22,7 @@ export async function getProductsByTagPaginated(
   const edges = data?.products?.edges || [];
   const products = edges.map((edge: { node: Product }) => edge.node);
   const endCursor = edges.length > 0 ? edges[edges.length - 1].cursor : null;
-  const hasNextPage = data?.products?.pageInfo?.hasNextPage;
-  console.log(data.products.pageInfo);
-
+  const hasNextPage = data?.products?.pageInfo?.hasNextPage ?? false;
   return {
     products,
     hasNextPage,

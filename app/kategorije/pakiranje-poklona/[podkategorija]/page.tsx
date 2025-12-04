@@ -13,9 +13,9 @@ type PageProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { podkategorija: string };
+  params: Promise<{ podkategorija: string }>;
 }) {
-  const { podkategorija } = params;
+  const { podkategorija } = await params;
 
   const subcatNames = [
     {

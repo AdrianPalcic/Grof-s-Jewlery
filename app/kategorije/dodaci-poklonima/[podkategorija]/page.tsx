@@ -12,7 +12,7 @@ type PageProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { podkategorija: string };
+  params: Promise<{ podkategorija: string }>;
 }) {
   const { podkategorija } = await params;
 
@@ -94,7 +94,7 @@ export default async function Page({ params }: PageProps) {
 
   const {
     products: initialProducts,
-    endCursor: initialCursor,
+    endCursor: initialEndCursor,
     hasNextPage,
   } = await getProductsByTagPaginated(25, podkategorija);
 
@@ -105,7 +105,7 @@ export default async function Page({ params }: PageProps) {
       <ProductList
         initialProducts={initialProducts}
         initialTag={podkategorija}
-        initialEndCursor={initialCursor}
+        initialEndCursor={initialEndCursor}
         initialHasNextPage={hasNextPage}
       />
 

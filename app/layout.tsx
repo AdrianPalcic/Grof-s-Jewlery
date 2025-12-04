@@ -31,8 +31,9 @@ const cormorant = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Grof's Jewelry | Handmade Paper Jewelry",
+  title: "Grof's Jewelry | Handmade Unique Gifts",
   description: "Handmade Paper Jewelry",
+  metadataBase: new URL("https://grofsjewelry.com"),
 };
 
 export default async function RootLayout({
