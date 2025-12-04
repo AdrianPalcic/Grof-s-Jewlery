@@ -93,17 +93,21 @@ export default async function Page({ params }: PageProps) {
 
   const name = formatName(podkategorija);
 
-  const { products: initialProducts } = await getProductsByTagPaginated(
-    25,
-    podkategorija
-  );
+  const {
+    products: initialProducts,
+    endCursor: initialCursor,
+    hasNextPage,
+  } = await getProductsByTagPaginated(25, podkategorija);
 
   return (
     <main className="mt-10 mb-20 sm:px-10 px-4 mx-auto w-full">
       <Hero name={name} />
+
       <ProductList
         initialProducts={initialProducts}
         initialTag={podkategorija}
+        initialEndCursor={initialCursor}
+        initialHasNextPage={hasNextPage}
       />
 
       <CTA />

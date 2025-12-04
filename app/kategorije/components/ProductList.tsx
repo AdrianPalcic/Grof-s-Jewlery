@@ -8,16 +8,27 @@ import ItemGrid from "@/app/compontents/ItemGrid";
 interface Props {
   initialProducts: Product[];
   initialTag: string;
+  initialEndCursor: string | null;
+  initialHasNextPage: boolean;
 }
 
-const ProductList = ({ initialProducts, initialTag }: Props) => {
+const ProductList = ({
+  initialProducts,
+  initialTag,
+  initialEndCursor,
+  initialHasNextPage,
+}: Props) => {
   const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [lastCursor, setLastCursor] = useState<string | null>(initialEndCursor);
+  const [hasNextPage, setHasNextPage] = useState(initialHasNextPage);
   const [loading, setLoading] = useState(false);
-  const [lastCursor, setLastCursor] = useState<string | null>(null);
-  const [hasNextPage, setHasNextPage] = useState(true);
   const tag = initialTag;
 
   const loadMore = async () => {
+    console.log(hasNextPage);
+    if (!hasNextPage) {
+      return;
+    }
     setLoading(true);
     try {
       const {
@@ -26,8 +37,6 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
         hasNextPage: nextPage,
       } = await getProductsByTagPaginated(25, tag, lastCursor || undefined);
 
-      console.log("cursor prije slanja:", lastCursor);
-      console.log("API returned:", newProducts);
       setProducts((prev) => {
         // Deduplikacija po ID-u
         const all = [...prev, ...newProducts];
@@ -54,9 +63,9 @@ const ProductList = ({ initialProducts, initialTag }: Props) => {
       )}
 
       <div className="flex justify-center my-6">
-        {products.length >= 25 && (
+        {hasNextPage && (
           <button onClick={loadMore} className="ghost">
-            Učitaj još
+            {loading ? "Učitavanje..." : "Učitaj još"}
           </button>
         )}
       </div>

@@ -40,6 +40,7 @@ export const GET_PRODUCTS_BY_TAG_W_CURSOR = `
       }
       pageInfo {
         hasNextPage
+        endCursor
       }
     }
   }
