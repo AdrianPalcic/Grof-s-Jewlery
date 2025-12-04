@@ -6,16 +6,17 @@ import ItemImages from "@/app/compontents/ItemImages";
 import { Metadata } from "next";
 
 type PageProps = {
-  params: {
-    slug: string;
-  };
+  params?: Promise<{ slug: string }>;
+  searchParams?: Promise<unknown>;
 };
 
 // Metadata za SEO i OG
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const product = await getProductByHandle(params.slug);
+  const resolvedParams = params ? await params : undefined;
+  const slug = resolvedParams?.slug as string;
+  const product = await getProductByHandle(slug);
   const ogImage = product.images.edges[0]?.node.url || "/hero-home.png";
 
   return {
@@ -26,7 +27,7 @@ export async function generateMetadata({
       title: `Grof's Jewelry | ${product.title}`,
       description:
         product.description || "Pregledajte naš unikatni nakit i poklone.",
-      url: `https://grofsjewelry.com/proizvodi/${params.slug}`,
+      url: `https://grofsjewelry.com/proizvodi/${slug}`,
       siteName: "Grof's Jewelry",
       images: [
         {
@@ -50,7 +51,9 @@ export async function generateMetadata({
 
 // Page komponenta
 export default async function Page({ params }: PageProps) {
-  const product = await getProductByHandle(params.slug);
+  const resolvedParams = params ? await params : undefined;
+  const slug = resolvedParams?.slug as string;
+  const product = await getProductByHandle(slug);
   const images = product.images.edges.map((edge) => edge.node);
 
   return (
